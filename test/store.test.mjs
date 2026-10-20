@@ -3,8 +3,6 @@ import assert from 'node:assert/strict';
 import { spawn } from 'node:child_process';
 import http from 'node:http';
 import crypto from 'node:crypto';
-import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -15,6 +13,8 @@ const ADMIN_TOKEN = 'admin-test-token';
 // A fake Stripe API that records what the store sends it.
 const stripeCalls = [];
 const sessions = new Map();
+const intents = new Map();
+const withIntent = s => ({ ...s, payment_intent: intents.get(s.payment_intent) });
 const notifications = [];
 let stripeServer, notifyServer, stripeUrl, notifyUrl;
 
@@ -24,11 +24,10 @@ function listen(handler) {
 async function readBody(req) { let b = ''; for await (const c of req) b += c; return b; }
 
 async function startStore(extraEnv) {
-  const dataDir = fs.mkdtempSync(path.join(os.tmpdir(), 'auctoran-test-'));
   const port = 20000 + Math.floor(Math.random() * 20000);
   const child = spawn(process.execPath, ['server.mjs'], {
     cwd: ROOT,
-    env: { PATH: process.env.PATH, PORT: String(port), DATA_DIR: dataDir, STRIPE_API_BASE: stripeUrl, PUBLIC_BASE_URL: `http://localhost:${port}`, ...extraEnv },
+    env: { PATH: process.env.PATH, PORT: String(port), STRIPE_API_BASE: stripeUrl, PUBLIC_BASE_URL: `http://localhost:${port}`, ...extraEnv },
     stdio: ['ignore', 'pipe', 'pipe']
   });
   let output = '';
@@ -38,7 +37,7 @@ async function startStore(extraEnv) {
     child.on('exit', code => reject(new Error(`server exited ${code}: ${output}`)));
   });
   const base = `http://localhost:${port}`;
-  return { base, dataDir, output: () => output, stop: () => child.kill() };
+  return { base, output: () => output, stop: () => child.kill() };
 }
 const post = (url, body, headers = {}) => fetch(url, { method: 'POST', headers: { 'Content-Type': 'application/json', ...headers }, body: typeof body === 'string' ? body : JSON.stringify(body) });
 function signedWebhook(base, event, secret = WEBHOOK_SECRET) {
@@ -60,16 +59,25 @@ before(async () => {
       const session = {
         id, url: `https://checkout.stripe.com/c/pay/${id}`, created: Math.floor(Date.now() / 1000), livemode: false,
         payment_status: 'paid', status: 'complete', currency: 'usd', amount_subtotal: 9998, amount_total: 10998,
-        total_details: { amount_shipping: 1000, amount_tax: 0 }, payment_intent: 'pi_123',
+        total_details: { amount_shipping: 1000, amount_tax: 0 }, payment_intent: 'pi_' + id,
         metadata: { store: form.get('metadata[store]'), items: form.get('metadata[items]') },
         customer_details: { email: 'buyer@example.com', name: 'Test Buyer', phone: '+15555550100' },
         shipping_details: { name: 'Test Buyer', address: { line1: '1 Main St', city: 'Austin', state: 'TX', postal_code: '78701', country: 'US' } }
       };
       sessions.set(id, session);
+      intents.set(session.payment_intent, { id: session.payment_intent, status: 'succeeded', metadata: { store: form.get('payment_intent_data[metadata][store]') } });
       return res.end(JSON.stringify(session));
     }
-    const match = req.url.match(/^\/v1\/checkout\/sessions\/(cs_\w+)$/);
-    if (req.method === 'GET' && match && sessions.has(match[1])) return res.end(JSON.stringify(sessions.get(match[1])));
+    const u = new URL(req.url, 'http://stripe');
+    if (req.method === 'GET' && u.pathname === '/v1/checkout/sessions') return res.end(JSON.stringify({ data: [...sessions.values()].reverse().map(withIntent) }));
+    const match = u.pathname.match(/^\/v1\/checkout\/sessions\/(cs_\w+)$/);
+    if (req.method === 'GET' && match && sessions.has(match[1])) { const s = sessions.get(match[1]); return res.end(JSON.stringify(u.searchParams.getAll('expand[]').includes('payment_intent') ? withIntent(s) : s)); }
+    const pi = u.pathname.match(/^\/v1\/payment_intents\/(pi_\w+)$/);
+    if (req.method === 'POST' && pi && intents.has(pi[1])) {
+      const intent = intents.get(pi[1]);
+      for (const [k, v] of new URLSearchParams(body)) { const m = k.match(/^metadata\[(\w+)\]$/); if (m) intent.metadata[m[1]] = v; }
+      return res.end(JSON.stringify(intent));
+    }
     res.statusCode = 404; res.end(JSON.stringify({ error: { message: 'No such session' } }));
   });
   stripeUrl = `http://localhost:${stripeServer.address().port}`;
@@ -94,8 +102,7 @@ test('pages and APIs load', async () => {
 });
 
 test('private files are never served', async () => {
-  fs.writeFileSync(path.join(demo.dataDir, 'orders.json'), '[]');
-  for (const p of ['/.env', '/.env.example', '/package.json', '/server.mjs', '/data/products.json', '/data/store.json', '/storage/orders.json', '/test/store.test.mjs', '/README.md', '/%2e%2e/server.mjs', '/src/%2e%2e/server.mjs', '/assets/%2e%2e/.env', '/assets/../server.mjs']) {
+  for (const p of ['/.env', '/.env.example', '/package.json', '/server.mjs', '/data/products.json', '/data/store.json', '/lib/store.mjs', '/api/index.mjs', '/public/index.html', '/vercel.json', '/test/store.test.mjs', '/README.md', '/%2e%2e/server.mjs', '/src/%2e%2e/server.mjs', '/assets/%2e%2e/.env', '/assets/../server.mjs']) {
     const res = await fetch(demo.base + p);
     assert.ok([403, 404].includes(res.status), `${p} returned ${res.status}`);
   }
@@ -114,7 +121,7 @@ test('checkout rejects bad carts', async () => {
   assert.equal((await fetch(demo.base + '/api/checkout', { method: 'POST', body: '{}' })).status, 415);
 });
 
-test('Stripe checkout uses server prices, then webhook records the order once', async () => {
+test('Stripe checkout uses server prices, then webhook notifies once per order', async () => {
   const res = await post(testMode.base + '/api/checkout', { items: [{ id: 'fortivor-pre-workout', qty: 2, priceCents: 1 }] }, { 'X-Forwarded-For': '10.0.0.1' });
   const data = await res.json();
   assert.equal(res.status, 200, JSON.stringify(data));
@@ -136,11 +143,7 @@ test('Stripe checkout uses server prices, then webhook records the order once', 
   assert.equal((await signedWebhook(testMode.base, event)).status, 200);
   assert.equal((await signedWebhook(testMode.base, event)).status, 200); // Stripe retries must not duplicate
 
-  const orders = JSON.parse(fs.readFileSync(path.join(testMode.dataDir, 'orders.json'), 'utf8'));
-  assert.equal(orders.length, 1);
-  assert.equal(orders[0].payment, 'paid');
-  assert.equal(orders[0].items[0].qty, 2);
-  assert.equal(orders[0].shipping.address.city, 'Austin');
+  assert.equal(intents.get('pi_' + sessionId).metadata.notified, 'true');
   assert.equal(notifications.length, 1);
   assert.match(notifications[0].text, /2× Fortivor Pre-Workout/);
 });
@@ -151,10 +154,17 @@ test('admin can list and fulfil orders with the token only', async () => {
   assert.equal((await fetch(demo.base + '/api/admin/orders', { headers: { Authorization: 'Bearer anything' } })).status, 404);
   const auth = { Authorization: `Bearer ${ADMIN_TOKEN}` };
   const { orders } = await (await fetch(testMode.base + '/api/admin/orders', { headers: auth })).json();
-  assert.ok(orders.length >= 1);
+  assert.equal(orders.length, 1);
+  assert.equal(orders[0].payment, 'paid');
+  assert.equal(orders[0].fulfillment, 'unfulfilled');
+  assert.equal(orders[0].items[0].qty, 2);
+  assert.equal(orders[0].shipping.address.city, 'Austin');
   const res = await post(`${testMode.base}/api/admin/orders/${orders[0].id}`, { fulfillment: 'fulfilled', tracking: '1Z999' }, auth);
   assert.equal(res.status, 200);
   assert.equal((await res.json()).order.tracking, '1Z999');
+  assert.equal(intents.get(orders[0].paymentIntent).metadata.fulfillment, 'fulfilled');
+  const again = await (await fetch(testMode.base + '/api/admin/orders', { headers: auth })).json();
+  assert.equal(again.orders[0].fulfillment, 'fulfilled');
   assert.equal((await post(`${testMode.base}/api/admin/orders/${orders[0].id}`, { fulfillment: 'fulfilled' })).status, 401);
 });
 
