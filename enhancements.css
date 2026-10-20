@@ -99,3 +99,23 @@
 @media(max-width:600px){.hero-shell{display:flex;flex-direction:column;height:auto;min-height:0}.hero-left{min-height:590px;padding:75px 6% 80px}.hero-photo{background-position:center,center,70% center}.hero-copy h1{font-size:clamp(59px,12.5vw,85px);line-height:.89;margin:34px 0 26px}.hero-description{font-size:13px}.hero-cta-row{margin-top:25px;gap:19px}.hero-right{min-height:595px}.hero-right-top{padding:20px 6% 7px}.hero-product-visual{min-height:325px;margin:0 5%}.hero-product-visual img{max-height:390px}.hero-right-bottom{min-height:145px;padding:20px 6%}.hero-right-bottom strong{font-size:41px}.hero-right-bottom span{font-size:10px}.hero-right-bottom .circle-arrow{width:47px;height:47px}.quick-evidence{grid-template-columns:repeat(3,minmax(0,1fr));padding:22px 4%}.quick-evidence>div{display:block;padding:0 8px;border-right:1px solid #d6c6ad28}.quick-evidence>div:first-child{padding-left:0}.quick-evidence span{display:block;font-size:7px;letter-spacing:.055em;line-height:1.5;min-height:23px}.quick-evidence strong{display:block;font:400 clamp(18px,5vw,25px) var(--serif);margin:7px 0 5px}.quick-evidence small{display:block;font-size:7px;letter-spacing:0;text-align:left}.quick-evidence>a{font-size:9px}.edition-bar{height:58px;gap:10px;font-size:10px;letter-spacing:.08em}.edition-bar .edition-plus{font-size:13px}.photo-interlude .interlude-photo{min-height:400px}.interlude-photo img{object-position:66% center}.interlude-copy{padding:64px 6% 75px}.interlude-copy h2{font-size:clamp(62px,13vw,84px)}.upgraded-ritual .ritual-picture{height:560px}.upgraded-ritual .ritual-picture img{object-fit:cover;object-position:center center}.upgraded-ritual .ritual-content{padding:75px 6%}.upgraded-ritual .ritual-content h2{font-size:clamp(73px,13.6vw,103px)}.pdp-formula-intro h2{font-size:clamp(65px,12vw,89px)}.pdp-formula-intro>p:not(.kicker){font-size:15px}.pdp-ingredient{grid-template-columns:28px 1fr auto;gap:8px;padding:23px 0}.pdp-ingredient>b{font-size:12px;letter-spacing:0}.pdp-ingredient>strong{font-size:22px}.pdp-ingredient-end{font-size:8px}.pdp-editorial>img{height:315px}.pdp-editorial>div{padding:65px 6% 70px}.pdp-editorial h2{font-size:clamp(62px,12vw,82px)}.pdp-faq{padding:75px 6% 90px}.pdp-faq>h2{font-size:clamp(56px,11vw,75px)}.pdp-faq summary{font-size:12px;padding:23px 0}.pdp-faq details p{font-size:14px}}
 
 .upgraded-ritual .ritual-picture{background-image:url("/assets/ritual-sculpture.webp");background-size:cover;background-position:center}
+/* v4: policies, sold-out state, order admin */
+.footer-disclaimer{max-width:900px;margin:0 0 28px;color:#7d766c;font-size:10px;line-height:1.7}
+.fda-note{font-size:12px;opacity:.75}
+.info-heading{font:800 13px var(--sans);letter-spacing:.12em;text-transform:uppercase;margin:34px 0 10px;color:#1c1b17}
+.info-heading:first-child{margin-top:0}
+.info-content a:not(.btn){color:#1c1b17;text-decoration:underline;text-underline-offset:3px}
+.info-updated{font-size:12px!important;opacity:.7}
+.cart-notice{background:#e2dccf;border-left:3px solid #8d7650;padding:14px 18px;margin:0 0 28px;font-size:14px;color:#3b362e}
+button[disabled]{opacity:.5;cursor:not-allowed}
+.admin-login{display:flex;flex-direction:column;gap:14px;max-width:380px;margin-top:40px}
+.admin-login label{font-size:11px;font-weight:800;letter-spacing:.12em}
+.admin-login input,.admin-actions input{border:1px solid #b9b0a1;background:#f7f4ee;padding:13px 14px;font:14px var(--sans);width:100%}
+.admin-orders{margin:40px 0 24px;display:flex;flex-direction:column;gap:14px}
+.admin-summary{font-size:14px}
+.admin-order{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:24px;background:#f7f4ee;border:1px solid #d8d0c2;padding:22px;font-size:14px;line-height:1.6}
+.admin-order.done{opacity:.6}
+.admin-order strong{display:block;font-size:17px;margin:6px 0}
+.admin-order small{color:#6d6457}
+.admin-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+@media(max-width:800px){.admin-order{grid-template-columns:1fr}}

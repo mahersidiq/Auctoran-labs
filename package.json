@@ -1,13 +1,16 @@
 {
-  "name":"auctoran-labs-storefront",
-  "private":true,
-  "version":"1.0.0",
-  "type":"module",
-  "description":"Auctoran Labs editorial storefront with server-validated Stripe Checkout integration",
-  "scripts":{
-    "start":"node server.mjs",
-    "dev":"node --watch server.mjs",
-    "check":"node --check server.mjs && node --check src/app.js"
+  "name": "auctoran-labs-storefront",
+  "private": true,
+  "version": "1.1.0",
+  "type": "module",
+  "description": "Auctoran Labs editorial storefront with server-validated Stripe Checkout integration",
+  "scripts": {
+    "start": "node server.mjs",
+    "dev": "node --watch server.mjs",
+    "check": "node --check server.mjs && node --check src/app.js && node --test test/*.test.mjs",
+    "test": "node --test test/*.test.mjs"
   },
-  "engines":{"node":">=20"}
+  "engines": {
+    "node": ">=20"
+  }
 }

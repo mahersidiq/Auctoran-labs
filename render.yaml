@@ -1,0 +1,35 @@
+# One-click deploy on Render: Dashboard > New > Blueprint > pick this repo.
+# The persistent disk keeps /admin order history across deploys (requires a paid instance).
+services:
+  - type: web
+    name: auctoran-labs
+    runtime: node
+    plan: starter
+    buildCommand: npm install --omit=dev
+    startCommand: npm start
+    healthCheckPath: /healthz
+    disk:
+      name: orders
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: TRUST_PROXY
+        value: "true"
+      - key: DATA_DIR
+        value: /var/data
+      - key: STORE_LIVE
+        value: "false"
+      - key: ADMIN_TOKEN
+        generateValue: true
+      - key: STRIPE_SECRET_KEY
+        sync: false
+      - key: STRIPE_WEBHOOK_SECRET
+        sync: false
+      - key: SHIP_US_CENTS
+        sync: false
+      - key: SUPPORT_EMAIL
+        sync: false
+      - key: ORDER_NOTIFY_URL
+        sync: false
