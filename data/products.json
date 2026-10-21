@@ -19,6 +19,7 @@
     "isFeatured":true,
     "image":"/assets/fortivor.jpg",
     "imageDetail":"/assets/fortivor-detail.jpg",
+    "gallery":[{"src": "/assets/fortivor.jpg", "label": "Product", "alt": "Fortivor Pre-Workout full package"}, {"src": "/assets/fortivor-detail.jpg", "label": "Description", "alt": "Fortivor front label and product description close-up"}, {"src": "/assets/fortivor-facts-gallery.png", "label": "Nutrition facts", "alt": "Fortivor draft formula panel; amounts from packaging concept, not a verified final label"}],
     "eyebrow":"HOUSE RELEASE 001",
     "tone":"cherry",
     "formula":[
@@ -44,7 +45,7 @@
     "size":"Size pending",
     "flavor":"Variant pending",
     "priceCents":5999,
-    "isOwn":false,"isSample":true,"isFeatured":true,"image":null,"eyebrow":"CURATED / 002","tone":"slate","formula":[]
+    "isOwn":false,"isSample":true,"isFeatured":true,"image":"/assets/whey-isolate-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/whey-isolate-gallery.png", "panel": 0, "label": "Product", "alt": "Whey Isolate concept packaging — front product view"}, {"src": "/assets/whey-isolate-gallery.png", "panel": 1, "label": "Description", "alt": "Whey Isolate concept packaging — category and package detail"}, {"src": "/assets/whey-isolate-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Whey Isolate concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 002","tone":"slate","formula":[]
   },
   {
     "id":"sample-creatine",
@@ -60,7 +61,7 @@
     "size":"Size pending",
     "flavor":"Unflavored · example",
     "priceCents":2999,
-    "isOwn":false,"isSample":true,"isFeatured":true,"image":null,"eyebrow":"CURATED / 003","tone":"stone","formula":[]
+    "isOwn":false,"isSample":true,"isFeatured":true,"image":"/assets/creatine-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/creatine-gallery.png", "panel": 0, "label": "Product", "alt": "Creatine concept packaging — front product view"}, {"src": "/assets/creatine-gallery.png", "panel": 1, "label": "Description", "alt": "Creatine concept packaging — category and package detail"}, {"src": "/assets/creatine-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Creatine concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 003","tone":"stone","formula":[]
   },
   {
     "id":"sample-amino",
@@ -76,7 +77,7 @@
     "size":"Size pending",
     "flavor":"Variant pending",
     "priceCents":3499,
-    "isOwn":false,"isSample":true,"isFeatured":true,"image":null,"eyebrow":"CURATED / 004","tone":"moss","formula":[]
+    "isOwn":false,"isSample":true,"isFeatured":true,"image":"/assets/amino-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/amino-gallery.png", "panel": 0, "label": "Product", "alt": "Essential Aminos concept packaging — front product view"}, {"src": "/assets/amino-gallery.png", "panel": 1, "label": "Description", "alt": "Essential Aminos concept packaging — category and package detail"}, {"src": "/assets/amino-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Essential Aminos concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 004","tone":"moss","formula":[]
   },
   {
     "id":"sample-vitamins",
@@ -92,7 +93,7 @@
     "size":"Size pending",
     "flavor":"Capsules · example",
     "priceCents":2499,
-    "isOwn":false,"isSample":true,"isFeatured":false,"image":null,"eyebrow":"CURATED / 005","tone":"sand","formula":[]
+    "isOwn":false,"isSample":true,"isFeatured":false,"image":"/assets/vitamins-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/vitamins-gallery.png", "panel": 0, "label": "Product", "alt": "Daily Essentials concept packaging — front product view"}, {"src": "/assets/vitamins-gallery.png", "panel": 1, "label": "Description", "alt": "Daily Essentials concept packaging — category and package detail"}, {"src": "/assets/vitamins-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Daily Essentials concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 005","tone":"sand","formula":[]
   },
   {
     "id":"sample-fat-burner",
@@ -108,6 +109,6 @@
     "size":"Size pending",
     "flavor":"Capsules · example",
     "priceCents":3999,
-    "isOwn":false,"isSample":true,"isFeatured":false,"image":null,"eyebrow":"CURATED / 006","tone":"oxide","formula":[]
+    "isOwn":false,"isSample":true,"isFeatured":false,"image":"/assets/fat-burner-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/fat-burner-gallery.png", "panel": 0, "label": "Product", "alt": "Thermogenic concept packaging — front product view"}, {"src": "/assets/fat-burner-gallery.png", "panel": 1, "label": "Description", "alt": "Thermogenic concept packaging — category and package detail"}, {"src": "/assets/fat-burner-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Thermogenic concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 006","tone":"oxide","formula":[]
   }
 ]
