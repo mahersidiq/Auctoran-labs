@@ -119,3 +119,20 @@ button[disabled]{opacity:.5;cursor:not-allowed}
 .admin-order small{color:#6d6457}
 .admin-actions{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
 @media(max-width:800px){.admin-order{grid-template-columns:1fr}}
+
+
+/* Product galleries: each generated triptych supplies three distinct views. */
+.product-photo-panel{display:block;position:relative;width:100%;height:100%;overflow:hidden}
+.product-photo-panel .real-product-img{position:absolute;top:0;width:300%!important;max-width:none;height:100%!important;object-fit:fill!important;filter:none;transition:none}
+.photo-panel-0 .real-product-img{left:0}
+.photo-panel-1 .real-product-img{left:-100%}
+.photo-panel-2 .real-product-img{left:-200%}
+.product-image:hover .product-photo-panel .real-product-img{transform:none}
+.detail-main-image{height:auto;aspect-ratio:1}
+.detail-gallery-image{width:100%;height:100%}
+.detail-image-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));max-width:430px;gap:12px}
+.detail-image-row button{position:relative;display:flex;flex-direction:column;width:100%;height:auto;aspect-ratio:1;padding:0 0 25px;background:#151411;border-color:#b0a48e}
+.detail-image-row button>img,.detail-image-row button>.product-photo-panel{width:100%;height:100%;min-height:0;flex:1}
+.gallery-photo-label{position:absolute;bottom:0;left:0;width:100%;height:25px;display:flex;align-items:center;justify-content:center;background:#1c1a17;color:#eae0cc;font-size:10px;letter-spacing:.03em}
+.detail-image-row button[aria-pressed="true"] .gallery-photo-label{background:#817057;color:#fff}
+.gallery-caption{font-size:12px;line-height:1.6;color:#655e52;margin:14px 0 0}
