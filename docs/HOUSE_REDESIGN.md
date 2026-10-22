@@ -48,6 +48,20 @@ AXE_SOURCE=/tmp/auctoran-audit/node_modules/axe-core/axe.min.js node scripts/acc
 
 The audit checks the six principal pages at desktop and mobile widths, search/bag/menu dialogs, and stack preferences and empty states. Results, including checks needing human review, are in `docs/house-accessibility-results.json`. Automated results are not a complete accessibility certification.
 
+## Mobile alignment polish
+
+The collection's mobile category links inherited older alternating padding and 50% width rules. That created a half-width column with inconsistent arrow insets. The category navigation now uses equal-width grid cells: two columns on phones, three on tablets, and six on larger screens. Every link has the same padding, a fixed-size icon, and a minimum 44px touch target. The collection's mobile heading and shop link occupy separate rows.
+
+The same review also aligned product prices and buttons across each card row, increased small card text, standardized control icons, enlarged header and quantity controls, and reflowed filled shopping bags on narrow screens. The mobile purchase bar stays hidden until the primary purchase controls have scrolled above the viewport. Gallery navigation uses matching SVG arrows.
+
+```bash
+node scripts/layout-qa.mjs
+```
+
+The layout suite checks 14 routes at 14 widths from 320 to 1440px, including the responsive breakpoints: **196 page layouts**, plus filled-bag, primary-purchase, and sticky-purchase states. Assertions cover arrow insets and centering, icon dimensions, category grid geometry, card baselines, header overlap, touch targets, horizontal overflow, and loaded images. It also verifies quantity changes and sticky-bar timing. Results are in `docs/layout-results.json`; reviewed screenshots use the `screenshots/polish-` prefix.
+
+After this polish, all 19 automated tests, 15 browser check groups, 196 layout combinations, three additional layout states, and 17 accessibility scans passed. Browser validation used Chromium with mobile/touch input emulation. Safari and a physical iPhone were not tested; the official WebKit browser download was blocked by the environment's network policy.
+
 ## Launch configuration still required
 
 This change prepares the design and preserves the existing checkout configuration. It does not deploy the website or enable live payment processing. The current environment remains in demo mode.

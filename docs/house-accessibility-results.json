@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-22T15:18:16.857Z",
+  "testedAt": "2026-10-22T15:52:09.146Z",
   "engine": "Chromium",
   "base": "http://localhost:3000",
   "scope": "Automated WCAG 2 A/AA and 2.1 AA checks; incomplete results require human review. This is not an accessibility certification.",
@@ -61,7 +61,6 @@
       "violations": [],
       "passedRules": 24,
       "incomplete": [
-        "aria-prohibited-attr",
         "color-contrast"
       ]
     },

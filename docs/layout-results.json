@@ -1,0 +1,1202 @@
+{
+  "testedAt": "2026-10-22T15:52:00.676Z",
+  "engine": "chromium",
+  "mobileInput": true,
+  "physicalDeviceTested": false,
+  "results": [
+    {
+      "width": 320,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 320,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 360,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 375,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 390,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 393,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 414,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 430,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 600,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 760,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 768,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 900,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 901,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1024,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/shop",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/product/fortivor-pre-workout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/product/sample-whey-isolate",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/product/sample-creatine",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/product/sample-amino",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/product/sample-vitamins",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/product/sample-fat-burner",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/about",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/contact",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/info/shipping",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/info/returns",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/build-your-stack",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "width": 1440,
+      "path": "/cart",
+      "issues": [],
+      "h1Count": 1
+    }
+  ],
+  "interactions": [
+    {
+      "name": "Filled shopping bag layout",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "name": "Product purchase controls",
+      "issues": [],
+      "h1Count": 1
+    },
+    {
+      "name": "Sticky purchase after primary controls",
+      "issues": [],
+      "h1Count": 1
+    }
+  ],
+  "errors": []
+}
