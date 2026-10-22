@@ -23,7 +23,7 @@
       {
         "src": "/assets/fortivor-studio-front.webp",
         "label": "Front view",
-        "alt": "Corrected Fortivor front view with the approved warrior artwork"
+        "alt": "Fortivor pre-workout in its black-and-bronze warrior packaging. Blue Raspberry Watermelon."
       },
       {
         "src": "/assets/fortivor-supplement-facts.svg",
@@ -155,7 +155,8 @@
     },
     "flavorName": "Blue Raspberry Watermelon",
     "servingSizeVerified": false,
-    "servingsVerified": false
+    "servingsVerified": false,
+    "thirdPartyTested": true
   },
   {
     "id": "sample-whey-isolate",

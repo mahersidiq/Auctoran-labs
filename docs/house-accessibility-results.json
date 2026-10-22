@@ -1,0 +1,129 @@
+{
+  "testedAt": "2026-10-22T15:18:16.857Z",
+  "engine": "Chromium",
+  "base": "http://localhost:3000",
+  "scope": "Automated WCAG 2 A/AA and 2.1 AA checks; incomplete results require human review. This is not an accessibility certification.",
+  "results": [
+    {
+      "name": "homepage at 1440px",
+      "violations": [],
+      "passedRules": 22,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "Fortivor at 1440px",
+      "violations": [],
+      "passedRules": 24,
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "catalog at 1440px",
+      "violations": [],
+      "passedRules": 24,
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "about at 1440px",
+      "violations": [],
+      "passedRules": 21,
+      "incomplete": []
+    },
+    {
+      "name": "stack builder at 1440px",
+      "violations": [],
+      "passedRules": 23,
+      "incomplete": []
+    },
+    {
+      "name": "contact at 1440px",
+      "violations": [],
+      "passedRules": 21,
+      "incomplete": []
+    },
+    {
+      "name": "homepage at 390px",
+      "violations": [],
+      "passedRules": 22,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "Fortivor at 390px",
+      "violations": [],
+      "passedRules": 24,
+      "incomplete": [
+        "aria-prohibited-attr",
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "catalog at 390px",
+      "violations": [],
+      "passedRules": 24,
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "about at 390px",
+      "violations": [],
+      "passedRules": 21,
+      "incomplete": []
+    },
+    {
+      "name": "stack builder at 390px",
+      "violations": [],
+      "passedRules": 23,
+      "incomplete": []
+    },
+    {
+      "name": "contact at 390px",
+      "violations": [],
+      "passedRules": 21,
+      "incomplete": []
+    },
+    {
+      "name": "search dialog",
+      "violations": [],
+      "passedRules": 23,
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "shopping bag dialog",
+      "violations": [],
+      "passedRules": 19,
+      "incomplete": []
+    },
+    {
+      "name": "mobile menu dialog",
+      "violations": [],
+      "passedRules": 20,
+      "incomplete": []
+    },
+    {
+      "name": "stack preferences",
+      "violations": [],
+      "passedRules": 26,
+      "incomplete": [
+        "color-contrast"
+      ]
+    },
+    {
+      "name": "stack empty state",
+      "violations": [],
+      "passedRules": 24,
+      "incomplete": []
+    }
+  ]
+}
