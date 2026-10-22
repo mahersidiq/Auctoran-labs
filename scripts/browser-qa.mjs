@@ -20,10 +20,21 @@ try{
   await page.locator('.order-page').waitFor();assert.match(await page.locator('.order-page').innerText(),/No payment was collected/);
   assert.equal(new URL(page.url()).search,'?demo=1');assert.equal(JSON.parse(await page.evaluate(()=>localStorage.getItem('auctoran-cart-v1')))[0].qty,1);
  });
+ await check('Homepage products show prices, quick-add works, and formula/testing links reach their sections',async()=>{
+  await go('/');const card=page.locator('.home-product-grid .product-card').first();
+  assert.match(await card.innerText(),/FORTIVOR/i);assert.match(await card.locator('.product-pricing strong').innerText(),/49\.99/);
+  await card.locator('.product-quick-add').click();assert.match(await page.locator('.cart-drawer.active').innerText(),/Fortivor/);await closeBag();
+  await page.locator('.hero-testing').click();assert.equal(new URL(page.url()).hash,'#our-standard');
+  await page.locator('.standard-grid article').nth(1).getByRole('link').click();
+  assert.equal(new URL(page.url()).pathname,'/product/fortivor-pre-workout');assert.equal(new URL(page.url()).hash,'#formula');
+  assert.equal(await page.locator('#formula').evaluate(el=>el===document.activeElement),true);
+  await page.locator('.detail-tested a').click();assert.equal(new URL(page.url()).pathname,'/about');assert.equal(new URL(page.url()).hash,'#testing');
+  assert.equal(await page.locator('#testing').evaluate(el=>el===document.activeElement),true);
+ });
  await check('B: Protein shortcut → price/concept filter → designed product → demo cart',async()=>{
   await go('/');await page.locator('.discovery-rail a[href="/shop?category=protein"]').click();await page.selectOption('#price-choice','7500');
   await page.selectOption('#brand-choice','concept');assert.equal(await page.locator('.shop-grid .product-card').count(),1);
-  await page.locator('.product-name').click();assert.match(await page.locator('.stock-status').innerText(),/Design concept/);
+  await page.locator('.product-name').click();assert.match(await page.locator('.stock-status').innerText(),/Collection preview/);
   await page.locator('.add-detail').click();assert.match(await page.locator('.cart-drawer.active').innerText(),/Whey Isolate/);await closeBag();
  });
  await check('C: stack goal → preferences → explicit concept opt-in → quantities → bulk add',async()=>{
@@ -87,12 +98,14 @@ try{
   await page.locator('.filter-disclosure').evaluate(el=>el.open=true);await page.selectOption('#sort-choice','price-low');const prices=await page.locator('.product-pricing strong').allTextContents();const nums=prices.map(s=>Number(s.replace(/[^0-9.]/g,'')));assert.deepEqual(nums,[...nums].sort((a,b)=>a-b));
  });
  await check('Cancelled checkout retains bag and explains cancellation',async()=>{await go('/cart?cancelled=1');assert.match(await page.locator('.cart-notice').innerText(),/bag is saved/);});
+ await page.evaluate(()=>localStorage.removeItem('auctoran-cart-v1'));
+ await page.reload();await page.locator('main').waitFor();
  const responsive=[];
  for(const width of [1440,1024,390,430]){
   await page.setViewportSize({width,height:width<600?844:1000});
   for(const [name,path] of [['homepage','/'],['fortivor','/product/fortivor-pre-workout'],['catalog','/shop'],['stack','/build-your-stack']]){
    await go(path);await page.evaluate(()=>document.fonts.ready);await readyImages();
-   await page.screenshot({path:`screenshots/refresh-${name}-${width}.jpg`,type:'jpeg',quality:80,fullPage:false});
+   await page.screenshot({path:`screenshots/house-${name}-${width}.jpg`,type:'jpeg',quality:80,fullPage:false});
    const data=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,broken:[...document.images].filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.src),h1:document.querySelectorAll('h1').length}));
    assert.ok(data.scrollWidth<=width,`${name} at ${width}: overflow ${data.scrollWidth}`);assert.equal(data.h1,1);assert.deepEqual(data.broken,[]);
    if(name==='homepage'){const ctas=await page.locator('.campaign-actions').boundingBox();assert.ok(ctas.y+ctas.height<= (width<600?844:1000),`Hero CTAs below fold ${width}`);}
@@ -100,14 +113,27 @@ try{
   }
  }
  results.push({name:'Responsive screenshots, no horizontal overflow, hero CTAs above fold: 1440/1024/390/430',status:'passed',responsive});
- await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/refresh-homepage-desktop-full.jpg',type:'jpeg',quality:80,fullPage:true});
- await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/refresh-fortivor-mobile-full.jpg',type:'jpeg',quality:80,fullPage:true});
+ const catalog=(await (await page.request.get(base+'/api/products')).json()).products;
+ const productRenders=[];
+ for(const width of [320,768]){
+  await page.setViewportSize({width,height:900});
+  for(const product of catalog){
+   await go('/product/'+product.slug);await page.evaluate(()=>document.fonts.ready);await readyImages();
+   const data=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,h1:document.querySelector('h1')?.textContent,broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.src)}));
+   assert.ok(data.scrollWidth<=width,`${product.name} at ${width}: overflow ${data.scrollWidth}`);
+   assert.ok(data.h1.includes(product.name));assert.deepEqual(data.broken,[]);
+   productRenders.push({product:product.name,width,overflow:false,brokenImages:0});
+  }
+ }
+ results.push({name:'All catalog product pages fit narrow phones and tablets',status:'passed',productRenders});
+ await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/house-homepage-desktop-full.jpg',type:'jpeg',quality:80,fullPage:true});
+ await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/house-fortivor-mobile-full.jpg',type:'jpeg',quality:80,fullPage:true});
  for(const [width,label] of [[1440,'desktop'],[390,'mobile']]){
   await page.setViewportSize({width,height:width<600?844:1000});await go('/product/fortivor-pre-workout');
   await page.getByRole('button',{name:'View Supplement Facts',exact:true}).click();await readyImages();
-  await page.screenshot({path:`screenshots/flat-facts-${label}.jpg`,type:'jpeg',quality:85,fullPage:false});
+  await page.screenshot({path:`screenshots/house-facts-${label}.jpg`,type:'jpeg',quality:85,fullPage:false});
  }
  assert.deepEqual(errors,[]);results.push({name:'No browser JavaScript exceptions',status:'passed'});
- await fs.writeFile('docs/browser-results.json',JSON.stringify({testedAt:new Date().toISOString(),engine:'Chromium',base,results,errors},null,2));
+ await fs.writeFile('docs/house-browser-results.json',JSON.stringify({testedAt:new Date().toISOString(),engine:'Chromium',base,results,errors},null,2));
  console.log(`Completed ${results.length} checks; ${responsive.length} responsive page renders.`);
-}catch(error){await page.screenshot({path:'/workspace/scratch/qa-failure.png',fullPage:true});console.error(error);await fs.writeFile('docs/browser-results.json',JSON.stringify({results,errors,failure:error.message},null,2));process.exitCode=1;}finally{await browser.close();}
+}catch(error){await page.screenshot({path:'/workspace/scratch/qa-failure.png',fullPage:true});console.error(error);await fs.writeFile('docs/house-browser-results.json',JSON.stringify({results,errors,failure:error.message},null,2));process.exitCode=1;}finally{await browser.close();}

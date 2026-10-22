@@ -22,6 +22,10 @@ With no settings it runs in **demo mode**: everything works, but no payment is t
 
 Women’s training photography, unified studio backgrounds and larger category/gallery images are documented in [imagery and gallery improvements](docs/INCLUSIVE_IMAGERY.md). The completed black-and-bronze tub designs for Whey Isolate, Creatine, Essential Aminos, Daily Essentials and Thermogenic are documented in [collection designs](docs/COLLECTION_DESIGNS.md). Site-wide layouts and editorial photography are in [visual refresh](docs/VISUAL_REFRESH.md). Fortivor's artwork and product record remain unchanged; its approved sources and outstanding label details are in [product presentation](docs/PRODUCT_PRESENTATION.md).
 
+## Current storefront
+
+The latest design uses an original Fortivor campaign, product cards near the top of the homepage, formula and testing information, and coordinated product, brand, and customer-care pages. See [the House redesign and validation guide](docs/HOUSE_REDESIGN.md), [browser results](docs/house-browser-results.json), and [automated accessibility results](docs/house-accessibility-results.json). Current screenshots use the `screenshots/house-` prefix.
+
 ## V4 implementation
 
 The existing Node/vanilla-JS architecture and hosting targets are preserved. See [audit](docs/AUDIT.md), [delivery and configuration](docs/DELIVERY.md), [browser results](docs/browser-results.json) and [screenshots](screenshots/).
