@@ -20,11 +20,11 @@ With no settings it runs in **demo mode**: everything works, but no payment is t
 
 ## Product presentation
 
-The current direction is a single-product Fortivor storefront with color, black-and-white, solo, partner and group training campaigns. See [Fortivor focus and validation](docs/FORTIVOR_FOCUS.md). The original Fortivor front artwork is retained. Earlier collection concepts are archived as inactive catalog records and are not offered in the storefront.
+The current direction is a single-product Fortivor storefront with a product-first hero, a homepage ingredient comparison, and the original Fortivor packaging artwork. Generated athlete scenes have been removed from rendered pages. Real training photography awaits source and license verification; see [photography status](docs/PHOTOGRAPHY.md). Earlier collection concepts are archived as inactive catalog records and are not offered in the storefront.
 
 ## Current storefront
 
-The homepage leads to Fortivor, selected formula highlights, brand information and customer care. The public API exposes only Fortivor and selected highlights while its production label is pending. Internal label notes and the superseded Supplement Facts are excluded from API responses. The complete new manufacturing specification has not been added to the repository. Current browser screenshots and reports are generated under ignored `storage/qa/`; older reports in `docs/` and `screenshots/` document previous designs.
+The homepage leads to Fortivor, selected formula highlights, a sourced comparison with specific C4 Ultimate, GHOST Legend V5 and Gorilla Mode labels, brand information and customer care. [Comparison details](docs/COMPARISON.md) explain the doses and limits of the claims. The public API exposes only Fortivor and selected highlights while its production label is pending. Internal label notes and the superseded Supplement Facts are excluded from API responses. The complete new manufacturing specification has not been added to the repository. See [current design and validation](docs/FORTIVOR_FOCUS.md). Current browser screenshots and reports are generated under ignored `storage/qa/`; older reports in `docs/` and `screenshots/` document previous designs.
 
 ## V4 implementation
 

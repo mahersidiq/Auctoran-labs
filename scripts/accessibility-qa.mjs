@@ -39,6 +39,12 @@ try {
       await audit(`${name} at ${width}px`);
     }
   }
+  await page.goto(base + '/#compare');
+  await page.locator('.comparison-sources summary').click();
+  await audit('expanded comparison at 390px');
+  await page.setViewportSize({ width: 1440, height: 1000 });
+  await audit('expanded comparison at 1440px');
+  await page.setViewportSize({ width: 390, height: 844 });
   await page.goto(base + '/');
   await page.locator('main').waitFor();
   for (const [name, trigger] of [['shopping bag dialog', '[data-action="openCart"]'], ['mobile menu dialog', '[data-action="openMenu"]']]) {
