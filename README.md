@@ -2,7 +2,7 @@
 
 Online store for Auctoran Labs and Fortivor pre-workout. Plain Node.js 20+, no dependencies to install.
 
-- Storefront: homepage, shop with filters/search, product pages, persistent bag
+- Storefront: Fortivor-focused homepage, product page, brand story, customer care and persistent bag. Older shop and stack-builder links lead to Fortivor.
 - Payments: Stripe-hosted Checkout (cards, Apple Pay, Google Pay, Link — whatever you enable in Stripe), US shipping address collection, optional Stripe Tax
 - Orders: paid orders are read straight from Stripe and shown at `/admin` with shipping addresses; shipped status and tracking are saved back to Stripe. Optional ping per order to Slack/Zapier/email via `ORDER_NOTIFY_URL` (sent from Stripe's signed webhook). Nothing is stored on the server, so it runs on Vercel or any host
 - Customer pages: shipping, returns, privacy, terms, contact — text in `data/store.json`
@@ -20,17 +20,17 @@ With no settings it runs in **demo mode**: everything works, but no payment is t
 
 ## Product presentation
 
-Women’s training photography, unified studio backgrounds and larger category/gallery images are documented in [imagery and gallery improvements](docs/INCLUSIVE_IMAGERY.md). The completed black-and-bronze tub designs for Whey Isolate, Creatine, Essential Aminos, Daily Essentials and Thermogenic are documented in [collection designs](docs/COLLECTION_DESIGNS.md). Site-wide layouts and editorial photography are in [visual refresh](docs/VISUAL_REFRESH.md). Fortivor's artwork and product record remain unchanged; its approved sources and outstanding label details are in [product presentation](docs/PRODUCT_PRESENTATION.md).
+The current direction is a single-product Fortivor storefront with color, black-and-white, solo, partner and group training campaigns. See [Fortivor focus and validation](docs/FORTIVOR_FOCUS.md). The original Fortivor front artwork is retained. Earlier collection concepts are archived as inactive catalog records and are not offered in the storefront.
 
 ## Current storefront
 
-The latest design uses an original Fortivor campaign, product cards near the top of the homepage, formula and testing information, and coordinated product, brand, and customer-care pages. See [the House redesign and validation guide](docs/HOUSE_REDESIGN.md), [browser results](docs/house-browser-results.json), and [automated accessibility results](docs/house-accessibility-results.json). Current screenshots use the `screenshots/house-` prefix.
+The homepage leads to Fortivor, selected formula highlights, brand information and customer care. The public API exposes only Fortivor and selected highlights while its production label is pending. Internal label notes and the superseded Supplement Facts are excluded from API responses. The complete new manufacturing specification has not been added to the repository. Current browser screenshots and reports are generated under ignored `storage/qa/`; older reports in `docs/` and `screenshots/` document previous designs.
 
 ## V4 implementation
 
 The existing Node/vanilla-JS architecture and hosting targets are preserved. See [audit](docs/AUDIT.md), [delivery and configuration](docs/DELIVERY.md), [browser results](docs/browser-results.json) and [screenshots](screenshots/).
 
-The storefront includes a three-step `/build-your-stack` route. Live matching excludes sample products and unverified stock, pricing, labeling, caffeine or stimulant information. A clearly marked Fortivor concept match is available only by opting in during preview.
+The former `/build-your-stack` and `/shop` routes now resolve to the Fortivor product page. Sample products are inactive in every mode, are removed from restored bags, and cannot enter checkout. The matching utility is retained for possible future catalog expansion.
 
 ## Go live — step by step
 

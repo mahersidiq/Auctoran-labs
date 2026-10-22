@@ -26,12 +26,20 @@
         "alt": "Fortivor pre-workout in its black-and-bronze warrior packaging. Blue Raspberry Watermelon."
       },
       {
-        "src": "/assets/fortivor-supplement-facts.svg",
-        "label": "Supplement Facts",
-        "alt": "Supplement Facts reproduced from the supplied black-and-gold label. The shown 18 g serving size is awaiting correction and is not approved dosing guidance.",
-        "kind": "label",
-        "width": 1200,
-        "height": 1400
+        "src": "/assets/campaign-flavor.webp",
+        "label": "Flavor campaign",
+        "alt": "Fortivor Blue Raspberry Watermelon campaign with fruit on warm stone.",
+        "kind": "campaign",
+        "width": 1536,
+        "height": 1024
+      },
+      {
+        "src": "/assets/campaign-partners.webp",
+        "label": "Training campaign",
+        "alt": "Illustrative adult athletes training together in a naturally lit gym.",
+        "kind": "campaign",
+        "width": 1536,
+        "height": 1024
       }
     ],
     "eyebrow": "AUCTORAN LABS PRE-WORKOUT",
@@ -195,7 +203,8 @@
     "caffeineVerified": false,
     "imageDetail": "/assets/collection-protein-studio.webp",
     "isConcept": true,
-    "imageKind": "packaging-design-concept"
+    "imageKind": "packaging-design-concept",
+    "active": false
   },
   {
     "id": "sample-creatine",
@@ -234,7 +243,8 @@
     "caffeineVerified": false,
     "imageDetail": "/assets/collection-creatine-studio.webp",
     "isConcept": true,
-    "imageKind": "packaging-design-concept"
+    "imageKind": "packaging-design-concept",
+    "active": false
   },
   {
     "id": "sample-amino",
@@ -273,7 +283,8 @@
     "caffeineVerified": false,
     "imageDetail": "/assets/collection-aminos-studio.webp",
     "isConcept": true,
-    "imageKind": "packaging-design-concept"
+    "imageKind": "packaging-design-concept",
+    "active": false
   },
   {
     "id": "sample-vitamins",
@@ -312,7 +323,8 @@
     "caffeineVerified": false,
     "imageDetail": "/assets/collection-vitamins-studio.webp",
     "isConcept": true,
-    "imageKind": "packaging-design-concept"
+    "imageKind": "packaging-design-concept",
+    "active": false
   },
   {
     "id": "sample-fat-burner",
@@ -351,6 +363,7 @@
     "caffeineVerified": false,
     "imageDetail": "/assets/collection-thermogenic-studio.webp",
     "isConcept": true,
-    "imageKind": "packaging-design-concept"
+    "imageKind": "packaging-design-concept",
+    "active": false
   }
 ]

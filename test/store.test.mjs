@@ -95,7 +95,13 @@ test('pages and APIs load', async () => {
   const page = await fetch(demo.base + '/');
   assert.match(page.headers.get('content-security-policy'), /default-src 'self'/);
   const { products } = await (await fetch(demo.base + '/api/products')).json();
-  assert.ok(products.find(p => p.id === 'fortivor-pre-workout'));
+  assert.deepEqual(products.map(p => p.id), ['fortivor-pre-workout']);
+  assert.deepEqual(products[0].formula.map(f => f.name), ['L-Citrulline', 'Beta-Alanine', 'Betaine Anhydrous']);
+  assert.equal(products[0].factsVerified, false);
+  assert.equal(products[0].caffeineVerified, false);
+  for (const internal of ['sourceLabel', 'labelSource', 'labelConsistencyIssues', 'caffeineSources', 'supplementFactsText', 'supplementFactsImage']) {
+    assert.equal(Object.hasOwn(products[0], internal), false, internal);
+  }
   const config = await (await fetch(demo.base + '/api/config')).json();
   assert.equal(config.mode, 'demo');
   assert.ok(config.store.policies.returns);
@@ -204,14 +210,19 @@ test('live mode hides sample listings and refuses checkout until fully configure
 });
 
 
-test('inventory is unconfirmed in the supplied catalog and samples cannot reach Stripe even in test mode', async () => {
+test('the storefront exposes only Fortivor and archived products cannot enter any checkout', async () => {
  const {products}=await (await fetch(demo.base+'/api/products')).json();
  assert.equal(products[0].inStock,false);
  assert.equal(products[0].demoAvailable,true);
  assert.equal(products[0].priceConfirmed,false);
- const response=await post(testMode.base+'/api/checkout',{items:[{id:'sample-creatine',qty:1}]},{'X-Forwarded-For':'10.3.3.1'});
- assert.equal(response.status,400);
- assert.match((await response.json()).error,/Sample listings/);
+ assert.deepEqual(products.map(p=>p.id),['fortivor-pre-workout']);
+ const callsBefore=stripeCalls.length;
+ for(const store of [demo,testMode]) {
+  const response=await post(store.base+'/api/checkout',{items:[{id:'sample-creatine',qty:1}]},{'X-Forwarded-For':'10.3.3.1'});
+  assert.equal(response.status,400);
+  assert.match((await response.json()).error,/no longer available/);
+ }
+ assert.equal(stripeCalls.length,callsBefore);
 });
 
 test('concurrent signed webhook deliveries are coalesced and paid verification persists on Stripe', async () => {
