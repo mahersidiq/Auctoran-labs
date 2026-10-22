@@ -2,6 +2,8 @@
 
 Implemented directly in the existing repository, preserving dependency-free Node, vanilla JavaScript, existing routes, Stripe server integration, admin and Vercel/Render hosting configuration. No production deployment performed.
 
+Latest imagery and copy changes: [Fortivor product presentation](PRODUCT_PRESENTATION.md). The new packaging shows Blue Raspberry Watermelon, 25 servings and 450 g, with commercial details still awaiting approval.
+
 ## Design and commerce
 
 - Full-width monochrome campaign hero with the requested headline/copy and both shopping CTAs above the fold at the four tested widths. Seven direct category shortcuts immediately follow.
@@ -28,7 +30,7 @@ The UI, cart and deterministic matching are implemented. The supplied catalog is
 
 ## Launch blockers and configuration
 
-1. Approve Fortivor's price, formula, final Supplement Facts, suggested use, caffeine/allergen warnings and physical product photos. Update `data/products.json`: `priceConfirmed`, `labelVerified`, `supplementFactsText` or `supplementFactsImage`, `suggestedUse`, `warning`, `inventoryConfirmed`, `inventoryQuantity`, and `inStock`. Verify the five stated amounts: 8,000 mg citrulline; 3,200 mg beta-alanine; 300 mg caffeine; 200 mg alpha-GPC; 100 mg theanine. Shown flavor/servings: Sour Cherry Blitz / 30.
+1. Approve Fortivor's price, formula, final Supplement Facts, suggested use, caffeine/allergen warnings and physical product photos. Update `data/products.json`: `priceConfirmed`, `labelVerified`, `supplementFactsText` or `supplementFactsImage`, `suggestedUse`, `warning`, `inventoryConfirmed`, `inventoryQuantity`, and `inStock`. Verify the five stated amounts: 8,000 mg citrulline; 3,200 mg beta-alanine; 300 mg caffeine; 200 mg alpha-GPC; 100 mg theanine. The updated packaging preview shows Blue Raspberry Watermelon / 25 servings. Confirm the final product details before sale.
 2. For matching/filtering, provide verified `caffeineMg`, `caffeineVerified`, `stimulant` and `stimulantVerified` data. A caffeine-free value alone does not prove stimulant-free. Add only authorized supplier products with real images, prices, approved labels and stock. Samples remain excluded from live catalog and Stripe.
 3. Review shipping/return/privacy/terms text in `data/store.json`. Configure the server environment using `.env.example`: `PUBLIC_BASE_URL`, `SUPPORT_EMAIL`, shipping rates, `ADMIN_TOKEN`, and Stripe secret/webhook keys. Keep secrets in host settings; never commit them. Retain `STORE_LIVE=false` until approval.
 4. Configure Stripe webhook `/api/stripe/webhook` for Checkout completion and async payment success/failure. Test real Stripe test-mode redirects, receipts, cancellation, signed webhook arrival and fulfillment gating before switching to live credentials.

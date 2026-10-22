@@ -8,35 +8,36 @@
     "category": "Pre-Workout",
     "categoryKey": "pre-workout",
     "goal": "Energy & Focus",
-    "description": "A pre-workout built around a clearly stated formula. Sour Cherry Blitz. 30 servings.",
-    "details": "Fortivor is the first Auctoran Labs pre-workout concept. Sour Cherry Blitz, 30 servings. The front artwork lists five actives. Final price, physical packaging, inventory and Supplement Facts approval are pending.",
-    "size": "420 g \u00b7 30 servings",
-    "flavor": "Sour Cherry Blitz",
+    "description": "Our signature pre-workout. Designed for the preparation that comes before your training.",
+    "details": "Fortivor is Auctoran Labs’ signature pre-workout. The new Roman warrior packaging is shown in a studio concept rendering. Final price, availability, Supplement Facts and directions will be confirmed before sales open.",
+    "size": "450 g · 25 servings shown",
+    "flavor": "Blue Raspberry Watermelon",
     "priceCents": 4999,
     "compareAtCents": null,
     "isOwn": true,
     "isSample": false,
     "isFeatured": true,
-    "image": "/assets/fortivor.jpg",
-    "imageDetail": "/assets/fortivor-detail.jpg",
+    "image": "/assets/fortivor-studio-front.webp",
+    "imageDetail": "/assets/fortivor-studio-front.webp",
     "gallery": [
       {
-        "src": "/assets/fortivor.jpg",
-        "label": "Front artwork",
-        "alt": "Supplied Fortivor front artwork \u2014 final physical packaging pending approval"
+        "src": "/assets/fortivor-studio-front.webp",
+        "label": "Product view",
+        "alt": "New Fortivor packaging concept, full tub in a dark studio spotlight"
       },
       {
-        "src": "/assets/fortivor-detail.jpg",
-        "label": "Label detail",
-        "alt": "Close-up of supplied Fortivor front label artwork"
+        "src": "/assets/fortivor-studio-front.webp",
+        "label": "Design detail",
+        "alt": "Enlarged view of the same Fortivor gold lettering and Roman warrior design",
+        "focus": "detail"
       },
       {
         "src": "/assets/deadlift-editorial.webp",
-        "label": "The work",
-        "alt": "Auctoran campaign artwork of an athlete performing a barbell deadlift"
+        "label": "Training",
+        "alt": "Auctoran training campaign"
       }
     ],
-    "eyebrow": "HOUSE RELEASE 001",
+    "eyebrow": "AUCTORAN LABS PRE-WORKOUT",
     "tone": "cherry",
     "formula": [
       {
@@ -67,21 +68,30 @@
     "inventoryQuantity": null,
     "caffeineMg": 300,
     "caffeineVerified": false,
-    "servings": 30,
+    "servings": 25,
     "stimulant": "caffeinated",
     "matchingGoals": [
       "strength",
       "muscle-growth",
       "training-performance"
     ],
-    "inStock": false
+    "inStock": false,
+    "packagingRevision": "roman-warrior-2026-10",
+    "packagingConcept": true,
+    "formulaRevisionPending": true,
+    "previousPackagingDetails": {
+      "flavor": "Sour Cherry Blitz",
+      "servings": 30,
+      "size": "420 g · 30 servings"
+    },
+    "packagingDetailsConfirmed": false
   },
   {
     "id": "sample-whey-isolate",
     "slug": "sample-whey-isolate",
     "name": "Whey Isolate",
-    "fullName": "Whey Isolate \u00b7 Sample Listing",
-    "brand": "Partner Collection \u00b7 Sample",
+    "fullName": "Whey Isolate · Sample Listing",
+    "brand": "Partner Collection · Sample",
     "category": "Protein",
     "categoryKey": "protein",
     "goal": "Build & Recover",
@@ -100,7 +110,7 @@
         "src": "/assets/whey-isolate-gallery.webp",
         "panel": 0,
         "label": "Concept artwork",
-        "alt": "Whey Isolate concept packaging \u2014 front product view"
+        "alt": "Whey Isolate concept packaging — front product view"
       }
     ],
     "eyebrow": "CURATED / 002",
@@ -116,15 +126,15 @@
     "id": "sample-creatine",
     "slug": "sample-creatine",
     "name": "Creatine",
-    "fullName": "Creatine Monohydrate \u00b7 Sample Listing",
-    "brand": "Partner Collection \u00b7 Sample",
+    "fullName": "Creatine Monohydrate · Sample Listing",
+    "brand": "Partner Collection · Sample",
     "category": "Creatine",
     "categoryKey": "creatine",
     "goal": "Strength & Power",
     "description": "Example third-party creatine listing. Replace with an authorized supplier's actual product and verified information.",
     "details": "Sample catalog entry. No manufacturer or nutrition information has been supplied.",
     "size": "Size pending",
-    "flavor": "Unflavored \u00b7 example",
+    "flavor": "Unflavored · example",
     "priceCents": 2999,
     "isOwn": false,
     "isSample": true,
@@ -136,7 +146,7 @@
         "src": "/assets/creatine-gallery.webp",
         "panel": 0,
         "label": "Concept artwork",
-        "alt": "Creatine concept packaging \u2014 front product view"
+        "alt": "Creatine concept packaging — front product view"
       }
     ],
     "eyebrow": "CURATED / 003",
@@ -152,8 +162,8 @@
     "id": "sample-amino",
     "slug": "sample-amino",
     "name": "Essential Aminos",
-    "fullName": "Essential Aminos \u00b7 Sample Listing",
-    "brand": "Partner Collection \u00b7 Sample",
+    "fullName": "Essential Aminos · Sample Listing",
+    "brand": "Partner Collection · Sample",
     "category": "Aminos",
     "categoryKey": "aminos",
     "goal": "Recover & Repeat",
@@ -172,7 +182,7 @@
         "src": "/assets/amino-gallery.webp",
         "panel": 0,
         "label": "Concept artwork",
-        "alt": "Essential Aminos concept packaging \u2014 front product view"
+        "alt": "Essential Aminos concept packaging — front product view"
       }
     ],
     "eyebrow": "CURATED / 004",
@@ -188,15 +198,15 @@
     "id": "sample-vitamins",
     "slug": "sample-vitamins",
     "name": "Daily Essentials",
-    "fullName": "Daily Vitamins \u00b7 Sample Listing",
-    "brand": "Partner Collection \u00b7 Sample",
+    "fullName": "Daily Vitamins · Sample Listing",
+    "brand": "Partner Collection · Sample",
     "category": "Vitamins",
     "categoryKey": "vitamins",
     "goal": "Daily Foundation",
     "description": "Example third-party vitamins listing. Replace with an authorized supplier's verified product.",
     "details": "Sample catalog entry. No manufacturer or nutrition information has been supplied.",
     "size": "Size pending",
-    "flavor": "Capsules \u00b7 example",
+    "flavor": "Capsules · example",
     "priceCents": 2499,
     "isOwn": false,
     "isSample": true,
@@ -208,7 +218,7 @@
         "src": "/assets/vitamins-gallery.webp",
         "panel": 0,
         "label": "Concept artwork",
-        "alt": "Daily Essentials concept packaging \u2014 front product view"
+        "alt": "Daily Essentials concept packaging — front product view"
       }
     ],
     "eyebrow": "CURATED / 005",
@@ -224,15 +234,15 @@
     "id": "sample-fat-burner",
     "slug": "sample-fat-burner",
     "name": "Thermogenic",
-    "fullName": "Thermogenic \u00b7 Sample Listing",
-    "brand": "Partner Collection \u00b7 Sample",
+    "fullName": "Thermogenic · Sample Listing",
+    "brand": "Partner Collection · Sample",
     "category": "Fat Burners",
     "categoryKey": "fat-burners",
     "goal": "Training Support",
     "description": "Example third-party category listing. Replace with a verified product and appropriate warnings.",
     "details": "Sample catalog entry. No manufacturer, ingredient panel or nutrition information has been supplied.",
     "size": "Size pending",
-    "flavor": "Capsules \u00b7 example",
+    "flavor": "Capsules · example",
     "priceCents": 3999,
     "isOwn": false,
     "isSample": true,
@@ -244,7 +254,7 @@
         "src": "/assets/fat-burner-gallery.webp",
         "panel": 0,
         "label": "Concept artwork",
-        "alt": "Thermogenic concept packaging \u2014 front product view"
+        "alt": "Thermogenic concept packaging — front product view"
       }
     ],
     "eyebrow": "CURATED / 006",

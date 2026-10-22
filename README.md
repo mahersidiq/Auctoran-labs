@@ -18,6 +18,10 @@ npm run dev      # auto-restart on file changes
 
 With no settings it runs in **demo mode**: everything works, but no payment is taken.
 
+## Product presentation
+
+The latest Fortivor studio imagery, clear shopping labels, responsive screenshots and validation are documented in [product presentation](docs/PRODUCT_PRESENTATION.md).
+
 ## V4 implementation
 
 The existing Node/vanilla-JS architecture and hosting targets are preserved. See [audit](docs/AUDIT.md), [delivery and configuration](docs/DELIVERY.md), [browser results](docs/browser-results.json) and [screenshots](screenshots/).

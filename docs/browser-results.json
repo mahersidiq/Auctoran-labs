@@ -1,7 +1,7 @@
 {
-  "testedAt": "2026-10-22T03:14:07.012Z",
+  "testedAt": "2026-10-22T04:24:37.854Z",
   "engine": "Chromium",
-  "base": "http://localhost:3000",
+  "base": "http://localhost:4174",
   "results": [
     {
       "name": "A: homepage → Fortivor → add → demo checkout; no payment and bag retained",

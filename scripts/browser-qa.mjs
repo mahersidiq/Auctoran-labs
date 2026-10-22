@@ -64,10 +64,10 @@ try{
  await check('Gallery thumbnails, zoom, Escape, swipe and mobile sticky purchase visibility',async()=>{
   await go('/product/fortivor-pre-workout');assert.equal(await page.locator('.detail-image-row button').count(),3);
   assert.equal(await page.locator('.detail-image-row').getByText('Nutrition facts').count(),0);
-  await page.getByRole('button',{name:'View Label detail',exact:true}).click();assert.match(await page.locator('.gallery-caption').innerText(),/Close-up/);
+  await page.getByRole('button',{name:'View Design detail',exact:true}).click();assert.match(await page.locator('.gallery-caption').innerText(),/Enlarged/);
   await page.locator('.detail-gallery-image').click();assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),true);await page.keyboard.press('Escape');assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),false);
   await page.locator('.detail-gallery-image').dispatchEvent('touchstart',{changedTouches:[{identifier:1,clientX:300,clientY:200}]});await page.locator('.detail-gallery-image').dispatchEvent('touchend',{changedTouches:[{identifier:1,clientX:100,clientY:205}]});
-  assert.equal(await page.getByRole('button',{name:'View The work',exact:true}).getAttribute('aria-pressed'),'true');
+  assert.equal(await page.getByRole('button',{name:'View Training',exact:true}).getAttribute('aria-pressed'),'true');
   await page.locator('#primary-purchase').scrollIntoViewIfNeeded();await page.waitForTimeout(100);assert.equal(await page.locator('.mobile-purchase').isVisible(),false);
   await page.locator('#product-faq').scrollIntoViewIfNeeded();await page.waitForTimeout(100);assert.equal(await page.locator('.mobile-purchase').isVisible(),true);
  });
@@ -84,7 +84,7 @@ try{
   await go('/shop');await page.locator('#catalog-query').fill('creatine');await page.locator('#catalog-search button').click();assert.equal(await page.locator('.shop-grid .product-card').count(),1);
   await page.locator('.filter-disclosure').evaluate(el=>el.open=true);await page.selectOption('#price-choice','3000');assert.equal(await page.locator('.shop-grid .product-card').count(),1);await page.reload();await page.locator('main').waitFor();assert.equal(await page.locator('#catalog-query').inputValue(),'creatine');
   await page.selectOption('#stimulant-choice','free');assert.equal(await page.locator('.empty-shop').count(),1);await page.locator('.empty-shop a').click();
-  await page.selectOption('#sort-choice','price-low');const prices=await page.locator('.product-pricing strong').allTextContents();const nums=prices.map(s=>Number(s.replace(/[^0-9.]/g,'')));assert.deepEqual(nums,[...nums].sort((a,b)=>a-b));
+  await page.locator('.filter-disclosure').evaluate(el=>el.open=true);await page.selectOption('#sort-choice','price-low');const prices=await page.locator('.product-pricing strong').allTextContents();const nums=prices.map(s=>Number(s.replace(/[^0-9.]/g,'')));assert.deepEqual(nums,[...nums].sort((a,b)=>a-b));
  });
  await check('Cancelled checkout retains bag and explains cancellation',async()=>{await go('/cart?cancelled=1');assert.match(await page.locator('.cart-notice').innerText(),/bag is saved/);});
  const responsive=[];
@@ -92,7 +92,7 @@ try{
   await page.setViewportSize({width,height:width<600?844:1000});
   for(const [name,path] of [['homepage','/'],['fortivor','/product/fortivor-pre-workout'],['catalog','/shop'],['stack','/build-your-stack']]){
    await go(path);await page.evaluate(()=>document.fonts.ready);await readyImages();
-   await page.screenshot({path:`screenshots/${name}-${width}.png`,fullPage:false});
+   await page.screenshot({path:`screenshots/studio-${name}-${width}.jpg`,type:'jpeg',quality:80,fullPage:false});
    const data=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,broken:[...document.images].filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.src),h1:document.querySelectorAll('h1').length}));
    assert.ok(data.scrollWidth<=width,`${name} at ${width}: overflow ${data.scrollWidth}`);assert.equal(data.h1,1);assert.deepEqual(data.broken,[]);
    if(name==='homepage'){const ctas=await page.locator('.campaign-actions').boundingBox();assert.ok(ctas.y+ctas.height<= (width<600?844:1000),`Hero CTAs below fold ${width}`);}
@@ -100,8 +100,8 @@ try{
   }
  }
  results.push({name:'Responsive screenshots, no horizontal overflow, hero CTAs above fold: 1440/1024/390/430',status:'passed',responsive});
- await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/homepage-desktop-full.png',fullPage:true});
- await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/fortivor-mobile-full.png',fullPage:true});
+ await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/studio-homepage-desktop-full.jpg',type:'jpeg',quality:80,fullPage:true});
+ await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/studio-fortivor-mobile-full.jpg',type:'jpeg',quality:80,fullPage:true});
  assert.deepEqual(errors,[]);results.push({name:'No browser JavaScript exceptions',status:'passed'});
  await fs.writeFile('docs/browser-results.json',JSON.stringify({testedAt:new Date().toISOString(),engine:'Chromium',base,results,errors},null,2));
  console.log(`Completed ${results.length} checks; ${responsive.length} responsive page renders.`);

@@ -27,7 +27,7 @@
       ]
     },
     "privacy": {
-      "kicker": "THE HOUSE / PRIVACY",
+      "kicker": "AUCTORAN LABS / PRIVACY",
       "title": "PRIVACY.",
       "sections": [
         ["What we collect", "When you place an order, we receive your name, email address, phone number, billing and shipping address, and the items you bought. Card details are entered on Stripe's secure checkout page; we never see or store your full card number."],
@@ -38,7 +38,7 @@
       ]
     },
     "terms": {
-      "kicker": "THE HOUSE / TERMS",
+      "kicker": "AUCTORAN LABS / TERMS",
       "title": "TERMS.",
       "sections": [
         ["Using this store", "By placing an order with Auctoran Labs you agree to these terms. You must be at least 18 years old to purchase from this store."],
