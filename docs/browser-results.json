@@ -1,0 +1,158 @@
+{
+  "testedAt": "2026-10-22T03:14:07.012Z",
+  "engine": "Chromium",
+  "base": "http://localhost:3000",
+  "results": [
+    {
+      "name": "A: homepage → Fortivor → add → demo checkout; no payment and bag retained",
+      "status": "passed"
+    },
+    {
+      "name": "B: Protein shortcut → price/brand filter → sample detail → demo cart",
+      "status": "passed"
+    },
+    {
+      "name": "C: stack goal → preferences → explicit concept opt-in → quantities → bulk add",
+      "status": "passed"
+    },
+    {
+      "name": "Stack default and stimulant-free routes truthfully return no verified stock",
+      "status": "passed"
+    },
+    {
+      "name": "D: 390px menu → product → quantity → add → checkout",
+      "status": "passed"
+    },
+    {
+      "name": "E: returning customer restores cart, accurate subtotal, quantity updates, removal",
+      "status": "passed"
+    },
+    {
+      "name": "Checkout server failure is visible, retry enabled, cart preserved",
+      "status": "passed"
+    },
+    {
+      "name": "Gallery thumbnails, zoom, Escape, swipe and mobile sticky purchase visibility",
+      "status": "passed"
+    },
+    {
+      "name": "Keyboard: skip link, menu/search/cart focus containment and Escape restoration",
+      "status": "passed"
+    },
+    {
+      "name": "URL-backed search, brand/price/caffeine filtering, price sort and empty-state recovery",
+      "status": "passed"
+    },
+    {
+      "name": "Cancelled checkout retains bag and explains cancellation",
+      "status": "passed"
+    },
+    {
+      "name": "Responsive screenshots, no horizontal overflow, hero CTAs above fold: 1440/1024/390/430",
+      "status": "passed",
+      "responsive": [
+        {
+          "page": "homepage",
+          "width": 1440,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "fortivor",
+          "width": 1440,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "catalog",
+          "width": 1440,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "stack",
+          "width": 1440,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "homepage",
+          "width": 1024,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "fortivor",
+          "width": 1024,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "catalog",
+          "width": 1024,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "stack",
+          "width": 1024,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "homepage",
+          "width": 390,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "fortivor",
+          "width": 390,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "catalog",
+          "width": 390,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "stack",
+          "width": 390,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "homepage",
+          "width": 430,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "fortivor",
+          "width": 430,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "catalog",
+          "width": 430,
+          "overflow": false,
+          "brokenImages": 0
+        },
+        {
+          "page": "stack",
+          "width": 430,
+          "overflow": false,
+          "brokenImages": 0
+        }
+      ]
+    },
+    {
+      "name": "No browser JavaScript exceptions",
+      "status": "passed"
+    }
+  ],
+  "errors": []
+}
