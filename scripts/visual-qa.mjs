@@ -30,7 +30,7 @@ try{
     const clipped=[...document.querySelectorAll('.v4-product-art>img,.product-image>img,.detail-main-image .real-product-img,.category-visual img')].filter(img=>{
      const a=img.getBoundingClientRect(),b=img.parentElement.getBoundingClientRect();return a.width>b.width+2||a.height>b.height+2;
     }).map(img=>img.src);
-    return {overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('h1').length,broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src),oldImages:[...document.images].filter(i=>/gallery\.webp|athlete\.jpg|ritual-sculpture|deadlift-editorial/.test(i.src)).map(i=>i.src),lowContrast,clipped};
+    return {overflow:document.documentElement.scrollWidth>innerWidth,h1:document.querySelectorAll('h1').length,broken:[...document.images].filter(i=>!i.complete||!i.naturalWidth).map(i=>i.src),oldImages:[...document.images].filter(i=>/gallery\.webp|athlete\.jpg|ritual-sculpture|deadlift-editorial|\/studio-(protein|creatine|aminos|vitamins|thermogenic)/.test(i.src)).map(i=>i.src),lowContrast,clipped};
    });
    assert.equal(metrics.overflow,false,`${name} ${width}: horizontal overflow`);
    assert.equal(metrics.h1,1,`${name}: single page heading`);
@@ -38,8 +38,9 @@ try{
    if(name==='homepage')assert.equal(await page.locator('.category-visual').count(),6);
    if(name==='fortivor')assert.equal(await page.locator('.detail-image-row button').count(),2);
    if(['protein','creatine','aminos','vitamins','thermogenic'].includes(name)){
-    assert.match(await page.locator('.gallery-caption').innerText(),/Illustrative/);
+    assert.match(await page.locator('.gallery-caption').innerText(),/Design concept/);
     assert.equal(await page.locator('.gallery-tools button').count(),0);
+    assert.equal(await page.locator('.pdp-formula').count(),0,'Concepts must not inherit the Fortivor formula');
    }
    renders.push({page:name,width,status:'passed'});
    if([1440,390].includes(width)&&['about','shipping','contact','protein','stack','empty-bag','catalog'].includes(name))await page.screenshot({path:`screenshots/refresh-${name}-${width}-full.jpg`,type:'jpeg',quality:80,fullPage:true});
@@ -58,6 +59,11 @@ try{
   assert.equal(await page.locator('.shop-grid .product-card').count(),1);await go('/');
  }
  checks.push('All six photographic category tiles open the correct filtered catalog');
+ await go('/shop');await page.locator('.filter-disclosure summary').click();await page.selectOption('#brand-choice','house');assert.equal(await page.locator('.shop-grid .product-card').count(),6);
+ await page.selectOption('#brand-choice','concept');assert.equal(await page.locator('.shop-grid .product-card').count(),5);
+ assert.equal(await page.locator('.shop-grid .product-card .product-preview-tag').filter({hasText:'DESIGN CONCEPT'}).count(),5);
+ await page.selectOption('#brand-choice','partner');assert.equal(await page.locator('.empty-shop').count(),1);
+ checks.push('Auctoran branded concepts have their own filter and are not misrepresented as curated partner inventory');
  await go('/info/shipping');await page.locator('.care-navigation a[href="/info/returns"]').click();
  assert.equal(await page.locator('.care-navigation [aria-current="page"]').innerText(),'Returns');
  await page.locator('.care-navigation a[href="/contact"]').click();assert.equal(await page.locator('h1').innerText(),'CONTACT.');

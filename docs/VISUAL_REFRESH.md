@@ -1,5 +1,7 @@
 # Complete storefront visual refresh
 
+The unbranded category still lifes from this pass have since been replaced with finished Auctoran packaging designs. See [current collection designs](COLLECTION_DESIGNS.md). The layout and editorial photography described here remain in use.
+
 The mobile screenshot exposed an implementation problem, not just a weak image: the second Fortivor view was enlarged to 160%, offset and clipped inside a nested span that also inherited caption positioning. Other products still displayed cropped panels from older three-image packaging sheets. About used a narrow portrait as a wide background and heavily darkened it.
 
 ## Implemented
