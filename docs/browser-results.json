@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-22T05:15:36.455Z",
+  "testedAt": "2026-10-22T05:30:08.214Z",
   "engine": "Chromium",
   "base": "http://localhost:4174",
   "results": [
@@ -8,7 +8,7 @@
       "status": "passed"
     },
     {
-      "name": "B: Protein shortcut → price/brand filter → sample detail → demo cart",
+      "name": "B: Protein shortcut → price/concept filter → designed product → demo cart",
       "status": "passed"
     },
     {

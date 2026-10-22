@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-22T05:18:39.790Z",
+  "testedAt": "2026-10-22T05:31:27.993Z",
   "engine": "Chromium",
   "base": "http://localhost:4174",
   "renders": [
@@ -327,6 +327,7 @@
   "checks": [
     "All 16 customer routes at four widths; visible headings/navigation, bounded product images, no legacy media, missing assets or horizontal overflow",
     "All six photographic category tiles open the correct filtered catalog",
+    "Auctoran branded concepts have their own filter and are not misrepresented as curated partner inventory",
     "Customer care navigation changes route and active state correctly",
     "Mobile facts zoom genuinely enlarges the label and Escape closes it"
   ],

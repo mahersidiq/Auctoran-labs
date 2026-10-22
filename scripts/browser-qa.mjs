@@ -20,10 +20,10 @@ try{
   await page.locator('.order-page').waitFor();assert.match(await page.locator('.order-page').innerText(),/No payment was collected/);
   assert.equal(new URL(page.url()).search,'?demo=1');assert.equal(JSON.parse(await page.evaluate(()=>localStorage.getItem('auctoran-cart-v1')))[0].qty,1);
  });
- await check('B: Protein shortcut → price/brand filter → sample detail → demo cart',async()=>{
+ await check('B: Protein shortcut → price/concept filter → designed product → demo cart',async()=>{
   await go('/');await page.locator('.discovery-rail a[href="/shop?category=protein"]').click();await page.selectOption('#price-choice','7500');
-  await page.selectOption('#brand-choice','partner');assert.equal(await page.locator('.shop-grid .product-card').count(),1);
-  await page.locator('.product-name').click();assert.match(await page.locator('.stock-status').innerText(),/Sample listing/);
+  await page.selectOption('#brand-choice','concept');assert.equal(await page.locator('.shop-grid .product-card').count(),1);
+  await page.locator('.product-name').click();assert.match(await page.locator('.stock-status').innerText(),/Design concept/);
   await page.locator('.add-detail').click();assert.match(await page.locator('.cart-drawer.active').innerText(),/Whey Isolate/);await closeBag();
  });
  await check('C: stack goal → preferences → explicit concept opt-in → quantities → bulk add',async()=>{
