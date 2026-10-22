@@ -191,10 +191,47 @@ test('live mode hides sample listings and refuses checkout until fully configure
   const ready = await startStore({ STRIPE_SECRET_KEY: 'sk_live_123', STORE_LIVE: 'true', PUBLIC_BASE_URL: 'https://shop.example.com', SHIP_US_CENTS: '0', STRIPE_WEBHOOK_SECRET: WEBHOOK_SECRET, SUPPORT_EMAIL: 'help@example.com' });
   try {
     const config = await (await fetch(ready.base + '/api/config')).json();
-    assert.equal(config.preview, false);
+    assert.equal(config.preview, true); // supplied catalog still lacks approved price, label and stock
     const res = await post(ready.base + '/api/checkout', { items: [{ id: 'fortivor-pre-workout', qty: 1 }] });
-    assert.equal(res.status, 200);
-    assert.equal(stripeCalls.findLast(c => c.method === 'POST').body.get('shipping_options[0][shipping_rate_data][display_name]'), 'Complimentary US shipping');
+    assert.equal(res.status, 409);
+    const health = await (await fetch(ready.base + '/healthz')).json();
+    assert.equal(health.ready,false);
+    assert.ok(health.missing.some(p=>p.includes('priceConfirmed')));
+    assert.ok(health.missing.some(p=>p.includes('inventoryQuantity')));
+    assert.ok(health.missing.some(p=>p.includes('Supplement Facts')));
     assert.equal((await fetch(ready.base + '/')).headers.get('strict-transport-security'), 'max-age=31536000; includeSubDomains');
   } finally { ready.stop(); }
+});
+
+
+test('inventory is unconfirmed in the supplied catalog and samples cannot reach Stripe even in test mode', async () => {
+ const {products}=await (await fetch(demo.base+'/api/products')).json();
+ assert.equal(products[0].inStock,false);
+ assert.equal(products[0].demoAvailable,true);
+ assert.equal(products[0].priceConfirmed,false);
+ const response=await post(testMode.base+'/api/checkout',{items:[{id:'sample-creatine',qty:1}]},{'X-Forwarded-For':'10.3.3.1'});
+ assert.equal(response.status,400);
+ assert.match((await response.json()).error,/Sample listings/);
+});
+
+test('concurrent signed webhook deliveries are coalesced and paid verification persists on Stripe', async () => {
+ const response=await post(testMode.base+'/api/checkout',{items:[{id:'fortivor-pre-workout',qty:1}]},{'X-Forwarded-For':'10.3.3.2'});
+ const {url}=await response.json(); const id=url.split('/').pop();
+ const event={id:'evt_concurrent',type:'checkout.session.completed',data:{object:{id}}};
+ const before=notifications.length;
+ const results=await Promise.all(Array.from({length:5},()=>signedWebhook(testMode.base,event)));
+ assert.ok(results.every(r=>r.status===200));
+ assert.equal(notifications.length,before+1);
+ assert.equal(intents.get('pi_'+id).metadata.payment_verified,'true');
+ assert.equal(notifications.at(-1).idempotencyKey,'auctoran-order-'+id);
+});
+
+test('fulfillment requires a signed webhook and checkout verification rejects a foreign store',async()=>{
+ const response=await post(testMode.base+'/api/checkout',{items:[{id:'fortivor-pre-workout',qty:1}]},{'X-Forwarded-For':'10.3.3.3'});
+ const {url}=await response.json();const id=url.split('/').pop();
+ const fulfillment=await post(testMode.base+'/api/admin/orders/'+id,{fulfillment:'fulfilled'},{Authorization:'Bearer '+ADMIN_TOKEN});
+ assert.equal(fulfillment.status,502);
+ assert.match((await fulfillment.json()).error,/signed webhook/);
+ const session=sessions.get(id);session.metadata.store='another-store';
+ assert.equal((await fetch(testMode.base+'/api/checkout/verify?session_id='+id)).status,404);
 });

@@ -18,9 +18,19 @@ npm run dev      # auto-restart on file changes
 
 With no settings it runs in **demo mode**: everything works, but no payment is taken.
 
+## Product presentation
+
+The latest Fortivor studio imagery, clear shopping labels, responsive screenshots and validation are documented in [product presentation](docs/PRODUCT_PRESENTATION.md).
+
+## V4 implementation
+
+The existing Node/vanilla-JS architecture and hosting targets are preserved. See [audit](docs/AUDIT.md), [delivery and configuration](docs/DELIVERY.md), [browser results](docs/browser-results.json) and [screenshots](screenshots/).
+
+The storefront includes a three-step `/build-your-stack` route. Live matching excludes sample products and unverified stock, pricing, labeling, caffeine or stimulant information. A clearly marked Fortivor concept match is available only by opting in during preview.
+
 ## Go live — step by step
 
-1. **Products.** Edit `data/products.json`: set Fortivor's real `priceCents` (e.g. `4999` = $49.99) and confirm the formula against the final Supplement Facts label. Sample partner products (`"isSample": true`) are hidden automatically in live mode; delete them or replace them with real products when you have them. Set `"inStock": false` to show a product as sold out, or `"active": false` to hide it.
+1. **Products.** Edit `data/products.json`: set Fortivor's confirmed `priceCents` and `priceConfirmed: true`. Supply approved `supplementFactsText` or `supplementFactsImage`, `suggestedUse`, `warning`, and set `labelVerified: true` only after approval. Confirm `inventoryQuantity`, `inventoryConfirmed: true`, and `inStock: true`. The current $49.99 is illustrative. Sample partner products (`"isSample": true`) are hidden automatically in live mode; delete them or replace them with real products when you have them. Set `"inStock": false` to show a product as sold out, or `"active": false` to hide it.
 2. **Policies.** Review the text in `data/store.json` (processing time, return window, policy wording) and adjust to how you actually operate. Have it checked by a professional if you can.
 3. **Deploy.**
    - **Vercel:** import the GitHub repo. `vercel.json` handles everything: `public/` is served as the website and `api/index.mjs` runs the checkout/order backend. Add the settings below under *Project → Settings → Environment Variables*, then redeploy. Add your domain under *Settings → Domains*.

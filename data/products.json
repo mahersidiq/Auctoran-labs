@@ -1,114 +1,340 @@
 [
   {
-    "id":"fortivor-pre-workout",
-    "slug":"fortivor-pre-workout",
-    "name":"Fortivor",
-    "fullName":"Fortivor Pre-Workout",
-    "brand":"Auctoran Labs",
-    "category":"Pre-Workout",
-    "categoryKey":"pre-workout",
-    "goal":"Energy & Focus",
-    "description":"A pre-workout built around a clearly stated formula. Sour Cherry Blitz. 30 servings.",
-    "details":"Fortivor is the first release from Auctoran Labs. The label features L-citrulline, beta-alanine, caffeine, alpha-GPC and L-theanine. Verify the finished product and supplement facts panel before publishing or selling.",
-    "size":"420 g · 30 servings",
-    "flavor":"Sour Cherry Blitz",
-    "priceCents":4999,
-    "compareAtCents":null,
-    "isOwn":true,
-    "isSample":false,
-    "isFeatured":true,
-    "image":"/assets/fortivor.jpg",
-    "imageDetail":"/assets/fortivor-detail.jpg",
-    "gallery":[{"src": "/assets/fortivor.jpg", "label": "Product", "alt": "Fortivor Pre-Workout full package"}, {"src": "/assets/fortivor-detail.jpg", "label": "Description", "alt": "Fortivor front label and product description close-up"}, {"src": "/assets/fortivor-facts-gallery.png", "label": "Nutrition facts", "alt": "Fortivor draft formula panel; amounts from packaging concept, not a verified final label"}],
-    "eyebrow":"HOUSE RELEASE 001",
-    "tone":"cherry",
-    "formula":[
-      {"name":"L-Citrulline","amount":"8,000 mg"},
-      {"name":"Beta-Alanine","amount":"3,200 mg"},
-      {"name":"Caffeine","amount":"300 mg"},
-      {"name":"Alpha-GPC","amount":"200 mg"},
-      {"name":"L-Theanine","amount":"100 mg"}
+    "id": "fortivor-pre-workout",
+    "slug": "fortivor-pre-workout",
+    "name": "Fortivor",
+    "fullName": "Fortivor Pre-Workout",
+    "brand": "Auctoran Labs",
+    "category": "Pre-Workout",
+    "categoryKey": "pre-workout",
+    "goal": "Energy & Focus",
+    "description": "Premium pre-workout. Blue Raspberry Watermelon. A formula built around clearly stated ingredient amounts.",
+    "details": "Fortivor combines L-citrulline, beta-alanine, betaine anhydrous, taurine, L-tyrosine, Alpha-GPC, theobromine and caffeine sources totaling approximately 355 mg. The flavor is Blue Raspberry Watermelon. Serving size and usage directions are awaiting confirmation.",
+    "size": "450 g · serving size awaiting confirmation",
+    "flavor": "Blue Raspberry Watermelon",
+    "priceCents": 4999,
+    "compareAtCents": null,
+    "isOwn": true,
+    "isSample": false,
+    "isFeatured": true,
+    "image": "/assets/fortivor-studio-front.webp",
+    "imageDetail": "/assets/fortivor-studio-front.webp",
+    "gallery": [
+      {
+        "src": "/assets/fortivor-studio-front.webp",
+        "label": "Front view",
+        "alt": "Corrected Fortivor front view with the approved warrior artwork"
+      },
+      {
+        "src": "/assets/fortivor-supplement-facts.svg",
+        "label": "Supplement Facts",
+        "alt": "Supplement Facts reproduced from the supplied black-and-gold label. The shown 18 g serving size is awaiting correction and is not approved dosing guidance.",
+        "kind": "label",
+        "width": 1200,
+        "height": 1400
+      }
     ],
-    "warning":"Contains 300 mg of caffeine per serving. Follow the actual product label. Do not combine with other stimulants without professional guidance. Confirm the final formula, labeling and applicable compliance before sale."
+    "eyebrow": "AUCTORAN LABS PRE-WORKOUT",
+    "tone": "cherry",
+    "formula": [
+      {
+        "name": "L-Citrulline",
+        "amount": "8,000 mg",
+        "amountMg": 8000
+      },
+      {
+        "name": "Beta-Alanine",
+        "amount": "3,200 mg",
+        "amountMg": 3200
+      },
+      {
+        "name": "Betaine Anhydrous",
+        "amount": "2,500 mg",
+        "amountMg": 2500
+      },
+      {
+        "name": "Taurine",
+        "amount": "2,000 mg",
+        "amountMg": 2000
+      },
+      {
+        "name": "L-Tyrosine",
+        "amount": "1,500 mg",
+        "amountMg": 1500
+      },
+      {
+        "name": "Alpha-GPC (50%)",
+        "amount": "300 mg",
+        "amountMg": 300
+      },
+      {
+        "name": "Theobromine",
+        "amount": "300 mg",
+        "amountMg": 300
+      },
+      {
+        "name": "Caffeine Anhydrous",
+        "amount": "300 mg",
+        "amountMg": 300
+      },
+      {
+        "name": "Guarana Extract (22% Caffeine)",
+        "amount": "250 mg",
+        "amountMg": 250
+      },
+      {
+        "name": "Sodium (as Sodium Chloride)",
+        "amount": "300 mg",
+        "amountMg": 300
+      }
+    ],
+    "warning": "Approximately 355 mg total caffeine per serving, calculated from the two labeled caffeine sources. Also contains theobromine. For adults 18+ only. Do not combine with other caffeine or stimulant products. Not for children, pregnancy or nursing. Consult a qualified healthcare professional before use, especially with medications, medical conditions or caffeine sensitivity. Use only according to the approved directions.",
+    "priceConfirmed": false,
+    "labelVerified": false,
+    "inventoryConfirmed": false,
+    "inventoryQuantity": null,
+    "caffeineMg": 355,
+    "caffeineVerified": true,
+    "servings": 25,
+    "stimulant": "caffeinated",
+    "matchingGoals": [
+      "strength",
+      "muscle-growth",
+      "training-performance"
+    ],
+    "inStock": false,
+    "packagingRevision": "roman-warrior-2026-10",
+    "packagingConcept": true,
+    "formulaRevisionPending": false,
+    "previousPackagingDetails": {
+      "flavor": "Sour Cherry Blitz",
+      "servings": 30,
+      "size": "420 g · 30 servings"
+    },
+    "packagingDetailsConfirmed": true,
+    "factsVerified": true,
+    "directionsVerified": false,
+    "servingSize": "Awaiting confirmation",
+    "servingSizeGrams": 18,
+    "stimulantVerified": true,
+    "caffeineSources": [
+      {
+        "name": "Caffeine Anhydrous",
+        "amountMg": 300,
+        "caffeineFraction": 1
+      },
+      {
+        "name": "Guarana Extract",
+        "amountMg": 250,
+        "caffeineFraction": 0.22
+      }
+    ],
+    "caffeineNote": "Approximately 355 mg total caffeine per serving, calculated from 300 mg caffeine anhydrous plus 55 mg from 250 mg guarana extract standardized to 22% caffeine.",
+    "otherIngredients": [
+      "Citric Acid",
+      "Natural & Artificial Flavors",
+      "Silicon Dioxide",
+      "Sucralose",
+      "Acesulfame Potassium",
+      "Calcium Silicate"
+    ],
+    "labelSource": "Ingredient amounts transcribed from the product image and confirmed by the owner; owner-provided description confirms 355 mg total caffeine; Blue Raspberry Watermelon flavor retained as requested. Serving size is unresolved.",
+    "labelConsistencyIssues": [
+      {
+        "kind": "serving-mass",
+        "listedIngredientsMg": 18650,
+        "declaredServingSizeMg": 18000,
+        "message": "Listed ingredients total 18.65 g before other ingredients, exceeding the declared 18 g serving. Owner correction requested; supplied amounts retained."
+      }
+    ],
+    "supplementFactsText": "Serving size: awaiting confirmation. The supplied label shows 25 servings per container; the final serving count requires confirmation. Declared formula amounts: L-Citrulline 8,000 mg; Beta-Alanine 3,200 mg; Betaine Anhydrous 2,500 mg; Taurine 2,000 mg; L-Tyrosine 1,500 mg; Alpha-GPC (50%) 300 mg; Theobromine 300 mg; Caffeine Anhydrous 300 mg; Guarana Extract (22% Caffeine) 250 mg; Sodium (as Sodium Chloride) 300 mg. Other Ingredients: Citric Acid, Natural & Artificial Flavors, Silicon Dioxide, Sucralose, Acesulfame Potassium, Calcium Silicate.",
+    "supplementFactsImage": "/assets/fortivor-supplement-facts.svg",
+    "sourceLabel": {
+      "servingSize": "1 Scoop (18 g)",
+      "servings": 25
+    },
+    "flavorName": "Blue Raspberry Watermelon",
+    "servingSizeVerified": false,
+    "servingsVerified": false
   },
   {
-    "id":"sample-whey-isolate",
-    "slug":"sample-whey-isolate",
-    "name":"Whey Isolate",
-    "fullName":"Whey Isolate · Sample Listing",
-    "brand":"Partner Collection · Sample",
-    "category":"Protein",
-    "categoryKey":"protein",
-    "goal":"Build & Recover",
-    "description":"Example third-party protein listing. Replace with an authorized supplier's actual product and verified information.",
-    "details":"Sample catalog entry. No manufacturer or nutrition information has been supplied.",
-    "size":"Size pending",
-    "flavor":"Variant pending",
-    "priceCents":5999,
-    "isOwn":false,"isSample":true,"isFeatured":true,"image":"/assets/whey-isolate-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/whey-isolate-gallery.png", "panel": 0, "label": "Product", "alt": "Whey Isolate concept packaging — front product view"}, {"src": "/assets/whey-isolate-gallery.png", "panel": 1, "label": "Description", "alt": "Whey Isolate concept packaging — category and package detail"}, {"src": "/assets/whey-isolate-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Whey Isolate concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 002","tone":"slate","formula":[]
+    "id": "sample-whey-isolate",
+    "slug": "sample-whey-isolate",
+    "name": "Whey Isolate",
+    "fullName": "Whey Isolate · Sample Listing",
+    "brand": "Partner Collection · Sample",
+    "category": "Protein",
+    "categoryKey": "protein",
+    "goal": "Build & Recover",
+    "description": "Example third-party protein listing. Replace with an authorized supplier's actual product and verified information.",
+    "details": "Sample catalog entry. No manufacturer or nutrition information has been supplied.",
+    "size": "Size pending",
+    "flavor": "Variant pending",
+    "priceCents": 5999,
+    "isOwn": false,
+    "isSample": true,
+    "isFeatured": true,
+    "image": "/assets/whey-isolate-gallery.webp",
+    "imagePanel": 0,
+    "gallery": [
+      {
+        "src": "/assets/whey-isolate-gallery.webp",
+        "panel": 0,
+        "label": "Concept artwork",
+        "alt": "Whey Isolate concept packaging — front product view"
+      }
+    ],
+    "eyebrow": "CURATED / 002",
+    "tone": "slate",
+    "formula": [],
+    "inStock": false,
+    "inventoryConfirmed": false,
+    "priceConfirmed": false,
+    "labelVerified": false,
+    "caffeineVerified": false
   },
   {
-    "id":"sample-creatine",
-    "slug":"sample-creatine",
-    "name":"Creatine",
-    "fullName":"Creatine Monohydrate · Sample Listing",
-    "brand":"Partner Collection · Sample",
-    "category":"Creatine",
-    "categoryKey":"creatine",
-    "goal":"Strength & Power",
-    "description":"Example third-party creatine listing. Replace with an authorized supplier's actual product and verified information.",
-    "details":"Sample catalog entry. No manufacturer or nutrition information has been supplied.",
-    "size":"Size pending",
-    "flavor":"Unflavored · example",
-    "priceCents":2999,
-    "isOwn":false,"isSample":true,"isFeatured":true,"image":"/assets/creatine-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/creatine-gallery.png", "panel": 0, "label": "Product", "alt": "Creatine concept packaging — front product view"}, {"src": "/assets/creatine-gallery.png", "panel": 1, "label": "Description", "alt": "Creatine concept packaging — category and package detail"}, {"src": "/assets/creatine-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Creatine concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 003","tone":"stone","formula":[]
+    "id": "sample-creatine",
+    "slug": "sample-creatine",
+    "name": "Creatine",
+    "fullName": "Creatine Monohydrate · Sample Listing",
+    "brand": "Partner Collection · Sample",
+    "category": "Creatine",
+    "categoryKey": "creatine",
+    "goal": "Strength & Power",
+    "description": "Example third-party creatine listing. Replace with an authorized supplier's actual product and verified information.",
+    "details": "Sample catalog entry. No manufacturer or nutrition information has been supplied.",
+    "size": "Size pending",
+    "flavor": "Unflavored · example",
+    "priceCents": 2999,
+    "isOwn": false,
+    "isSample": true,
+    "isFeatured": true,
+    "image": "/assets/creatine-gallery.webp",
+    "imagePanel": 0,
+    "gallery": [
+      {
+        "src": "/assets/creatine-gallery.webp",
+        "panel": 0,
+        "label": "Concept artwork",
+        "alt": "Creatine concept packaging — front product view"
+      }
+    ],
+    "eyebrow": "CURATED / 003",
+    "tone": "stone",
+    "formula": [],
+    "inStock": false,
+    "inventoryConfirmed": false,
+    "priceConfirmed": false,
+    "labelVerified": false,
+    "caffeineVerified": false
   },
   {
-    "id":"sample-amino",
-    "slug":"sample-amino",
-    "name":"Essential Aminos",
-    "fullName":"Essential Aminos · Sample Listing",
-    "brand":"Partner Collection · Sample",
-    "category":"Aminos",
-    "categoryKey":"aminos",
-    "goal":"Recover & Repeat",
-    "description":"Example third-party essential amino acid listing. Replace with an authorized supplier's verified product.",
-    "details":"Sample catalog entry. No manufacturer or nutrition information has been supplied.",
-    "size":"Size pending",
-    "flavor":"Variant pending",
-    "priceCents":3499,
-    "isOwn":false,"isSample":true,"isFeatured":true,"image":"/assets/amino-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/amino-gallery.png", "panel": 0, "label": "Product", "alt": "Essential Aminos concept packaging — front product view"}, {"src": "/assets/amino-gallery.png", "panel": 1, "label": "Description", "alt": "Essential Aminos concept packaging — category and package detail"}, {"src": "/assets/amino-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Essential Aminos concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 004","tone":"moss","formula":[]
+    "id": "sample-amino",
+    "slug": "sample-amino",
+    "name": "Essential Aminos",
+    "fullName": "Essential Aminos · Sample Listing",
+    "brand": "Partner Collection · Sample",
+    "category": "Aminos",
+    "categoryKey": "aminos",
+    "goal": "Recover & Repeat",
+    "description": "Example third-party essential amino acid listing. Replace with an authorized supplier's verified product.",
+    "details": "Sample catalog entry. No manufacturer or nutrition information has been supplied.",
+    "size": "Size pending",
+    "flavor": "Variant pending",
+    "priceCents": 3499,
+    "isOwn": false,
+    "isSample": true,
+    "isFeatured": true,
+    "image": "/assets/amino-gallery.webp",
+    "imagePanel": 0,
+    "gallery": [
+      {
+        "src": "/assets/amino-gallery.webp",
+        "panel": 0,
+        "label": "Concept artwork",
+        "alt": "Essential Aminos concept packaging — front product view"
+      }
+    ],
+    "eyebrow": "CURATED / 004",
+    "tone": "moss",
+    "formula": [],
+    "inStock": false,
+    "inventoryConfirmed": false,
+    "priceConfirmed": false,
+    "labelVerified": false,
+    "caffeineVerified": false
   },
   {
-    "id":"sample-vitamins",
-    "slug":"sample-vitamins",
-    "name":"Daily Essentials",
-    "fullName":"Daily Vitamins · Sample Listing",
-    "brand":"Partner Collection · Sample",
-    "category":"Vitamins",
-    "categoryKey":"vitamins",
-    "goal":"Daily Foundation",
-    "description":"Example third-party vitamins listing. Replace with an authorized supplier's verified product.",
-    "details":"Sample catalog entry. No manufacturer or nutrition information has been supplied.",
-    "size":"Size pending",
-    "flavor":"Capsules · example",
-    "priceCents":2499,
-    "isOwn":false,"isSample":true,"isFeatured":false,"image":"/assets/vitamins-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/vitamins-gallery.png", "panel": 0, "label": "Product", "alt": "Daily Essentials concept packaging — front product view"}, {"src": "/assets/vitamins-gallery.png", "panel": 1, "label": "Description", "alt": "Daily Essentials concept packaging — category and package detail"}, {"src": "/assets/vitamins-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Daily Essentials concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 005","tone":"sand","formula":[]
+    "id": "sample-vitamins",
+    "slug": "sample-vitamins",
+    "name": "Daily Essentials",
+    "fullName": "Daily Vitamins · Sample Listing",
+    "brand": "Partner Collection · Sample",
+    "category": "Vitamins",
+    "categoryKey": "vitamins",
+    "goal": "Daily Foundation",
+    "description": "Example third-party vitamins listing. Replace with an authorized supplier's verified product.",
+    "details": "Sample catalog entry. No manufacturer or nutrition information has been supplied.",
+    "size": "Size pending",
+    "flavor": "Capsules · example",
+    "priceCents": 2499,
+    "isOwn": false,
+    "isSample": true,
+    "isFeatured": false,
+    "image": "/assets/vitamins-gallery.webp",
+    "imagePanel": 0,
+    "gallery": [
+      {
+        "src": "/assets/vitamins-gallery.webp",
+        "panel": 0,
+        "label": "Concept artwork",
+        "alt": "Daily Essentials concept packaging — front product view"
+      }
+    ],
+    "eyebrow": "CURATED / 005",
+    "tone": "sand",
+    "formula": [],
+    "inStock": false,
+    "inventoryConfirmed": false,
+    "priceConfirmed": false,
+    "labelVerified": false,
+    "caffeineVerified": false
   },
   {
-    "id":"sample-fat-burner",
-    "slug":"sample-fat-burner",
-    "name":"Thermogenic",
-    "fullName":"Thermogenic · Sample Listing",
-    "brand":"Partner Collection · Sample",
-    "category":"Fat Burners",
-    "categoryKey":"fat-burners",
-    "goal":"Training Support",
-    "description":"Example third-party category listing. Replace with a verified product and appropriate warnings.",
-    "details":"Sample catalog entry. No manufacturer, ingredient panel or nutrition information has been supplied.",
-    "size":"Size pending",
-    "flavor":"Capsules · example",
-    "priceCents":3999,
-    "isOwn":false,"isSample":true,"isFeatured":false,"image":"/assets/fat-burner-gallery.png","imagePanel":0,"gallery":[{"src": "/assets/fat-burner-gallery.png", "panel": 0, "label": "Product", "alt": "Thermogenic concept packaging — front product view"}, {"src": "/assets/fat-burner-gallery.png", "panel": 1, "label": "Description", "alt": "Thermogenic concept packaging — category and package detail"}, {"src": "/assets/fat-burner-gallery.png", "panel": 2, "label": "Nutrition facts", "alt": "Thermogenic concept packaging — sample facts panel; verified supplier information pending"}],"eyebrow":"CURATED / 006","tone":"oxide","formula":[]
+    "id": "sample-fat-burner",
+    "slug": "sample-fat-burner",
+    "name": "Thermogenic",
+    "fullName": "Thermogenic · Sample Listing",
+    "brand": "Partner Collection · Sample",
+    "category": "Fat Burners",
+    "categoryKey": "fat-burners",
+    "goal": "Training Support",
+    "description": "Example third-party category listing. Replace with a verified product and appropriate warnings.",
+    "details": "Sample catalog entry. No manufacturer, ingredient panel or nutrition information has been supplied.",
+    "size": "Size pending",
+    "flavor": "Capsules · example",
+    "priceCents": 3999,
+    "isOwn": false,
+    "isSample": true,
+    "isFeatured": false,
+    "image": "/assets/fat-burner-gallery.webp",
+    "imagePanel": 0,
+    "gallery": [
+      {
+        "src": "/assets/fat-burner-gallery.webp",
+        "panel": 0,
+        "label": "Concept artwork",
+        "alt": "Thermogenic concept packaging — front product view"
+      }
+    ],
+    "eyebrow": "CURATED / 006",
+    "tone": "oxide",
+    "formula": [],
+    "inStock": false,
+    "inventoryConfirmed": false,
+    "priceConfirmed": false,
+    "labelVerified": false,
+    "caffeineVerified": false
   }
 ]
