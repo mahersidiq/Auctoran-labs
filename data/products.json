@@ -174,14 +174,14 @@
     "isOwn": false,
     "isSample": true,
     "isFeatured": true,
-    "image": "/assets/whey-isolate-gallery.webp",
-    "imagePanel": 0,
+    "image": "/assets/studio-protein.webp",
     "gallery": [
       {
-        "src": "/assets/whey-isolate-gallery.webp",
-        "panel": 0,
-        "label": "Concept artwork",
-        "alt": "Whey Isolate concept packaging — front product view"
+        "src": "/assets/studio-protein.webp",
+        "label": "Category studio image",
+        "alt": "Illustrative protein category still life. Sample listing; this is not verified manufacturer packaging.",
+        "width": 1280,
+        "height": 1280
       }
     ],
     "eyebrow": "CURATED / 002",
@@ -191,7 +191,9 @@
     "inventoryConfirmed": false,
     "priceConfirmed": false,
     "labelVerified": false,
-    "caffeineVerified": false
+    "caffeineVerified": false,
+    "imageDetail": "/assets/studio-protein.webp",
+    "illustrativeImage": true
   },
   {
     "id": "sample-creatine",
@@ -210,14 +212,14 @@
     "isOwn": false,
     "isSample": true,
     "isFeatured": true,
-    "image": "/assets/creatine-gallery.webp",
-    "imagePanel": 0,
+    "image": "/assets/studio-creatine.webp",
     "gallery": [
       {
-        "src": "/assets/creatine-gallery.webp",
-        "panel": 0,
-        "label": "Concept artwork",
-        "alt": "Creatine concept packaging — front product view"
+        "src": "/assets/studio-creatine.webp",
+        "label": "Category studio image",
+        "alt": "Illustrative creatine category still life. Sample listing; this is not verified manufacturer packaging.",
+        "width": 1280,
+        "height": 1280
       }
     ],
     "eyebrow": "CURATED / 003",
@@ -227,7 +229,9 @@
     "inventoryConfirmed": false,
     "priceConfirmed": false,
     "labelVerified": false,
-    "caffeineVerified": false
+    "caffeineVerified": false,
+    "imageDetail": "/assets/studio-creatine.webp",
+    "illustrativeImage": true
   },
   {
     "id": "sample-amino",
@@ -246,14 +250,14 @@
     "isOwn": false,
     "isSample": true,
     "isFeatured": true,
-    "image": "/assets/amino-gallery.webp",
-    "imagePanel": 0,
+    "image": "/assets/studio-aminos.webp",
     "gallery": [
       {
-        "src": "/assets/amino-gallery.webp",
-        "panel": 0,
-        "label": "Concept artwork",
-        "alt": "Essential Aminos concept packaging — front product view"
+        "src": "/assets/studio-aminos.webp",
+        "label": "Category studio image",
+        "alt": "Illustrative aminos category still life. Sample listing; this is not verified manufacturer packaging.",
+        "width": 1280,
+        "height": 1280
       }
     ],
     "eyebrow": "CURATED / 004",
@@ -263,7 +267,9 @@
     "inventoryConfirmed": false,
     "priceConfirmed": false,
     "labelVerified": false,
-    "caffeineVerified": false
+    "caffeineVerified": false,
+    "imageDetail": "/assets/studio-aminos.webp",
+    "illustrativeImage": true
   },
   {
     "id": "sample-vitamins",
@@ -282,14 +288,14 @@
     "isOwn": false,
     "isSample": true,
     "isFeatured": false,
-    "image": "/assets/vitamins-gallery.webp",
-    "imagePanel": 0,
+    "image": "/assets/studio-vitamins.webp",
     "gallery": [
       {
-        "src": "/assets/vitamins-gallery.webp",
-        "panel": 0,
-        "label": "Concept artwork",
-        "alt": "Daily Essentials concept packaging — front product view"
+        "src": "/assets/studio-vitamins.webp",
+        "label": "Category studio image",
+        "alt": "Illustrative vitamins category still life. Sample listing; this is not verified manufacturer packaging.",
+        "width": 1280,
+        "height": 1280
       }
     ],
     "eyebrow": "CURATED / 005",
@@ -299,7 +305,9 @@
     "inventoryConfirmed": false,
     "priceConfirmed": false,
     "labelVerified": false,
-    "caffeineVerified": false
+    "caffeineVerified": false,
+    "imageDetail": "/assets/studio-vitamins.webp",
+    "illustrativeImage": true
   },
   {
     "id": "sample-fat-burner",
@@ -318,14 +326,14 @@
     "isOwn": false,
     "isSample": true,
     "isFeatured": false,
-    "image": "/assets/fat-burner-gallery.webp",
-    "imagePanel": 0,
+    "image": "/assets/studio-thermogenic.webp",
     "gallery": [
       {
-        "src": "/assets/fat-burner-gallery.webp",
-        "panel": 0,
-        "label": "Concept artwork",
-        "alt": "Thermogenic concept packaging — front product view"
+        "src": "/assets/studio-thermogenic.webp",
+        "label": "Category studio image",
+        "alt": "Illustrative fat burners category still life. Sample listing; this is not verified manufacturer packaging.",
+        "width": 1280,
+        "height": 1280
       }
     ],
     "eyebrow": "CURATED / 006",
@@ -335,6 +343,8 @@
     "inventoryConfirmed": false,
     "priceConfirmed": false,
     "labelVerified": false,
-    "caffeineVerified": false
+    "caffeineVerified": false,
+    "imageDetail": "/assets/studio-thermogenic.webp",
+    "illustrativeImage": true
   }
 ]
