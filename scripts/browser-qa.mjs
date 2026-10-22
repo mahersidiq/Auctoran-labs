@@ -92,7 +92,7 @@ try{
   await page.setViewportSize({width,height:width<600?844:1000});
   for(const [name,path] of [['homepage','/'],['fortivor','/product/fortivor-pre-workout'],['catalog','/shop'],['stack','/build-your-stack']]){
    await go(path);await page.evaluate(()=>document.fonts.ready);await readyImages();
-   await page.screenshot({path:`screenshots/studio-${name}-${width}.jpg`,type:'jpeg',quality:80,fullPage:false});
+   await page.screenshot({path:`screenshots/refresh-${name}-${width}.jpg`,type:'jpeg',quality:80,fullPage:false});
    const data=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,broken:[...document.images].filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.src),h1:document.querySelectorAll('h1').length}));
    assert.ok(data.scrollWidth<=width,`${name} at ${width}: overflow ${data.scrollWidth}`);assert.equal(data.h1,1);assert.deepEqual(data.broken,[]);
    if(name==='homepage'){const ctas=await page.locator('.campaign-actions').boundingBox();assert.ok(ctas.y+ctas.height<= (width<600?844:1000),`Hero CTAs below fold ${width}`);}
@@ -100,8 +100,8 @@ try{
   }
  }
  results.push({name:'Responsive screenshots, no horizontal overflow, hero CTAs above fold: 1440/1024/390/430',status:'passed',responsive});
- await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/studio-homepage-desktop-full.jpg',type:'jpeg',quality:80,fullPage:true});
- await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/studio-fortivor-mobile-full.jpg',type:'jpeg',quality:80,fullPage:true});
+ await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/refresh-homepage-desktop-full.jpg',type:'jpeg',quality:80,fullPage:true});
+ await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/refresh-fortivor-mobile-full.jpg',type:'jpeg',quality:80,fullPage:true});
  for(const [width,label] of [[1440,'desktop'],[390,'mobile']]){
   await page.setViewportSize({width,height:width<600?844:1000});await go('/product/fortivor-pre-workout');
   await page.getByRole('button',{name:'View Supplement Facts',exact:true}).click();await readyImages();

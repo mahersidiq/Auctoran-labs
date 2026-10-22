@@ -1,0 +1,334 @@
+{
+  "testedAt": "2026-10-22T05:18:39.790Z",
+  "engine": "Chromium",
+  "base": "http://localhost:4174",
+  "renders": [
+    {
+      "page": "homepage",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "catalog",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "fortivor",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "protein",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "creatine",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "aminos",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "vitamins",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "thermogenic",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "about",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "stack",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "shipping",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "returns",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "privacy",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "terms",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "contact",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "empty-bag",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "homepage",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "catalog",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "fortivor",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "protein",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "creatine",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "aminos",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "vitamins",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "thermogenic",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "about",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "stack",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "shipping",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "returns",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "privacy",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "terms",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "contact",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "empty-bag",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "homepage",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "catalog",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "fortivor",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "protein",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "creatine",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "aminos",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "vitamins",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "thermogenic",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "about",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "stack",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "shipping",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "returns",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "privacy",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "terms",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "contact",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "empty-bag",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "homepage",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "catalog",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "fortivor",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "protein",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "creatine",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "aminos",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "vitamins",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "thermogenic",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "about",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "stack",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "shipping",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "returns",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "privacy",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "terms",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "contact",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "empty-bag",
+      "width": 430,
+      "status": "passed"
+    }
+  ],
+  "checks": [
+    "All 16 customer routes at four widths; visible headings/navigation, bounded product images, no legacy media, missing assets or horizontal overflow",
+    "All six photographic category tiles open the correct filtered catalog",
+    "Customer care navigation changes route and active state correctly",
+    "Mobile facts zoom genuinely enlarges the label and Escape closes it"
+  ],
+  "errors": []
+}

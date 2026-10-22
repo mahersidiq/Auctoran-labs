@@ -20,7 +20,7 @@ With no settings it runs in **demo mode**: everything works, but no payment is t
 
 ## Product presentation
 
-The latest Fortivor studio imagery, clear shopping labels, responsive screenshots and validation are documented in [product presentation](docs/PRODUCT_PRESENTATION.md).
+The latest site-wide photography, corrected Fortivor framing, catalog/product pages, About and customer care layouts are documented in [visual refresh](docs/VISUAL_REFRESH.md). Approved formula sources and outstanding label details remain in [product presentation](docs/PRODUCT_PRESENTATION.md).
 
 ## V4 implementation
 
