@@ -174,10 +174,10 @@
     "isOwn": true,
     "isSample": true,
     "isFeatured": true,
-    "image": "/assets/collection-protein.webp",
+    "image": "/assets/collection-protein-studio.webp",
     "gallery": [
       {
-        "src": "/assets/collection-protein.webp",
+        "src": "/assets/collection-protein-studio.webp",
         "label": "Front design",
         "alt": "Auctoran Labs Whey Isolate front packaging design, with a black tub, bronze typography and architectural arches. Design concept.",
         "width": 1280,
@@ -192,7 +192,7 @@
     "priceConfirmed": false,
     "labelVerified": false,
     "caffeineVerified": false,
-    "imageDetail": "/assets/collection-protein.webp",
+    "imageDetail": "/assets/collection-protein-studio.webp",
     "isConcept": true,
     "imageKind": "packaging-design-concept"
   },
@@ -213,10 +213,10 @@
     "isOwn": true,
     "isSample": true,
     "isFeatured": true,
-    "image": "/assets/collection-creatine.webp",
+    "image": "/assets/collection-creatine-studio.webp",
     "gallery": [
       {
-        "src": "/assets/collection-creatine.webp",
+        "src": "/assets/collection-creatine-studio.webp",
         "label": "Front design",
         "alt": "Auctoran Labs Creatine front packaging design, with a black tub, bronze typography and architectural arches. Design concept.",
         "width": 1280,
@@ -231,7 +231,7 @@
     "priceConfirmed": false,
     "labelVerified": false,
     "caffeineVerified": false,
-    "imageDetail": "/assets/collection-creatine.webp",
+    "imageDetail": "/assets/collection-creatine-studio.webp",
     "isConcept": true,
     "imageKind": "packaging-design-concept"
   },
@@ -252,10 +252,10 @@
     "isOwn": true,
     "isSample": true,
     "isFeatured": true,
-    "image": "/assets/collection-aminos.webp",
+    "image": "/assets/collection-aminos-studio.webp",
     "gallery": [
       {
-        "src": "/assets/collection-aminos.webp",
+        "src": "/assets/collection-aminos-studio.webp",
         "label": "Front design",
         "alt": "Auctoran Labs Essential Aminos front packaging design, with a black tub, bronze typography and architectural arches. Design concept.",
         "width": 1280,
@@ -270,7 +270,7 @@
     "priceConfirmed": false,
     "labelVerified": false,
     "caffeineVerified": false,
-    "imageDetail": "/assets/collection-aminos.webp",
+    "imageDetail": "/assets/collection-aminos-studio.webp",
     "isConcept": true,
     "imageKind": "packaging-design-concept"
   },
@@ -291,10 +291,10 @@
     "isOwn": true,
     "isSample": true,
     "isFeatured": false,
-    "image": "/assets/collection-vitamins.webp",
+    "image": "/assets/collection-vitamins-studio.webp",
     "gallery": [
       {
-        "src": "/assets/collection-vitamins.webp",
+        "src": "/assets/collection-vitamins-studio.webp",
         "label": "Front design",
         "alt": "Auctoran Labs Daily Essentials front packaging design, with a black tub, bronze typography and architectural arches. Design concept.",
         "width": 1280,
@@ -309,7 +309,7 @@
     "priceConfirmed": false,
     "labelVerified": false,
     "caffeineVerified": false,
-    "imageDetail": "/assets/collection-vitamins.webp",
+    "imageDetail": "/assets/collection-vitamins-studio.webp",
     "isConcept": true,
     "imageKind": "packaging-design-concept"
   },
@@ -330,10 +330,10 @@
     "isOwn": true,
     "isSample": true,
     "isFeatured": false,
-    "image": "/assets/collection-thermogenic.webp",
+    "image": "/assets/collection-thermogenic-studio.webp",
     "gallery": [
       {
-        "src": "/assets/collection-thermogenic.webp",
+        "src": "/assets/collection-thermogenic-studio.webp",
         "label": "Front design",
         "alt": "Auctoran Labs Thermogenic front packaging design, with a black tub, bronze typography and architectural arches. Design concept.",
         "width": 1280,
@@ -348,7 +348,7 @@
     "priceConfirmed": false,
     "labelVerified": false,
     "caffeineVerified": false,
-    "imageDetail": "/assets/collection-thermogenic.webp",
+    "imageDetail": "/assets/collection-thermogenic-studio.webp",
     "isConcept": true,
     "imageKind": "packaging-design-concept"
   }

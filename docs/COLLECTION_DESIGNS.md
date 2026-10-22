@@ -6,13 +6,13 @@ The five unbranded category containers have been replaced with finished Auctoran
 
 | Product | Desktop image | Mobile image |
 | --- | --- | --- |
-| Whey Isolate | `collection-protein.webp` | `collection-protein-mobile.webp` |
-| Creatine | `collection-creatine.webp` | `collection-creatine-mobile.webp` |
-| Essential Aminos | `collection-aminos.webp` | `collection-aminos-mobile.webp` |
-| Daily Essentials | `collection-vitamins.webp` | `collection-vitamins-mobile.webp` |
-| Thermogenic | `collection-thermogenic.webp` | `collection-thermogenic-mobile.webp` |
+| Whey Isolate | `collection-protein-studio.webp` | `collection-protein-studio-mobile.webp` |
+| Creatine | `collection-creatine-studio.webp` | `collection-creatine-studio-mobile.webp` |
+| Essential Aminos | `collection-aminos-studio.webp` | `collection-aminos-studio-mobile.webp` |
+| Daily Essentials | `collection-vitamins-studio.webp` | `collection-vitamins-studio-mobile.webp` |
+| Thermogenic | `collection-thermogenic-studio.webp` | `collection-thermogenic-studio-mobile.webp` |
 
-All ten files are in `public/assets/`. Each product has its own legible name and classification, Auctoran mark, matte black label, bronze architectural arches/columns and glossy black lid. Each image shows one complete tub in a dark studio presentation. Desktop WebPs are 1280×1280 (195–221 KB); mobile WebPs are 640×640 (55–63 KB). Original image generations are retained outside the repository.
+All ten files are in `public/assets/`. Each product has its own legible name and classification, Auctoran mark, matte black label, bronze architectural arches/columns and glossy black lid. Each image shows one complete tub in a dark studio presentation. Desktop WebPs are 1280×1280 (167–176 KB); mobile WebPs are 640×640 (48–53 KB). Their backgrounds now share Fortivor’s charcoal studio, cool silver halo and smooth dark floor. See [inclusive imagery and gallery improvements](INCLUSIVE_IMAGERY.md). Original image generations are retained outside the repository.
 
 The references informed visual design only. Their Fortivor name, formula, serving size, usage directions, certification/testing badges, barcode and QR code were not copied to these products. No new flavors, serving counts, weights or ingredient amounts were invented.
 
