@@ -30,7 +30,7 @@ try{
   await go('/build-your-stack');await page.getByRole('button',{name:/03 Training Performance/}).click();
   await page.getByRole('button',{name:'CONTINUE',exact:true}).click();await page.locator('#stack-preview').check();await page.selectOption('#stack-budget','10000');
   await page.getByRole('button',{name:'SEE MY SELECTION'}).click();assert.equal(await page.locator('.stack-result').count(),1);
-  assert.match(await page.locator('.stack-result').innerText(),/300 mg caffeine/);
+  assert.match(await page.locator('.stack-result').innerText(),/355 mg caffeine/);
   await page.getByRole('button',{name:'Increase Fortivor stack quantity',exact:true}).click();assert.match(await page.locator('.stack-checkout').innerText(),/\$99.98/);
   await page.getByRole('button',{name:'ADD SELECTED TO DEMO BAG'}).click();assert.match(await page.locator('.cart-drawer.active').innerText(),/Fortivor/);await closeBag();
  });
@@ -62,12 +62,12 @@ try{
   assert.equal(await page.getByRole('button',{name:'TRY DEMO CHECKOUT'}).isEnabled(),true);assert.ok(JSON.parse(await page.evaluate(()=>localStorage.getItem('auctoran-cart-v1'))).length>0);await page.unroute('**/api/checkout');
  });
  await check('Gallery thumbnails, zoom, Escape, swipe and mobile sticky purchase visibility',async()=>{
-  await go('/product/fortivor-pre-workout');assert.equal(await page.locator('.detail-image-row button').count(),3);
+  await go('/product/fortivor-pre-workout');assert.equal(await page.locator('.detail-image-row button').count(),2);
   assert.equal(await page.locator('.detail-image-row').getByText('Nutrition facts').count(),0);
-  await page.getByRole('button',{name:'View Design detail',exact:true}).click();assert.match(await page.locator('.gallery-caption').innerText(),/Enlarged/);
-  await page.locator('.detail-gallery-image').click();assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),true);await page.keyboard.press('Escape');assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),false);
+  await page.getByRole('button',{name:'View Supplement Facts',exact:true}).click();assert.match(await page.locator('.gallery-caption').innerText(),/Supplement Facts/);
+  await page.locator('.detail-gallery-image').click();assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),true);assert.match(await page.locator('.zoom-toolbar p').innerText(),/Supplement Facts/);await page.keyboard.press('Escape');assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),false);
   await page.locator('.detail-gallery-image').dispatchEvent('touchstart',{changedTouches:[{identifier:1,clientX:300,clientY:200}]});await page.locator('.detail-gallery-image').dispatchEvent('touchend',{changedTouches:[{identifier:1,clientX:100,clientY:205}]});
-  assert.equal(await page.getByRole('button',{name:'View Training',exact:true}).getAttribute('aria-pressed'),'true');
+  assert.equal(await page.getByRole('button',{name:'View Front view',exact:true}).getAttribute('aria-pressed'),'true');
   await page.locator('#primary-purchase').scrollIntoViewIfNeeded();await page.waitForTimeout(100);assert.equal(await page.locator('.mobile-purchase').isVisible(),false);
   await page.locator('#product-faq').scrollIntoViewIfNeeded();await page.waitForTimeout(100);assert.equal(await page.locator('.mobile-purchase').isVisible(),true);
  });
@@ -102,6 +102,11 @@ try{
  results.push({name:'Responsive screenshots, no horizontal overflow, hero CTAs above fold: 1440/1024/390/430',status:'passed',responsive});
  await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/studio-homepage-desktop-full.jpg',type:'jpeg',quality:80,fullPage:true});
  await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/studio-fortivor-mobile-full.jpg',type:'jpeg',quality:80,fullPage:true});
+ for(const [width,label] of [[1440,'desktop'],[390,'mobile']]){
+  await page.setViewportSize({width,height:width<600?844:1000});await go('/product/fortivor-pre-workout');
+  await page.getByRole('button',{name:'View Supplement Facts',exact:true}).click();await readyImages();
+  await page.screenshot({path:`screenshots/flat-facts-${label}.jpg`,type:'jpeg',quality:85,fullPage:false});
+ }
  assert.deepEqual(errors,[]);results.push({name:'No browser JavaScript exceptions',status:'passed'});
  await fs.writeFile('docs/browser-results.json',JSON.stringify({testedAt:new Date().toISOString(),engine:'Chromium',base,results,errors},null,2));
  console.log(`Completed ${results.length} checks; ${responsive.length} responsive page renders.`);

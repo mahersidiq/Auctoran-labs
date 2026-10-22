@@ -8,9 +8,9 @@
     "category": "Pre-Workout",
     "categoryKey": "pre-workout",
     "goal": "Energy & Focus",
-    "description": "Our signature pre-workout. Designed for the preparation that comes before your training.",
-    "details": "Fortivor is Auctoran Labs’ signature pre-workout. The new Roman warrior packaging is shown in a studio concept rendering. Final price, availability, Supplement Facts and directions will be confirmed before sales open.",
-    "size": "450 g · 25 servings shown",
+    "description": "Premium pre-workout. Blue Raspberry Watermelon. A formula built around clearly stated ingredient amounts.",
+    "details": "Fortivor combines L-citrulline, beta-alanine, betaine anhydrous, taurine, L-tyrosine, Alpha-GPC, theobromine and caffeine sources totaling approximately 355 mg. The flavor is Blue Raspberry Watermelon. Serving size and usage directions are awaiting confirmation.",
+    "size": "450 g · serving size awaiting confirmation",
     "flavor": "Blue Raspberry Watermelon",
     "priceCents": 4999,
     "compareAtCents": null,
@@ -22,19 +22,16 @@
     "gallery": [
       {
         "src": "/assets/fortivor-studio-front.webp",
-        "label": "Product view",
-        "alt": "New Fortivor packaging concept, full tub in a dark studio spotlight"
+        "label": "Front view",
+        "alt": "Corrected Fortivor front view with the approved warrior artwork"
       },
       {
-        "src": "/assets/fortivor-studio-front.webp",
-        "label": "Design detail",
-        "alt": "Enlarged view of the same Fortivor gold lettering and Roman warrior design",
-        "focus": "detail"
-      },
-      {
-        "src": "/assets/deadlift-editorial.webp",
-        "label": "Training",
-        "alt": "Auctoran training campaign"
+        "src": "/assets/fortivor-supplement-facts.svg",
+        "label": "Supplement Facts",
+        "alt": "Supplement Facts reproduced from the supplied black-and-gold label. The shown 18 g serving size is awaiting correction and is not approved dosing guidance.",
+        "kind": "label",
+        "width": 1200,
+        "height": 1400
       }
     ],
     "eyebrow": "AUCTORAN LABS PRE-WORKOUT",
@@ -42,32 +39,62 @@
     "formula": [
       {
         "name": "L-Citrulline",
-        "amount": "8,000 mg"
+        "amount": "8,000 mg",
+        "amountMg": 8000
       },
       {
         "name": "Beta-Alanine",
-        "amount": "3,200 mg"
+        "amount": "3,200 mg",
+        "amountMg": 3200
       },
       {
-        "name": "Caffeine",
-        "amount": "300 mg"
+        "name": "Betaine Anhydrous",
+        "amount": "2,500 mg",
+        "amountMg": 2500
       },
       {
-        "name": "Alpha-GPC",
-        "amount": "200 mg"
+        "name": "Taurine",
+        "amount": "2,000 mg",
+        "amountMg": 2000
       },
       {
-        "name": "L-Theanine",
-        "amount": "100 mg"
+        "name": "L-Tyrosine",
+        "amount": "1,500 mg",
+        "amountMg": 1500
+      },
+      {
+        "name": "Alpha-GPC (50%)",
+        "amount": "300 mg",
+        "amountMg": 300
+      },
+      {
+        "name": "Theobromine",
+        "amount": "300 mg",
+        "amountMg": 300
+      },
+      {
+        "name": "Caffeine Anhydrous",
+        "amount": "300 mg",
+        "amountMg": 300
+      },
+      {
+        "name": "Guarana Extract (22% Caffeine)",
+        "amount": "250 mg",
+        "amountMg": 250
+      },
+      {
+        "name": "Sodium (as Sodium Chloride)",
+        "amount": "300 mg",
+        "amountMg": 300
       }
     ],
-    "warning": "Contains 300 mg caffeine per stated serving in the supplied concept. For adults 18+ only. Do not combine with other caffeine or stimulant products. Not for children, pregnancy or nursing. Consult a qualified healthcare professional before use, especially with medications, medical conditions or caffeine sensitivity. Follow the approved label; directions are pending final review.",
+    "warning": "Approximately 355 mg total caffeine per serving, calculated from the two labeled caffeine sources. Also contains theobromine. For adults 18+ only. Do not combine with other caffeine or stimulant products. Not for children, pregnancy or nursing. Consult a qualified healthcare professional before use, especially with medications, medical conditions or caffeine sensitivity. Use only according to the approved directions.",
     "priceConfirmed": false,
     "labelVerified": false,
     "inventoryConfirmed": false,
     "inventoryQuantity": null,
-    "caffeineMg": 300,
-    "caffeineVerified": false,
+    "caffeineMg": 355,
+    "caffeineVerified": true,
     "servings": 25,
     "stimulant": "caffeinated",
     "matchingGoals": [
@@ -78,13 +105,57 @@
     "inStock": false,
     "packagingRevision": "roman-warrior-2026-10",
     "packagingConcept": true,
-    "formulaRevisionPending": true,
+    "formulaRevisionPending": false,
     "previousPackagingDetails": {
       "flavor": "Sour Cherry Blitz",
       "servings": 30,
       "size": "420 g · 30 servings"
     },
-    "packagingDetailsConfirmed": false
+    "packagingDetailsConfirmed": true,
+    "factsVerified": true,
+    "directionsVerified": false,
+    "servingSize": "Awaiting confirmation",
+    "servingSizeGrams": 18,
+    "stimulantVerified": true,
+    "caffeineSources": [
+      {
+        "name": "Caffeine Anhydrous",
+        "amountMg": 300,
+        "caffeineFraction": 1
+      },
+      {
+        "name": "Guarana Extract",
+        "amountMg": 250,
+        "caffeineFraction": 0.22
+      }
+    ],
+    "caffeineNote": "Approximately 355 mg total caffeine per serving, calculated from 300 mg caffeine anhydrous plus 55 mg from 250 mg guarana extract standardized to 22% caffeine.",
+    "otherIngredients": [
+      "Citric Acid",
+      "Natural & Artificial Flavors",
+      "Silicon Dioxide",
+      "Sucralose",
+      "Acesulfame Potassium",
+      "Calcium Silicate"
+    ],
+    "labelSource": "Ingredient amounts transcribed from the product image and confirmed by the owner; owner-provided description confirms 355 mg total caffeine; Blue Raspberry Watermelon flavor retained as requested. Serving size is unresolved.",
+    "labelConsistencyIssues": [
+      {
+        "kind": "serving-mass",
+        "listedIngredientsMg": 18650,
+        "declaredServingSizeMg": 18000,
+        "message": "Listed ingredients total 18.65 g before other ingredients, exceeding the declared 18 g serving. Owner correction requested; supplied amounts retained."
+      }
+    ],
+    "supplementFactsText": "Serving size: awaiting confirmation. The supplied label shows 25 servings per container; the final serving count requires confirmation. Declared formula amounts: L-Citrulline 8,000 mg; Beta-Alanine 3,200 mg; Betaine Anhydrous 2,500 mg; Taurine 2,000 mg; L-Tyrosine 1,500 mg; Alpha-GPC (50%) 300 mg; Theobromine 300 mg; Caffeine Anhydrous 300 mg; Guarana Extract (22% Caffeine) 250 mg; Sodium (as Sodium Chloride) 300 mg. Other Ingredients: Citric Acid, Natural & Artificial Flavors, Silicon Dioxide, Sucralose, Acesulfame Potassium, Calcium Silicate.",
+    "supplementFactsImage": "/assets/fortivor-supplement-facts.svg",
+    "sourceLabel": {
+      "servingSize": "1 Scoop (18 g)",
+      "servings": 25
+    },
+    "flavorName": "Blue Raspberry Watermelon",
+    "servingSizeVerified": false,
+    "servingsVerified": false
   },
   {
     "id": "sample-whey-isolate",
