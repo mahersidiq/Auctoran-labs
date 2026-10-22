@@ -19,9 +19,10 @@ test('caffeine includes guarana and unresolved serving mass cannot imply an appr
  assert.equal(p.directionsVerified,false);assert.equal(p.suggestedUse,undefined);
 });
 test('gallery preserves the original packaging and distinguishes campaign artwork from label information',async()=>{
- assert.equal(p.gallery.length,3);
+ assert.equal(p.gallery.length,2);
  assert.equal(p.gallery[0].src,'/assets/fortivor-studio-front.webp');
- assert.deepEqual(p.gallery.slice(1).map(g=>g.kind),['campaign','campaign']);
- assert.deepEqual(p.gallery.map(g=>g.label),['Front view','Flavor campaign','Training campaign']);
+ assert.deepEqual(p.gallery.slice(1).map(g=>g.kind),['campaign']);
+ assert.deepEqual(p.gallery.map(g=>g.label),['Front view','Flavor campaign']);
+ assert.ok(p.gallery.every(g=>!g.src.includes('campaign-partners')));
  for(const photo of p.gallery)assert.ok((await readFile(new URL('../public'+photo.src,import.meta.url))).length>0);
 });

@@ -1,251 +1,296 @@
-/* Fortivor: one product, warm bronze, cool shadows, people doing the work. */
-:root { --black:#111315; --ink:#191b1e; --cream:#f2f0e9; --gold:#c9a574; --house-muted:#626369; --house-line:#d6d4cd; --blue:#7ac3e6; }
-.notice-strip { background:#111315; color:#e3ded3; }
-.site-header { background:#f5f3edf5; color:#191b1e; }
+/* Fortivor: product first. Heavy type, clear amounts, and a direct route to the tub. */
+:root { --black:#0e1012; --ink:#202124; --cream:#f2f0e9; --gold:#d2af79; --house-line:#d7d1c6; --house-muted:#606167; }
+.site-header { background:#111315; color:#f3f0e7; border-bottom:1px solid #ffffff24; }
+.brand-symbol { color:#cfac75; }
 .main-nav { gap:30px; }
+.main-nav a:hover { color:#e1bc83; }
 .header-actions { gap:22px; }
-.header-shop { display:inline-flex; align-items:center; gap:14px; font-size:9px; font-weight:800; letter-spacing:.08em; min-height:44px; }
-.btn { border-radius:0; }
-.btn.dark-btn { background:#171a1d; }
+.header-shop { display:inline-flex; align-items:center; gap:14px; min-height:44px; font-size:10px; font-weight:800; letter-spacing:.06em; }
+.cart-counter { color:#e5c18b; }
+.notice-strip { background:#c8a36c; color:#171511; font-size:8px; letter-spacing:.1em; }
+.notice-strip .notice-middle { color:#171511; }
+.preview-strip { background:#e8e2d5; color:#534c40; }
+.btn { border-radius:0; font-size:11px; letter-spacing:.055em; }
+.btn.bronze { background:#d5b17a; color:#151310; }
+.btn.bronze:hover { background:#e7c999; }
+.btn.dark-btn { background:#171a1d; color:#f4f1e8; }
 .btn.dark-btn:hover { background:#343a40; }
-.btn.bronze { background:#d3ae79; color:#141619; }
-.btn.bronze:hover { background:#e4c89e; }
-.preview-strip { background:#e9e5db; color:#545252; }
-.fortivor-home { background:#f2f0e9; color:#191b1e; }
-.fortivor-home h2 { font:600 clamp(45px,5.1vw,78px)/.98 var(--display); letter-spacing:-.012em; }
-.fortivor-home h2 em { font:inherit; font-style:normal; color:#8b7250; }
-.fortivor-home .kicker { font-size:9px; letter-spacing:.14em; }
-.fortivor-hero.campaign-hero { min-height:640px; height:min(760px,52vw); padding:60px 5.5% 75px; background:#101419; }
-.fortivor-hero .house-hero-photo img { object-position:70% 42%; }
-.fortivor-hero .house-hero-photo { width:100%; height:100%; }
-.fortivor-hero .house-hero-photo img { object-position:70% 8%; }
-.fortivor-hero .house-hero-shade { background:linear-gradient(90deg,#070d14ed 0%,#0a1019c7 23%,#0a101954 46%,#0a101908 72%),linear-gradient(0deg,#050a12b3,transparent 35%); }
-.fortivor-hero .house-hero-copy { width:49%; max-width:660px; }
-.fortivor-hero .house-hero-copy h1 { font-size:clamp(98px,10.6vw,168px); line-height:.88; margin:28px 0 27px; letter-spacing:-.025em; }
-.fortivor-hero .house-hero-copy h1 em { color:#d5b382; }
-.fortivor-hero .house-hero-copy > p:not(.kicker) { font-size:13px; color:#eeece7; line-height:1.85; }
-.fortivor-hero .house-hero-copy > .kicker { color:#e7d6b9; font-size:9px; letter-spacing:.15em; }
-.fortivor-hero .campaign-actions { gap:20px; margin-top:27px; }
-.fortivor-hero .campaign-actions .btn { min-width:205px; }
-.fortivor-hero .hero-collection-link { font-size:8px; letter-spacing:.08em; }
-.hero-signoff { display:block; margin-top:24px; font-size:8px; letter-spacing:.17em; color:#d4d0c7; }
-.hero-product-link { position:absolute; z-index:2; right:4%; bottom:67px; display:flex; align-items:center; gap:16px; padding:9px 19px 9px 9px; max-width:365px; background:#10151dce; color:#f4f1e9; border:1px solid #c6ad8047; backdrop-filter:blur(12px); transition:background .2s; }
-.hero-product-link:hover { background:#1d252fee; }
-.hero-product-link > img { width:81px; height:85px; object-fit:cover; }
-.hero-product-link > span { display:grid; gap:5px; }
-.hero-product-link small { font-size:7px; letter-spacing:.15em; color:#d9bd93; }
-.hero-product-link strong { font:600 31px/.95 var(--display); letter-spacing:.03em; }
-.hero-product-link span span { font-size:9px; color:#e7e3da; }
-.hero-product-link > svg { margin-left:8px; color:#d5b382; }
-.hero-edition { position:absolute; inset:auto 4% 22px; display:flex; justify-content:space-between; color:#e1ded6; font-size:7px; letter-spacing:.16em; }
-.fortivor-manifesto { display:flex; justify-content:space-around; gap:20px; padding:22px 4%; background:#14181e; border-top:1px solid #ffffff29; color:#d0d2d2; font-size:9px; letter-spacing:.15em; }
-.fortivor-manifesto span:nth-child(2) { color:#d8b684; }
-.fortivor-feature { display:grid; grid-template-columns:1fr 1fr; }
-.fortivor-pack { position:relative; min-width:0; overflow:hidden; background:#090c10; }
-.fortivor-pack > a { display:block; height:100%; }
-.fortivor-pack img { width:100%; height:100%; min-height:610px; object-fit:cover; }
-.image-index,.pack-caption { position:absolute; z-index:1; color:#d7c6ab; font-size:8px; letter-spacing:.15em; }
-.image-index { top:27px; left:30px; }
-.pack-caption { bottom:25px; left:30px; right:25px; line-height:1.7; }
-.fortivor-feature-copy { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:70px 12%; }
-.fortivor-feature-copy .kicker { color:#786344; margin-bottom:21px; }
-.fortivor-feature-copy h2 { font-size:clamp(48px,4.6vw,70px); margin-bottom:27px; }
-.feature-intro { font-size:11px; font-weight:800; letter-spacing:.12em; margin-bottom:14px; }
-.fortivor-feature-copy > p:not(.kicker,.feature-intro,.feature-disclosure) { max-width:390px; color:#66676a; font-size:12px; line-height:1.95; }
-.flavor-choice { display:flex; align-items:center; gap:14px; border-block:1px solid #d8d3c9; width:100%; padding:20px 0; margin-top:25px; }
-.flavor-choice > div { display:grid; gap:7px; }
-.flavor-choice small { font-size:8px; letter-spacing:.13em; color:#6a6864; }
-.flavor-choice strong { font-size:11px; }
-.flavor-swatch { width:28px; height:28px; border-radius:50%; background:linear-gradient(135deg,#2e658b 10%,#91c5df 49%,#d98a87 51%,#a84e63); border:3px solid #f2f0e9; box-shadow:0 0 0 1px #aaa091; flex:0 0 auto; }
-.feature-price { display:flex; align-items:baseline; gap:13px; margin:25px 0; }
-.feature-price > strong { font-size:27px; font-weight:600; }
-.feature-price > span { font-size:9px; color:#6b6660; }
-.feature-actions { display:flex; align-items:center; flex-wrap:wrap; gap:12px 20px; }
-.feature-actions .underlined-link { font-size:8px; gap:12px; }
-.feature-disclosure { max-width:400px; font-size:9px; color:#6e6a63; line-height:1.8; margin-top:18px; }
-.training-editorial { padding:88px 5.5% 80px; background:#e9e6dd; }
-.editorial-heading { display:flex; justify-content:space-between; align-items:flex-end; gap:35px; margin-bottom:34px; }
-.editorial-heading .kicker { margin-bottom:15px; color:#6a5b44; }
-.editorial-heading > p { color:#65635f; font-size:12px; line-height:1.9; padding-bottom:4px; }
-.training-grid { display:grid; grid-template-columns:.85fr 1.15fr; gap:25px; }
-.training-grid figure { margin:0; position:relative; overflow:hidden; }
-.training-portrait { aspect-ratio:2/3; }
-.training-grid figure img { width:100%; height:100%; object-fit:cover; transition:transform .6s ease; }
-.training-grid figure:hover img { transform:scale(1.025); }
-.training-grid figcaption { position:absolute; inset:auto 0 0; padding:70px 25px 24px; display:grid; gap:9px; color:#fff; background:linear-gradient(transparent,#101215bd); }
-.training-grid figcaption span { font-size:7px; letter-spacing:.15em; }
-.training-grid figcaption b { font:600 clamp(22px,2.5vw,39px)/1 var(--display); letter-spacing:.015em; }
-.training-right { display:flex; flex-direction:column; gap:25px; min-width:0; }
-.training-right > figure { aspect-ratio:3/2; }
-.editorial-note { flex:1; display:grid; grid-template-columns:auto 1fr; align-content:center; align-items:center; column-gap:25px; padding:32px; background:#181d23; color:#eeeae1; }
-.editorial-asterisk { font-size:75px; line-height:1; color:#d9b47c; }
-.editorial-note > p { font:600 clamp(27px,3.2vw,48px)/1.04 var(--display); }
-.editorial-note .underlined-link { grid-column:2; justify-self:start; margin-top:13px; font-size:8px; gap:20px; color:#d4b17c; }
-.training-editorial .editorial-note { width:100%; max-width:none; margin:0; }
-.training-editorial .editorial-note > p { color:#eeeae1; margin:0; }
-.training-editorial .editorial-asterisk { width:65px; height:65px; color:#d9b47c; }
-.formula-preview { display:grid; grid-template-columns:1fr 1.1fr; gap:8%; padding:90px 6%; background:#12171e; color:#f3eee5; }
-.formula-preview .kicker { color:#c9b085; margin-bottom:17px; }
-.formula-preview h2 em { color:#c6a577; }
-.formula-preview > div:first-child > p:not(.kicker) { max-width:340px; font-size:12px; line-height:1.9; color:#c3c5c6; margin:22px 0 17px; }
-.formula-preview .underlined-link { color:#e1c497; font-size:9px; }
-.formula-preview-values { display:grid; grid-template-columns:repeat(3,1fr); align-items:center; column-gap:16px; }
-.formula-preview-values > div { padding:20px 0; border-block:1px solid #d4b1844d; }
-.formula-preview-values > div > span { display:block; min-height:30px; font-size:7px; letter-spacing:.1em; color:#c3c3c0; line-height:1.7; }
-.formula-preview-values strong { font:600 clamp(65px,7vw,105px)/1.1 var(--display); color:#dfc49a; }
-.formula-preview-values strong span { font-size:.37em; margin-left:3px; }
-.formula-preview-values > p { grid-column:1/-1; align-self:start; font-size:9px; color:#b6b7b6; line-height:1.9; margin-top:14px; }
-.fortivor-flavor { display:grid; grid-template-columns:1.1fr 1fr; background:#e4e7e7; }
-.flavor-photo { min-height:500px; overflow:hidden; }
-.flavor-copy { display:flex; flex-direction:column; justify-content:center; align-items:flex-start; padding:65px 12%; }
-.flavor-copy .kicker { color:#54646f; margin-bottom:20px; }
-.flavor-copy h2 { font-size:clamp(46px,4.6vw,67px); }
-.flavor-copy h2 em { color:#466879; }
-.flavor-copy > p:not(.kicker) { font-size:12px; line-height:1.9; color:#5b6268; margin:25px 0; max-width:350px; }
-.fortivor-faq { background:#f2f0e9; padding:75px 6%; }
-.fortivor-faq h2 { font-size:68px; }
-.fortivor-faq h2 em { color:#8b7250; }
-.fortivor-faq details summary { color:#27292d; }
-.session-cta { position:relative; isolation:isolate; min-height:470px; display:flex; align-items:center; overflow:hidden; padding:60px 6%; background:#131820; color:#fff; }
-.session-cta > div:first-child { position:absolute; inset:0; z-index:-2; }
-.session-cta img { object-position:75% 8%; }
-.session-cta::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#080e17ed,#080e1799 42%,#080e1722); }
-.session-cta .kicker { margin-bottom:19px; color:#d5bb91; }
-.session-cta h2 { font-size:clamp(60px,7.5vw,112px); margin-bottom:27px; }
-.session-cta h2 em { color:#d5b17f; }
-.footer.house-footer { background:#14191f; }
-.house-footer .footer-wordmark { color:#e5dfd4; }
-.house-footer .footer-manifesto p:not(.kicker) { color:#b8bdc2; }
-.house-footer .footer-link-columns a { color:#c4c6c7; }
-.house-footer .footer-disclaimer,.house-footer .footer-bottom { color:#b3b7ba; }
-.house-service-links { background:#e8e5dc; }
-.detail-page,.cart-page,.about-page { background:#f2f0e9; color:#191b1e; }
-.pdp-formula { background:#161c24; }
-.pdp-formula h2 em { color:#d1b17d; }
+.preworkout-home { background:#0e1012; color:#f2f0e9; }
+.preworkout-home h2 { font:600 clamp(44px,5vw,76px)/1.02 var(--display); letter-spacing:-.012em; }
+.preworkout-home h2 em { font:inherit; font-style:normal; color:#d2af79; }
+.preworkout-home .kicker { font-size:10px; letter-spacing:.12em; }
+.preworkout-hero { display:grid; grid-template-columns:1fr 1.05fr; position:relative; isolation:isolate; min-height:660px; padding:38px 5.5% 35px; overflow:hidden; background:#0d0f12; }
+.hero-copy { align-self:center; position:relative; z-index:2; padding-block:40px; }
+.hero-category { font-size:10px; font-weight:700; letter-spacing:.12em; color:#d5c3a6; line-height:1.7; }
+.hero-category > span { color:#7e776c; margin:0 10px; }
+.hero-copy h1 { font:600 clamp(80px,10.8vw,165px)/.95 var(--display); letter-spacing:-.025em; margin:21px 0 10px; color:#f7f3e9; }
+.hero-copy h1 > span { color:#d6b17b; }
+.hero-hook { font:600 clamp(30px,3vw,45px)/1.1 var(--display); color:#d5b27d; margin:0 0 22px; }
+.hero-description { font-size:15px; line-height:1.8; color:#cfceca; }
+.campaign-actions { display:flex; flex-direction:row; align-items:center; flex-wrap:wrap; gap:20px; margin-top:28px; }
+.campaign-actions .btn { min-width:205px; gap:35px; }
+.hero-compare { display:inline-flex; gap:12px; align-items:center; min-height:44px; font-size:12px; font-weight:600; color:#eee8dc; }
+.hero-compare:hover { color:#e2bd84; }
+.hero-price { display:flex; align-items:baseline; gap:12px; margin-top:22px; }
+.hero-price strong { font-size:22px; font-weight:600; }
+.hero-price > span { color:#b8b3aa; font-size:11px; }
+.hero-preview-note { margin-top:12px; max-width:330px; font-size:10px; line-height:1.8; color:#b2b0aa; }
+.hero-packshot { position:relative; min-width:0; display:flex; align-items:center; justify-content:center; }
+.hero-packshot > img { width:112%; max-width:none; height:auto; position:relative; z-index:1; mix-blend-mode:screen; }
+.packshot-backtype { display:none; }
+.flavor-stamp { position:absolute; right:-1%; bottom:12%; z-index:2; border-left:3px solid #d4af75; padding:9px 0 9px 14px; color:#f3e6d1; }
+.flavor-stamp > span { display:block; font-size:8px; letter-spacing:.15em; margin-bottom:6px; color:#e0c7a0; }
+.flavor-stamp > strong { font:600 21px/1.05 var(--display); letter-spacing:.03em; }
+.hero-pack-link { position:absolute; bottom:4px; left:50%; transform:translateX(-50%); display:inline-flex; align-items:center; gap:14px; min-height:44px; white-space:nowrap; font-size:9px; letter-spacing:.08em; color:#d9c5a7; z-index:2; }
+.formula-strip { display:grid; grid-template-columns:repeat(3,1fr) 1.2fr; align-items:center; padding:28px 7%; border-block:1px solid #6b604a; background:#191a1b; }
+.formula-strip > div { display:flex; align-items:center; gap:13px; padding-inline:25px; border-right:1px solid #ffffff29; }
+.formula-strip > div:first-child { padding-left:0; }
+.formula-strip strong { font:600 47px/1 var(--display); color:#e1bd86; white-space:nowrap; }
+.formula-strip strong > span { font-size:22px; margin-left:2px; }
+.formula-strip div > p { font-size:9px; line-height:1.7; letter-spacing:.08em; color:#ece6dc; }
+.formula-strip > p { padding-left:30px; font-size:10px; line-height:1.8; color:#c0bbb2; }
+.product-comparison { padding:76px 6% 64px; background:#f0eee7; color:#242528; }
+.comparison-intro { max-width:900px; }
+.comparison-intro .kicker { color:#735d3e; margin-bottom:17px; }
+.comparison-intro h2 { font-size:clamp(55px,5.6vw,83px); }
+.comparison-intro h2 em { color:#7d6647; }
+.comparison-intro > p:last-child { margin-top:19px; font-size:15px; line-height:1.8; color:#5e6062; }
+.comparison-wins { display:grid; grid-template-columns:1fr 1fr 1.1fr; gap:35px; margin:36px 0 37px; padding-block:27px; border-block:1px solid #c7c1b5; }
+.comparison-wins article > strong { display:block; font:600 87px/.95 var(--display); letter-spacing:-.02em; color:#212327; }
+.comparison-wins article > strong > span { font-size:50px; color:#927044; margin-left:3px; }
+.comparison-wins article > p { font-size:16px; line-height:1.55; margin:12px 0 11px; }
+.comparison-wins article > p > b { font-size:13px; font-weight:500; color:#5c5c59; }
+.comparison-wins article > span { font-size:10px; color:#676158; line-height:1.7; }
+.comparison-wins > aside { align-self:center; border-left:1px solid #c7c1b5; padding:12px 0 12px 35px; }
+.comparison-wins > aside > p { font:600 25px/1.25 var(--display); }
+.comparison-wins aside > span { display:block; font-size:11px; line-height:1.8; color:#62605b; margin-top:10px; }
+.comparison-wins aside > a { display:flex; align-items:center; gap:16px; width:fit-content; min-height:44px; margin-top:8px; font-size:9px; letter-spacing:.06em; font-weight:800; }
+.comparison-help { display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:12px; line-height:1.8; margin-bottom:12px; }
+.comparison-help > span { display:flex; align-items:center; gap:10px; color:#68645d; font-size:10px; }
+.comparison-scroll { width:100%; overflow-x:auto; overscroll-behavior-x:contain; scrollbar-color:#8f744f #e2ded4; border-block:1px solid #bcb4a5; }
+.comparison-scroll:focus-visible { outline:2px solid #715739; outline-offset:4px; }
+.comparison-table { width:100%; min-width:760px; border-collapse:separate; border-spacing:0; text-align:center; }
+.comparison-table caption { text-align:left; padding:14px 13px; font-size:10px; color:#5e5a54; background:#e7e3d9; }
+.comparison-table th,.comparison-table td { padding:22px 15px; border-bottom:1px solid #d4cdbf; }
+.comparison-table thead th { vertical-align:bottom; font-weight:600; width:20%; }
+.comparison-table thead th:first-child { text-align:left; font-size:10px; letter-spacing:.08em; }
+.comparison-table thead strong { display:block; font-size:16px; line-height:1.35; }
+.comparison-table thead small { display:block; margin-top:9px; font-size:10px; line-height:1.6; font-weight:400; color:#66625c; }
+.comparison-table tbody th { text-align:left; font-size:12px; line-height:1.6; font-weight:600; position:sticky; left:0; background:#f0eee7; z-index:1; }
+.comparison-table td { font:600 28px/1.2 var(--display); }
+.comparison-table .our-formula { background:#242321; color:#f0d0a1; border-bottom-color:#746750; }
+.comparison-table thead .our-formula strong { font:600 33px/1 var(--display); text-transform:uppercase; letter-spacing:.025em; }
+.comparison-table thead .our-formula small { color:#d1c4b0; }
+.comparison-pick { display:block; font-size:8px; letter-spacing:.13em; margin-bottom:13px; color:#d2b488; }
+.comparison-note { font-size:11px; line-height:1.85; max-width:1000px; color:#5c5952; margin-top:18px; }
+.comparison-sources { margin-top:16px; border-bottom:1px solid #ccc5b8; }
+.comparison-sources > summary { display:flex; justify-content:space-between; align-items:center; cursor:pointer; min-height:52px; font-size:12px; font-weight:600; list-style:none; }
+.comparison-sources > summary::-webkit-details-marker { display:none; }
+.comparison-sources > div { padding:5px 0 23px; max-width:900px; font-size:12px; line-height:1.9; color:#585953; }
+.comparison-sources ul { margin-block:13px; padding-left:18px; }
+.comparison-sources a { text-decoration:underline; text-underline-offset:3px; }
+.flavor-feature { display:grid; grid-template-columns:1fr 1fr; background:#181b20; color:#eeeae1; }
+.flavor-feature-art { overflow:hidden; min-height:550px; }
+.flavor-feature-art img { width:100%; height:100%; object-fit:cover; }
+.flavor-feature-copy { display:flex; flex-direction:column; align-items:flex-start; justify-content:center; padding:60px 11%; }
+.flavor-feature-copy .kicker { color:#c5ac87; margin-bottom:21px; }
+.flavor-feature-copy h2 { font-size:clamp(49px,4.7vw,70px); }
+.flavor-feature-copy > p:not(.kicker,.feature-disclosure) { font-size:14px; line-height:1.85; color:#c7c7c3; margin-top:22px; max-width:390px; }
+.flavor-line { display:flex; align-items:center; gap:12px; width:100%; padding:22px 0; margin:16px 0 23px; border-bottom:1px solid #ffffff30; }
+.flavor-dot { display:block; width:17px; height:17px; border-radius:50%; background:linear-gradient(135deg,#4e8bad 50%,#c97785 50%); }
+.flavor-line > strong { font-size:12px; font-weight:600; }
+.feature-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px 20px; }
+.feature-actions .btn { font-size:10px; padding-inline:20px; }
+.feature-actions .underlined-link { color:#e1c69c; font-size:10px; gap:15px; }
+.feature-disclosure { font-size:10px; line-height:1.8; color:#c1bbb1; margin-top:17px; }
+.focus-note { display:grid; grid-template-columns:1fr 1fr; column-gap:8%; padding:65px 7%; background:#ded9ce; color:#242528; }
+.focus-note > .kicker { grid-column:1/-1; margin-bottom:20px; color:#6a583e; }
+.focus-note h2 { font-size:clamp(43px,4.5vw,68px); }
+.focus-note h2 em { color:#7b6445; }
+.focus-note > div { padding-top:3px; }
+.focus-note > div > p { font-size:14px; line-height:1.85; margin-bottom:16px; color:#575851; }
+.focus-note .underlined-link { font-size:10px; gap:20px; }
+.real-training { padding:65px 5.5% 55px; background:#ded9ce; color:#26272a; }
+.real-training-heading { display:grid; grid-template-columns:1fr 1fr; align-items:end; gap:15px 50px; margin-bottom:28px; }
+.real-training-heading .kicker { grid-column:1/-1; color:#6a583e; }
+.real-training-heading h2 { font-size:clamp(46px,5vw,74px); }
+.real-training-heading h2 em { color:#7b6445; }
+.real-training-heading > p:last-child { font-size:14px; line-height:1.8; max-width:350px; color:#575851; }
+.real-training-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+.real-training-grid figure { margin:0; }
+.real-training-grid img { width:100%; height:390px; object-fit:cover; }
+.real-training-grid figcaption { font-size:9px; line-height:1.8; color:#635e54; margin-top:9px; }
+.training-photo.monochrome { filter:grayscale(1); }
+.fortivor-faq { background:#f0eee7; color:#242528; padding:65px 7%; }
+.fortivor-faq h2 { font-size:clamp(50px,5vw,74px); }
+.fortivor-faq h2 em { color:#7d6647; }
+.fortivor-faq .kicker { color:#735d3e; }
+.fortivor-faq summary { color:#242528; font-size:14px; }
+.fortivor-faq details > p { font-size:13px; }
+.product-close { display:flex; justify-content:space-between; align-items:center; gap:30px; padding:55px 7%; background:#141719; border-top:1px solid #585044; color:#f2eee5; }
+.product-close .kicker { color:#c8ad85; margin-bottom:10px; }
+.product-close h2 { font-size:clamp(55px,6vw,90px); }
+.product-close p:not(.kicker) { font-size:13px; line-height:1.8; color:#c7c1b7; margin-top:10px; }
+.product-close .btn { min-width:220px; }
+.footer.house-footer { background:#101214; color:#e7e2d7; }
+.house-footer .footer-wordmark { color:#e6dfd2; }
+.house-footer .footer-manifesto p:not(.kicker) { color:#c1beb7; }
+.house-footer .footer-link-columns a { color:#c8c5bd; }
+.house-footer .footer-disclaimer,.house-footer .footer-bottom { color:#b8b5ae; }
+.house-service-links { background:#e3ded2; }
+.house-service-links a small { color:#555a51; }
+.house-service-links a strong { color:#32362f; }
+.detail-page,.cart-page { background:#f2f0e9; color:#202124; }
+.pdp-formula { background:#151a20; }
+.pdp-formula h2 em { color:#d3b17e; }
 .detail-page .pdp-formula-intro h2,.detail-page .interactive-formula summary b { color:#f2eee5; }
 .detail-page .pdp-formula-intro .kicker,.detail-page .interactive-formula summary span,.detail-page .interactive-formula summary strong { color:#d6b986; }
 .detail-page .pdp-formula-intro > p:not(.kicker),.detail-page .interactive-formula details > p,.detail-page .formula-fine { color:#c7cbd0; }
-.detail-page .pdp-caution { background:#242c36; border-color:#647181; color:#e5e7e8; }
+.detail-page .pdp-caution { background:#242c36; border-color:#647181; }
 .detail-page .pdp-formula-intro > .pdp-caution { color:#e5e7e8 !important; }
 .detail-page .pdp-caution strong { color:#e0c18c; }
 .detail-page .interactive-formula { color:#e5e7e8; }
 .detail-page .interactive-formula details { border-color:#647181; }
 .info-updated { color:#64605a; opacity:1; }
-.fortivor-about .brand-hero { background:#151b22; }
-.fortivor-about .brand-hero h1 { font-size:clamp(50px,5vw,77px); }
-.fortivor-about .brand-hero-photo img { object-position:70% center; }
-.fortivor-about .brand-story figure img { aspect-ratio:2/3; object-fit:cover; }
-.fortivor-about .about-testing { background:#e4e7e7; }
-.about-partners { position:relative; min-height:570px; color:white; isolation:isolate; display:flex; align-items:center; padding:70px 6%; overflow:hidden; }
-.about-partners > img { position:absolute; inset:0; z-index:-2; object-position:center; }
-.about-partners::after { content:''; position:absolute; inset:0; z-index:-1; background:linear-gradient(90deg,#0a1119ec,#0a111970 52%,transparent); }
-.about-partners h2 { font-size:clamp(55px,6vw,90px); margin:20px 0 26px; }
-.about-partners h2 em { color:#d6b47f; }
-.gallery-caption { max-width:100%; }
-.detail-image-row { grid-template-columns:repeat(3,minmax(0,1fr)); }
-@media(min-width:1600px) { .fortivor-feature-copy { padding-inline:14%; } }
+.detail-image-row { grid-template-columns:repeat(2,minmax(0,1fr)); max-width:230px; }
+.product-about { background:#f0eee7; color:#242528; }
+.about-product-hero { display:grid; grid-template-columns:1fr 1fr; align-items:center; padding:50px 7%; min-height:580px; background:#111417; color:#f2eee5; }
+.about-product-hero h1 { font:600 clamp(55px,5.6vw,84px)/1.03 var(--display); margin:20px 0; }
+.about-product-hero h1 em { font:inherit; font-style:normal; color:#d3b17b; }
+.about-product-hero .kicker { color:#cbb38d; }
+.about-product-hero p:not(.kicker) { font-size:15px; line-height:1.8; color:#c8c4bc; margin-bottom:26px; }
+.about-product-hero > div:last-child img { width:100%; height:auto; mix-blend-mode:screen; }
+.about-product-story { display:grid; grid-template-columns:1fr 1fr; gap:20px 8%; padding:65px 7%; }
+.about-product-story > .kicker { grid-column:1/-1; color:#6d593c; }
+.about-product-story h2 { font:600 clamp(38px,4vw,60px)/1.05 var(--display); }
+.about-product-story > div > p { font-size:14px; line-height:1.9; color:#5b5a54; margin-bottom:17px; }
+.product-about .about-testing { background:#e2ded3; }
+.product-about .about-testing h2 { font:600 clamp(37px,4vw,60px)/1.05 var(--display); }
+.product-about .about-testing h2 em { font:inherit; font-style:normal; color:#7d6545; }
+.product-about .about-testing p { font-size:14px; line-height:1.9; }
+.care-aside img { width:100%; height:auto; object-fit:contain; }
 @media(max-width:1150px) {
- .main-nav { gap:20px; } .main-nav a { font-size:10px; } .header-shop { display:none; }
- .fortivor-hero.campaign-hero { min-height:610px; }
- .fortivor-hero .house-hero-copy { width:55%; }
- .fortivor-hero .house-hero-copy h1 { font-size:clamp(96px,11.5vw,135px); }
- .fortivor-feature-copy { padding:50px 9%; } .fortivor-pack img { min-height:590px; }
- .formula-preview { gap:5%; padding-inline:5%; }
- .training-grid { gap:18px; } .training-right { gap:18px; } .editorial-note { padding:25px; gap:16px; }
- .editorial-asterisk { font-size:55px; }
+ .header-shop { display:none; } .main-nav { gap:22px; }
+ .preworkout-hero { min-height:610px; padding-inline:5%; }
+ .hero-copy { padding-block:25px; } .hero-description { font-size:14px; }
+ .campaign-actions { gap:10px 18px; } .campaign-actions .btn { min-width:185px; padding-inline:20px; }
+ .flavor-stamp { right:-2%; bottom:15%; } .flavor-stamp > strong { font-size:18px; }
+ .formula-strip { padding-inline:5%; } .formula-strip > div { padding-inline:18px; gap:10px; }
+ .formula-strip strong { font-size:40px; } .formula-strip div > p { font-size:8px; }
+ .comparison-wins { gap:25px; } .comparison-wins > aside { padding-left:25px; }
+ .flavor-feature-copy { padding:45px 9%; } .flavor-feature-art { min-height:530px; }
+ .real-training-grid img { height:320px; }
 }
 @media(max-width:900px) {
  .main-nav { display:none; } .header-shop { display:inline-flex; }
- .fortivor-hero .hero-collection-link { font-size:8px; }
- .hero-product-link { right:4%; bottom:55px; max-width:300px; gap:10px; }
- .hero-product-link > img { width:65px; height:70px; }
- .hero-product-link strong { font-size:26px; }
- .editorial-heading > p { max-width:220px; }
- .fortivor-feature-copy h2 { font-size:49px; }
- .feature-actions { gap:5px; }
+ .hero-category { font-size:9px; } .hero-category > span { margin-inline:5px; }
+ .hero-copy h1 { font-size:clamp(78px,11vw,102px); }
+ .hero-hook { font-size:32px; } .hero-packshot > img { width:119%; }
+ .flavor-stamp { bottom:17%; } .flavor-stamp > strong { font-size:16px; }
+ .formula-strip { grid-template-columns:repeat(3,1fr); }
+ .formula-strip > p { grid-column:1/-1; padding:16px 0 0; text-align:center; }
+ .formula-strip > p br { display:none; } .formula-strip > div:last-of-type { border-right:0; }
+ .comparison-wins { grid-template-columns:1fr 1fr; }
+ .comparison-wins > aside { grid-column:1/-1; display:grid; grid-template-columns:1fr 1fr; border-left:0; border-top:1px solid #c7c1b5; padding:20px 0 0; gap:5px 20px; }
+ .comparison-wins aside > span { margin-top:0; align-self:center; } .comparison-wins aside > a { grid-column:2; margin-top:0; }
+ .real-training-grid img { height:270px; }
 }
 @media(max-width:760px) {
  html { scroll-padding-top:82px; }
  .site-header { height:72px; padding-inline:5%; } .header-actions { gap:5px; } .header-shop { display:none; }
- .notice-strip { height:26px; padding-inline:5%; font-size:7px; }
- .notice-strip > span:last-child { display:none; } .notice-middle { display:block; }
- .preview-strip { min-height:25px; padding:5px 10px; font-size:8px; gap:8px; }
- .fortivor-hero.campaign-hero { display:block; min-height:0; height:650px; padding:45px 6% 0; }
- .fortivor-hero .house-hero-photo { inset:0; width:100%; height:100%; }
- .fortivor-hero .house-hero-photo img { object-position:64% center; }
- .fortivor-hero .house-hero-shade { background:linear-gradient(180deg,#080e16c7 0%,#080e1670 36%,#080e1610 64%,#080e16c7 100%),linear-gradient(90deg,#080e1670,transparent 75%); }
- .fortivor-hero .house-hero-copy { width:100%; max-width:none; }
- .fortivor-hero .house-hero-copy h1 { font-size:clamp(88px,21vw,136px); line-height:.88; margin:20px 0; }
- .fortivor-hero .house-hero-copy > .kicker { font-size:8px; }
- .fortivor-hero .house-hero-copy > p:not(.kicker) { font-size:11px; line-height:1.8; }
- .fortivor-hero .campaign-actions { flex-direction:column; align-items:flex-start; gap:7px; margin-top:20px; }
- .fortivor-hero .campaign-actions .btn { min-width:203px; min-height:49px; padding:16px 20px; }
- .fortivor-hero .hero-collection-link { min-height:38px; }
- .hero-signoff { display:none; }
- .hero-product-link { left:6%; right:auto; bottom:45px; background:#10161edb; padding:7px 14px 7px 7px; max-width:88%; }
- .hero-product-link > img { width:57px; height:63px; }
- .hero-product-link strong { font-size:24px; }
- .hero-product-link span span { font-size:8px; }
- .hero-edition { inset:auto 6% 17px; font-size:6px; }
- .hero-edition span:last-child { display:none; }
- .fortivor-manifesto { gap:15px; padding:17px 5%; justify-content:space-between; font-size:7px; line-height:1.6; letter-spacing:.06em; }
- .fortivor-manifesto span { max-width:30%; } .fortivor-manifesto span:last-child { text-align:right; }
- .fortivor-feature { grid-template-columns:1fr; }
- .fortivor-pack { aspect-ratio:1/1; } .fortivor-pack img { min-height:0; }
- .image-index { top:22px; left:23px; } .pack-caption { left:23px; bottom:21px; font-size:7px; }
- .fortivor-feature-copy { padding:45px 7% 48px; }
- .fortivor-feature-copy h2 { font-size:clamp(51px,12.8vw,74px); }
- .fortivor-feature-copy > p:not(.kicker,.feature-intro,.feature-disclosure) { font-size:12px; }
- .feature-actions { width:100%; gap:8px 20px; } .feature-actions .btn { flex:1 0 190px; }
- .feature-actions .underlined-link { flex:1 0 145px; justify-content:space-between; }
- .feature-disclosure { font-size:9px; }
- .training-editorial { padding:48px 5% 45px; }
- .editorial-heading { display:block; margin-bottom:26px; }
- .editorial-heading h2 { font-size:clamp(44px,11vw,66px); }
- .editorial-heading .kicker { font-size:8px; }
- .editorial-heading > p { margin-top:20px; max-width:none; font-size:11px; }
- .training-grid { grid-template-columns:1fr; gap:15px; }
- .training-portrait { aspect-ratio:4/5; } .training-portrait img { object-position:center 42%; }
- .training-right { gap:15px; }
- .training-grid figcaption { padding:55px 20px 21px; }
- .training-grid figcaption b { font-size:30px; }
- .training-grid figcaption span { font-size:7px; }
- .training-right > figure { aspect-ratio:4/3; }
- .editorial-note { padding:27px 24px; column-gap:21px; min-height:180px; }
- .editorial-note > p { font-size:36px; } .editorial-asterisk { font-size:65px; }
- .formula-preview { grid-template-columns:1fr; gap:32px; padding:49px 7% 45px; }
- .formula-preview h2 { font-size:clamp(48px,12vw,70px); }
- .formula-preview > div:first-child > p:not(.kicker) { font-size:11px; margin-top:20px; }
- .formula-preview-values { column-gap:14px; }
- .formula-preview-values strong { font-size:clamp(68px,17vw,95px); }
- .formula-preview-values > div > span { font-size:6px; letter-spacing:.06em; }
- .formula-preview-values > p { font-size:9px; }
- .fortivor-flavor { grid-template-columns:1fr; }
- .flavor-photo { min-height:0; aspect-ratio:1/1; }
- .flavor-copy { padding:44px 7% 48px; }
- .flavor-copy h2 { font-size:clamp(44px,11.4vw,67px); }
- .fortivor-faq { padding:48px 7%; }
- .fortivor-faq h2 { font-size:59px; }
- .session-cta { min-height:400px; padding:50px 7%; }
- .session-cta img { object-position:65% center; }
- .session-cta::after { background:linear-gradient(90deg,#080e17d9,#080e1788 65%,#080e1740); }
- .session-cta h2 { font-size:clamp(56px,14vw,80px); }
- .hero-product-link .real-product-img { min-height:0; }
- .fortivor-about .brand-hero h1 { font-size:clamp(41px,10.5vw,68px); }
- .fortivor-about .brand-hero-photo { min-height:300px; }
- .fortivor-about .brand-story figure img { aspect-ratio:4/5; object-position:center 40%; }
- .about-partners { min-height:440px; padding:50px 7%; }
- .about-partners h2 { font-size:clamp(51px,12vw,75px); }
- .about-partners > img { object-position:65% center; }
- .detail-image-row .gallery-photo-label { font-size:7px; }
+ .notice-strip { height:26px; font-size:7px; padding-inline:5%; } .notice-strip > span:last-child { display:none; }
+ .preview-strip { min-height:25px; padding:5px 10px; gap:8px; font-size:8px; }
+ .preworkout-hero { display:flex; flex-direction:column; padding:28px 6% 28px; min-height:0; }
+ .hero-copy { display:contents; }
+ .hero-category { order:1; font-size:8px; margin:0 0 12px; }
+ .hero-copy h1 { order:2; font-size:clamp(65px,22vw,110px); line-height:.88; margin:0; }
+ .hero-packshot { order:3; height:300px; margin:4px 0 -12px; width:100%; }
+ .hero-packshot > img { height:100%; width:100%; max-width:420px; object-fit:contain; }
+ .packshot-backtype { font-size:62px; left:-14%; top:50%; color:#1d2024; }
+ .flavor-stamp { right:0; bottom:12%; padding-left:10px; max-width:125px; }
+ .flavor-stamp > span { font-size:6px; } .flavor-stamp > strong { font-size:15px; }
+ .hero-pack-link { display:none; }
+ .hero-hook { order:4; font-size:30px; margin:14px 0 10px; }
+ .hero-description { order:5; font-size:12px; line-height:1.7; }
+ .campaign-actions { order:6; display:flex; flex-direction:row; align-items:center; flex-wrap:nowrap; width:100%; gap:15px; margin-top:20px; }
+ .campaign-actions .btn { flex:1; min-width:0; min-height:50px; padding:16px 18px; font-size:10px; gap:15px; }
+ .hero-compare { flex:0 0 106px; font-size:11px; gap:7px; line-height:1.7; }
+ .hero-price { order:7; margin-top:16px; } .hero-price strong { font-size:20px; } .hero-price > span { font-size:10px; }
+ .hero-preview-note { order:8; font-size:9px; max-width:none; margin-top:8px; }
+ .formula-strip { padding:22px 6% 17px; column-gap:14px; }
+ .formula-strip > div { display:block; padding:0 12px 0 0; }
+ .formula-strip > div:nth-child(2) { padding-left:0; }
+ .formula-strip strong { font-size:40px; } .formula-strip div > p { font-size:7px; letter-spacing:.045em; margin-top:7px; }
+ .formula-strip > p { font-size:9px; padding-top:14px; line-height:1.7; }
+ .product-comparison { padding:45px 6% 42px; }
+ .comparison-intro .kicker { margin-bottom:13px; }
+ .comparison-intro h2 { font-size:clamp(48px,12vw,68px); }
+ .comparison-intro > p:last-child { font-size:13px; margin-top:15px; }
+ .comparison-wins { gap:21px 25px; margin:25px 0; padding-block:23px; }
+ .comparison-wins article > strong { font-size:74px; } .comparison-wins article > strong > span { font-size:40px; }
+ .comparison-wins article > p { font-size:13px; line-height:1.6; margin:10px 0; }
+ .comparison-wins article > p > b { font-size:11px; } .comparison-wins article > span { font-size:9px; }
+ .comparison-wins > aside { grid-template-columns:1fr; gap:7px; padding-top:22px; }
+ .comparison-wins > aside > p { font-size:23px; }
+ .comparison-wins aside > span { font-size:11px; }
+ .comparison-wins aside > a { grid-column:1; margin-top:2px; }
+ .comparison-help { display:block; font-size:11px; margin-bottom:10px; }
+ .comparison-help > span { font-size:9px; margin-top:6px; }
+ .comparison-table { min-width:720px; }
+ .comparison-table th,.comparison-table td { padding:20px 13px; }
+ .comparison-table caption { font-size:9px; }
+ .comparison-table thead th:first-child { font-size:8px; }
+ .comparison-table tbody th { width:125px; font-size:11px; box-shadow:1px 0 #b7ad9a; }
+ .comparison-table thead strong { font-size:14px; }
+ .comparison-table td { font-size:25px; }
+ .comparison-note { font-size:10px; margin-top:15px; }
+ .comparison-sources > summary { font-size:11px; }
+ .comparison-sources > div { font-size:11px; }
+ .flavor-feature { grid-template-columns:1fr; }
+ .flavor-feature-art { min-height:0; aspect-ratio:1/1; }
+ .flavor-feature-copy { padding:40px 7% 43px; }
+ .flavor-feature-copy h2 { font-size:clamp(47px,12vw,68px); }
+ .flavor-feature-copy > p:not(.kicker,.feature-disclosure) { font-size:13px; margin-top:20px; }
+ .flavor-line { margin-top:10px; padding:20px 0; }
+ .feature-actions { width:100%; gap:10px; }
+ .feature-actions .btn { width:100%; justify-content:space-between; }
+ .feature-actions .underlined-link { width:100%; justify-content:space-between; }
+ .feature-disclosure { font-size:9px; margin-top:8px; }
+ .focus-note { grid-template-columns:1fr; padding:42px 7%; gap:23px; }
+ .focus-note > .kicker { margin-bottom:0; }
+ .focus-note h2 { font-size:49px; }
+ .focus-note > div > p { font-size:13px; }
+ .real-training { padding:42px 6%; }
+ .real-training-heading { grid-template-columns:1fr; gap:16px; }
+ .real-training-heading h2 { font-size:55px; }
+ .real-training-heading > p:last-child { font-size:13px; }
+ .real-training-grid { grid-template-columns:1fr; gap:23px; }
+ .real-training-grid img { height:360px; }
+ .fortivor-faq { padding:42px 7%; }
+ .fortivor-faq h2 { font-size:54px; }
+ .fortivor-faq summary { font-size:12px; }
+ .fortivor-faq details > p { font-size:12px; }
+ .product-close { display:block; padding:40px 7%; }
+ .product-close h2 { font-size:61px; }
+ .product-close p:not(.kicker) { font-size:12px; }
+ .product-close .btn { margin-top:23px; width:100%; }
+ .about-product-hero { grid-template-columns:1fr; padding:40px 7% 25px; }
+ .about-product-hero h1 { font-size:59px; }
+ .about-product-hero p:not(.kicker) { font-size:13px; }
+ .about-product-hero > div:last-child img { max-height:400px; object-fit:contain; }
+ .about-product-story { grid-template-columns:1fr; gap:20px; padding:42px 7%; }
+ .about-product-story h2 { font-size:43px; }
+ .about-product-story > div > p { font-size:13px; }
+ .product-about .about-testing h2 { font-size:43px; }
+ .product-about .about-testing p { font-size:13px; }
 }
 @media(max-width:370px) {
  .brand > span { font-size:18px; } .brand-symbol { width:27px; height:27px; }
- .fortivor-hero.campaign-hero { height:625px; padding-top:37px; }
- .fortivor-hero .house-hero-copy h1 { font-size:85px; }
- .fortivor-manifesto { font-size:6px; }
- .fortivor-feature-copy h2 { font-size:47px; }
- .training-grid figcaption b { font-size:27px; }
- .formula-preview-values strong { font-size:66px; }
+ .hero-packshot { height:270px; }
+ .hero-copy h1 { font-size:70px; }
+ .hero-category { font-size:7px; }
+ .hero-compare { flex-basis:97px; font-size:10px; }
+ .campaign-actions .btn { padding-inline:14px; font-size:9px; }
+ .flavor-stamp { max-width:110px; } .flavor-stamp > strong { font-size:13px; }
+ .comparison-wins { column-gap:18px; } .comparison-wins article > strong { font-size:68px; }
 }
-@media(prefers-reduced-motion:reduce) { .training-grid figure img { transition:none; } }

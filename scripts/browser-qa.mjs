@@ -21,8 +21,22 @@ try{
   for(const route of ['/shop','/shop?category=protein','/build-your-stack']){await go(route);assert.equal(new URL(page.url()).pathname,product);assert.match(await page.locator('h1').innerText(),/Fortivor/i);}
   await go('/product/sample-creatine');assert.match(await page.locator('main').innerText(),/PAGE NOT FOUND/);
   await go('/');assert.equal(await page.locator('a[href*="category="],a[href="/build-your-stack"]').count(),0);
-  assert.equal(await page.locator('.fortivor-home img[src*="campaign-strength"]').count(),1);
-  assert.equal(await page.locator('.fortivor-home img[src*="campaign-partners"]').count(),1);
+  assert.equal(await page.locator('img[src*="campaign-strength"],img[src*="campaign-partners"],img[src*="campaign-crew"],img[src*="campaign-run"]').count(),0);
+  assert.equal(await page.locator('.hero-packshot img[src*="fortivor-studio-front"]').count(),1);
+ });
+ await check('Homepage comparison gives sourced advantages and discloses every compared dose',async()=>{
+  await go('/');await page.locator('.hero-compare').click();assert.equal(new URL(page.url()).hash,'#compare');
+  const table=page.locator('.comparison-table');assert.match(await table.innerText(),/GHOST Legend V5/);assert.match(await table.innerText(),/Gorilla Mode/);
+  assert.equal(await table.locator('td[data-brand="fortivor"][data-metric="citrullineMg"]').innerText(),'8 g');
+  assert.equal(await table.locator('td[data-brand="gorilla"][data-metric="citrullineMg"]').innerText(),'10 g');
+  assert.equal(await table.locator('td[data-brand="gorilla"][data-metric="betaAlanineMg"]').innerText(),'Not listed');
+  assert.match(await table.locator('thead').innerText(),/2 scoops · maximum dose/);
+  assert.match(await page.locator('.comparison-wins').innerText(),/33%/);assert.match(await page.locator('.comparison-wins').innerText(),/2×/);
+  assert.match(await page.locator('#comparison-note').innerText(),/proposed specifications/);
+  await page.locator('.comparison-sources summary').click();assert.equal(await page.locator('.comparison-sources a').count(),6);
+  await page.setViewportSize({width:390,height:844});const scroller=page.locator('.comparison-scroll');await scroller.focus();
+  await scroller.evaluate(el=>el.scrollLeft=el.scrollWidth);assert.ok(await scroller.evaluate(el=>el.scrollLeft>0));
+  await page.setViewportSize({width:1440,height:1000});
  });
  await check('Homepage add, quantity, demo checkout and retained bag',async()=>{
   await go('/');await page.locator('.fortivor-feature [data-action="add"]').click();await page.locator('.cart-drawer.active').waitFor();
