@@ -1,139 +1,80 @@
-// Optional QA: PLAYWRIGHT_MODULE=/absolute/path/to/playwright-core/index.mjs node scripts/browser-qa.mjs
+// Optional browser QA. Generated reports and screenshots stay in ignored storage/.
 import {pathToFileURL} from 'node:url';
+import path from 'node:path';
 import fs from 'node:fs/promises';
 import assert from 'node:assert/strict';
-const modulePath=process.env.PLAYWRIGHT_MODULE||'/opt/codex/cua_node/lib/node_modules/playwright-core/index.mjs';
-const {chromium}=await import(pathToFileURL(modulePath));
+const {chromium}=await import(pathToFileURL(process.env.PLAYWRIGHT_MODULE||'/opt/codex/cua_node/lib/node_modules/playwright-core/index.mjs'));
 const base=process.env.QA_BASE_URL||'http://localhost:3000';
+const output=path.resolve(process.env.QA_OUTPUT_DIR||'storage/qa');
+await fs.mkdir(output,{recursive:true});
+const startedAt=new Date().toISOString(),results=[],errors=[],renders=[];
 const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox','--disable-dev-shm-usage']});
-const results=[],errors=[];
 const context=await browser.newContext({viewport:{width:1440,height:1000},reducedMotion:'reduce'});
-const page=await context.newPage();page.on('pageerror',e=>errors.push(e.message));
-const check=async(name,fn)=>{await fn();results.push({name,status:'passed'});console.log('PASS '+name);};
-const go=async path=>{await page.goto(base+path);await page.locator('main').waitFor();};
-const readyImages=async()=>page.evaluate(async()=>{await Promise.all([...document.images].map(async img=>{img.loading='eager';try{await img.decode();}catch{}}));});
-const closeBag=async()=>{if(await page.locator('.cart-drawer.active').count())await page.getByRole('button',{name:'Close shopping bag',exact:true}).click();};
+const page=await context.newPage(),product='/product/fortivor-pre-workout';
+page.on('pageerror',e=>errors.push(e.message));
+const go=async route=>{await page.goto(base+route);await page.locator('main').waitFor();};
+const check=async(name,run)=>{await run();results.push({name,status:'passed'});console.log('PASS '+name);};
+const readyImages=async()=>page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(async i=>{i.loading='eager';try{await i.decode();}catch{}}));});
 try{
- await check('A: homepage → Fortivor → add → demo checkout; no payment and bag retained',async()=>{
-  await go('/');await page.locator('.campaign-actions a').first().click();await page.locator('.add-detail').click();
-  await page.locator('.cart-drawer a[href="/cart"]').click();await page.getByRole('button',{name:'TRY DEMO CHECKOUT'}).click();
-  await page.locator('.order-page').waitFor();assert.match(await page.locator('.order-page').innerText(),/No payment was collected/);
-  assert.equal(new URL(page.url()).search,'?demo=1');assert.equal(JSON.parse(await page.evaluate(()=>localStorage.getItem('auctoran-cart-v1')))[0].qty,1);
+ await check('Only Fortivor is public; old catalog and stack routes lead to Fortivor',async()=>{
+  const {products}=await(await page.request.get(base+'/api/products')).json();assert.deepEqual(products.map(p=>p.id),['fortivor-pre-workout']);
+  for(const route of ['/shop','/shop?category=protein','/build-your-stack']){await go(route);assert.equal(new URL(page.url()).pathname,product);assert.match(await page.locator('h1').innerText(),/Fortivor/i);}
+  await go('/product/sample-creatine');assert.match(await page.locator('main').innerText(),/PAGE NOT FOUND/);
+  await go('/');assert.equal(await page.locator('a[href*="category="],a[href="/build-your-stack"]').count(),0);
+  assert.equal(await page.locator('.fortivor-home img[src*="campaign-strength"]').count(),1);
+  assert.equal(await page.locator('.fortivor-home img[src*="campaign-partners"]').count(),1);
  });
- await check('Homepage products show prices, quick-add works, and formula/testing links reach their sections',async()=>{
-  await go('/');const card=page.locator('.home-product-grid .product-card').first();
-  assert.match(await card.innerText(),/FORTIVOR/i);assert.match(await card.locator('.product-pricing strong').innerText(),/49\.99/);
-  await card.locator('.product-quick-add').click();assert.match(await page.locator('.cart-drawer.active').innerText(),/Fortivor/);await closeBag();
-  await page.locator('.hero-testing').click();assert.equal(new URL(page.url()).hash,'#our-standard');
-  await page.locator('.standard-grid article').nth(1).getByRole('link').click();
-  assert.equal(new URL(page.url()).pathname,'/product/fortivor-pre-workout');assert.equal(new URL(page.url()).hash,'#formula');
-  assert.equal(await page.locator('#formula').evaluate(el=>el===document.activeElement),true);
-  await page.locator('.detail-tested a').click();assert.equal(new URL(page.url()).pathname,'/about');assert.equal(new URL(page.url()).hash,'#testing');
-  assert.equal(await page.locator('#testing').evaluate(el=>el===document.activeElement),true);
+ await check('Homepage add, quantity, demo checkout and retained bag',async()=>{
+  await go('/');await page.locator('.fortivor-feature [data-action="add"]').click();await page.locator('.cart-drawer.active').waitFor();
+  await page.locator('.cart-drawer [data-action="increase"]').click();assert.match(await page.locator('.drawer-subtotal').innerText(),/99\.98/);
+  await page.locator('.cart-drawer a[href="/cart"]').click();await page.getByRole('button',{name:'TRY DEMO CHECKOUT'}).click();await page.locator('.order-page').waitFor();
+  assert.match(await page.locator('.order-page').innerText(),/No payment was collected/);
+  assert.deepEqual(await page.evaluate(()=>JSON.parse(localStorage.getItem('auctoran-cart-v1'))),[{id:'fortivor-pre-workout',qty:2}]);
  });
- await check('B: Protein shortcut → price/concept filter → designed product → demo cart',async()=>{
-  await go('/');await page.locator('.discovery-rail a[href="/shop?category=protein"]').click();await page.selectOption('#price-choice','7500');
-  await page.selectOption('#brand-choice','concept');assert.equal(await page.locator('.shop-grid .product-card').count(),1);
-  await page.locator('.product-name').click();assert.match(await page.locator('.stock-status').innerText(),/Collection preview/);
-  await page.locator('.add-detail').click();assert.match(await page.locator('.cart-drawer.active').innerText(),/Whey Isolate/);await closeBag();
+ await check('Cart restoration removes archived products and preserves Fortivor quantities',async()=>{
+  await page.evaluate(()=>localStorage.setItem('auctoran-cart-v1',JSON.stringify([{id:'sample-creatine',qty:2},{id:'fortivor-pre-workout',qty:1},{id:'fortivor-pre-workout',qty:2}])));
+  await go('/cart');assert.equal(await page.locator('.cart-page .cart-line').count(),1);assert.match(await page.locator('.summary-total').innerText(),/149\.97/);
+  await page.locator('.cart-page .cart-line [data-action="decrease"]').click();await page.reload();await page.locator('.cart-page .cart-line').waitFor();assert.match(await page.locator('.summary-total').innerText(),/99\.98/);
  });
- await check('C: stack goal → preferences → explicit concept opt-in → quantities → bulk add',async()=>{
-  await go('/build-your-stack');await page.getByRole('button',{name:/03 Training Performance/}).click();
-  await page.getByRole('button',{name:'CONTINUE',exact:true}).click();await page.locator('#stack-preview').check();await page.selectOption('#stack-budget','10000');
-  await page.getByRole('button',{name:'SEE MY SELECTION'}).click();assert.equal(await page.locator('.stack-result').count(),1);
-  assert.match(await page.locator('.stack-result').innerText(),/355 mg caffeine/);
-  await page.getByRole('button',{name:'Increase Fortivor stack quantity',exact:true}).click();assert.match(await page.locator('.stack-checkout').innerText(),/\$99.98/);
-  await page.getByRole('button',{name:'ADD SELECTED TO DEMO BAG'}).click();assert.match(await page.locator('.cart-drawer.active').innerText(),/Fortivor/);await closeBag();
- });
- await check('Stack default and stimulant-free routes truthfully return no verified stock',async()=>{
-  await go('/build-your-stack');await page.getByRole('button',{name:/03 Training Performance/}).click();await page.getByRole('button',{name:'CONTINUE',exact:true}).click();
-  await page.getByRole('button',{name:'SEE MY SELECTION'}).click();assert.equal(await page.locator('.stack-empty').count(),1);
-  await page.getByRole('button',{name:'← EDIT PREFERENCES'}).click();await page.locator('#stack-preview').check();await page.locator('input[name="stack-stimulant"][value="free"]').check();
-  await page.getByRole('button',{name:'SEE MY SELECTION'}).click();assert.equal(await page.locator('.stack-result').count(),0);
- });
- await check('D: 390px menu → product → quantity → add → checkout',async()=>{
-  await page.setViewportSize({width:390,height:844});await go('/');await page.getByRole('button',{name:'Open menu',exact:true}).click();
-  await page.locator('.mobile-nav-panel a[href="/shop?category=pre-workout"]').click();await page.locator('.product-name').click();
-  await page.getByRole('button',{name:'Increase quantity',exact:true}).click();assert.equal(await page.locator('.purchase-controls output').innerText(),'2');
-  await page.locator('.add-detail').click();await page.locator('.cart-drawer a[href="/cart"]').click();await page.getByRole('button',{name:'TRY DEMO CHECKOUT'}).click();await page.locator('.order-page').waitFor();assert.match(await page.locator('h1').innerText(),/DEMO/);
- });
- await check('E: returning customer restores cart, accurate subtotal, quantity updates, removal',async()=>{
-  await go('/cart');await page.reload();await page.locator('.cart-list').waitFor();
-  const items=JSON.parse(await page.evaluate(()=>localStorage.getItem('auctoran-cart-v1')));
-  const catalog=(await (await page.request.get(base+'/api/products')).json()).products;
-  const expected=items.reduce((n,i)=>n+catalog.find(p=>p.id===i.id).priceCents*i.qty,0);
-  assert.equal(await page.locator('.summary-total strong').innerText(),'$'+(expected/100).toFixed(2));
-  const before=items[0].qty;await page.locator('.cart-list [data-action="increase"]').first().click();
-  assert.equal(JSON.parse(await page.evaluate(()=>localStorage.getItem('auctoran-cart-v1')))[0].qty,Math.min(20,before+1));
-  await page.locator('.cart-list [data-action="remove"]').first().click();assert.equal(await page.locator('.cart-list .cart-line').count(),items.length-1);
- });
- await check('Checkout server failure is visible, retry enabled, cart preserved',async()=>{
-  await go('/cart');await page.route('**/api/checkout',route=>route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'Checkout is temporarily unavailable. Please try again.'})}));
+ await check('Checkout failure allows retry and cancelled checkout keeps the bag',async()=>{
+  await page.route('**/api/checkout',route=>route.fulfill({status:503,contentType:'application/json',body:JSON.stringify({error:'Checkout is temporarily unavailable. Please try again.'})}));
   await page.getByRole('button',{name:'TRY DEMO CHECKOUT'}).click();await page.locator('#checkout-error').filter({hasText:'temporarily unavailable'}).waitFor();
-  assert.equal(await page.getByRole('button',{name:'TRY DEMO CHECKOUT'}).isEnabled(),true);assert.ok(JSON.parse(await page.evaluate(()=>localStorage.getItem('auctoran-cart-v1'))).length>0);await page.unroute('**/api/checkout');
+  assert.equal(await page.getByRole('button',{name:'TRY DEMO CHECKOUT'}).isEnabled(),true);assert.equal(await page.locator('.cart-page .cart-line').count(),1);await page.unroute('**/api/checkout');
+  await go('/cart?cancelled=1');assert.match(await page.locator('.cart-notice').innerText(),/bag is saved/);
  });
- await check('Gallery thumbnails, zoom, Escape, swipe and mobile sticky purchase visibility',async()=>{
-  await go('/product/fortivor-pre-workout');assert.equal(await page.locator('.detail-image-row button').count(),2);
-  assert.equal(await page.locator('.detail-image-row').getByText('Nutrition facts').count(),0);
-  await page.getByRole('button',{name:'View Supplement Facts',exact:true}).click();assert.match(await page.locator('.gallery-caption').innerText(),/Supplement Facts/);
-  await page.locator('.detail-gallery-image').click();assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),true);assert.match(await page.locator('.zoom-toolbar p').innerText(),/Supplement Facts/);await page.keyboard.press('Escape');assert.equal(await page.locator('#gallery-zoom').evaluate(d=>d.open),false);
-  await page.locator('.detail-gallery-image').dispatchEvent('touchstart',{changedTouches:[{identifier:1,clientX:300,clientY:200}]});await page.locator('.detail-gallery-image').dispatchEvent('touchend',{changedTouches:[{identifier:1,clientX:100,clientY:205}]});
-  assert.equal(await page.getByRole('button',{name:'View Front view',exact:true}).getAttribute('aria-pressed'),'true');
-  await page.locator('#primary-purchase').scrollIntoViewIfNeeded();await page.waitForTimeout(100);assert.equal(await page.locator('.mobile-purchase').isVisible(),false);
-  await page.locator('#product-faq').scrollIntoViewIfNeeded();await page.waitForTimeout(100);assert.equal(await page.locator('.mobile-purchase').isVisible(),true);
+ await check('Product gallery, zoom, selected highlights and pending label status',async()=>{
+  await go(product);await page.getByRole('button',{name:'View Flavor campaign',exact:true}).click();await page.getByRole('button',{name:'Enlarge Flavor campaign',exact:true}).click();
+  await page.locator('dialog[open]').waitFor();await page.keyboard.press('Escape');assert.equal(await page.locator('dialog[open]').count(),0);
+  await page.locator('.product-jumps a[href="#formula"]').click();assert.equal(new URL(page.url()).hash,'#formula');assert.equal(await page.locator('.interactive-formula details').count(),3);
+  assert.doesNotMatch(await page.locator('.interactive-formula').innerText(),/Alpha-GPC|Theobromine|L-Theanine/);
+  await page.locator('#supplement-information summary').filter({hasText:'LABEL STATUS'}).click();assert.match(await page.locator('#supplement-information').innerText(),/final production Supplement Facts/i);
+  assert.equal(await page.locator('a[href*="fortivor-supplement-facts"]').count(),0);
  });
- await check('Keyboard: skip link, menu/search/cart focus containment and Escape restoration',async()=>{
-  await go('/');await page.keyboard.press('Tab');assert.equal(await page.locator('.skip-link').evaluate(el=>el===document.activeElement),true);
-  await page.keyboard.press('Enter');assert.equal(await page.locator('main').evaluate(el=>el===document.activeElement),true);
-  const search=page.getByRole('button',{name:'Search',exact:true});await search.click();assert.equal(await page.locator('#site-search').evaluate(el=>el===document.activeElement),true);
-  for(let i=0;i<8;i++)await page.keyboard.press('Tab');assert.equal(await page.locator('.search-cover').evaluate(el=>el.contains(document.activeElement)),true);
-  await page.keyboard.press('Escape');assert.equal(await search.evaluate(el=>el===document.activeElement),true);
-  await page.getByRole('button',{name:/Open shopping bag/}).click();for(let i=0;i<20;i++)await page.keyboard.press('Tab');assert.equal(await page.locator('.cart-drawer').evaluate(el=>el.contains(document.activeElement)),true);await page.keyboard.press('Escape');
-  await page.getByRole('button',{name:'Open menu',exact:true}).click();assert.equal(await page.locator('.mobile-nav-panel').evaluate(el=>el.contains(document.activeElement)),true);await page.keyboard.press('Escape');
+ await check('Keyboard skip link, bag focus containment and restoration',async()=>{
+  await go('/');await page.keyboard.press('Tab');assert.equal(await page.locator('.skip-link').evaluate(el=>el===document.activeElement),true);await page.keyboard.press('Enter');assert.equal(await page.locator('main').evaluate(el=>el===document.activeElement),true);
+  const bag=page.getByRole('button',{name:/Open shopping bag/});await bag.click();for(let i=0;i<15;i++)await page.keyboard.press('Tab');assert.equal(await page.locator('.cart-drawer').evaluate(el=>el.contains(document.activeElement)),true);
+  await page.keyboard.press('Escape');assert.equal(await bag.evaluate(el=>el===document.activeElement),true);
  });
- await check('URL-backed search, brand/price/caffeine filtering, price sort and empty-state recovery',async()=>{
-  await go('/shop');await page.locator('#catalog-query').fill('creatine');await page.locator('#catalog-search button').click();assert.equal(await page.locator('.shop-grid .product-card').count(),1);
-  await page.locator('.filter-disclosure').evaluate(el=>el.open=true);await page.selectOption('#price-choice','3000');assert.equal(await page.locator('.shop-grid .product-card').count(),1);await page.reload();await page.locator('main').waitFor();assert.equal(await page.locator('#catalog-query').inputValue(),'creatine');
-  await page.selectOption('#stimulant-choice','free');assert.equal(await page.locator('.empty-shop').count(),1);await page.locator('.empty-shop a').click();
-  await page.locator('.filter-disclosure').evaluate(el=>el.open=true);await page.selectOption('#sort-choice','price-low');const prices=await page.locator('.product-pricing strong').allTextContents();const nums=prices.map(s=>Number(s.replace(/[^0-9.]/g,'')));assert.deepEqual(nums,[...nums].sort((a,b)=>a-b));
+ await check('Mobile menu, direct formula navigation, quantity and sticky purchase',async()=>{
+  await page.setViewportSize({width:390,height:844});await go('/');await page.getByRole('button',{name:'Open menu',exact:true}).click();await page.locator('.mobile-nav-panel a[href="'+product+'#formula"]').click();
+  assert.equal(new URL(page.url()).hash,'#formula');assert.equal(await page.locator('#formula').evaluate(el=>el===document.activeElement),true);assert.equal(await page.locator('.mobile-nav-panel').getAttribute('aria-hidden'),'true');
+  await go(product);await page.getByRole('button',{name:'Increase quantity',exact:true}).click();assert.equal(await page.locator('.purchase-controls output').innerText(),'2');
+  await page.locator('#formula').scrollIntoViewIfNeeded();await page.locator('.mobile-purchase:not([hidden])').waitFor();await page.locator('.mobile-purchase [data-action="addDetail"]').click();await page.locator('.cart-drawer.active').waitFor();await page.keyboard.press('Escape');
  });
- await check('Cancelled checkout retains bag and explains cancellation',async()=>{await go('/cart?cancelled=1');assert.match(await page.locator('.cart-notice').innerText(),/bag is saved/);});
- await page.evaluate(()=>localStorage.removeItem('auctoran-cart-v1'));
- await page.reload();await page.locator('main').waitFor();
- const responsive=[];
- for(const width of [1440,1024,390,430]){
-  await page.setViewportSize({width,height:width<600?844:1000});
-  for(const [name,path] of [['homepage','/'],['fortivor','/product/fortivor-pre-workout'],['catalog','/shop'],['stack','/build-your-stack']]){
-   await go(path);await page.evaluate(()=>document.fonts.ready);await readyImages();
-   await page.screenshot({path:`screenshots/house-${name}-${width}.jpg`,type:'jpeg',quality:80,fullPage:false});
-   const data=await page.evaluate(()=>({width:innerWidth,scrollWidth:document.documentElement.scrollWidth,broken:[...document.images].filter(i=>i.complete&&i.naturalWidth===0).map(i=>i.src),h1:document.querySelectorAll('h1').length}));
-   assert.ok(data.scrollWidth<=width,`${name} at ${width}: overflow ${data.scrollWidth}`);assert.equal(data.h1,1);assert.deepEqual(data.broken,[]);
-   if(name==='homepage'){const ctas=await page.locator('.campaign-actions').boundingBox();assert.ok(ctas.y+ctas.height<= (width<600?844:1000),`Hero CTAs below fold ${width}`);}
-   responsive.push({page:name,width,overflow:false,brokenImages:0});
+ await check('Six routes fit five viewport sizes with loaded images and one h1',async()=>{
+  for(const width of [320,390,768,1024,1440]){
+   await page.setViewportSize({width,height:width<600?844:1000});
+   for(const [name,route] of [['homepage','/'],['fortivor',product],['about','/about'],['cart','/cart'],['contact','/contact'],['shipping','/info/shipping']]){
+    await go(route);await readyImages();const d=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,h1:document.querySelectorAll('h1').length,broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.currentSrc)}));
+    assert.ok(d.scrollWidth<=width,`${name} overflow at ${width}: ${d.scrollWidth}`);assert.equal(d.h1,1,name);assert.deepEqual(d.broken,[],name);
+    if(name==='homepage'){const cta=await page.locator('.campaign-actions .btn').boundingBox();assert.ok(cta.y+cta.height<=(width<600?844:1000),'Hero purchase link below fold at '+width);}
+    if(['homepage','fortivor','about'].includes(name))await page.screenshot({path:path.join(output,`${name}-${width}.jpg`),type:'jpeg',quality:82,fullPage:false});
+    renders.push({page:name,width,overflow:false,brokenImages:0});
+   }
   }
- }
- results.push({name:'Responsive screenshots, no horizontal overflow, hero CTAs above fold: 1440/1024/390/430',status:'passed',responsive});
- const catalog=(await (await page.request.get(base+'/api/products')).json()).products;
- const productRenders=[];
- for(const width of [320,768]){
-  await page.setViewportSize({width,height:900});
-  for(const product of catalog){
-   await go('/product/'+product.slug);await page.evaluate(()=>document.fonts.ready);await readyImages();
-   const data=await page.evaluate(()=>({scrollWidth:document.documentElement.scrollWidth,h1:document.querySelector('h1')?.textContent,broken:[...document.images].filter(i=>i.complete&&!i.naturalWidth).map(i=>i.src)}));
-   assert.ok(data.scrollWidth<=width,`${product.name} at ${width}: overflow ${data.scrollWidth}`);
-   assert.ok(data.h1.includes(product.name));assert.deepEqual(data.broken,[]);
-   productRenders.push({product:product.name,width,overflow:false,brokenImages:0});
-  }
- }
- results.push({name:'All catalog product pages fit narrow phones and tablets',status:'passed',productRenders});
- await page.setViewportSize({width:1440,height:1000});await go('/');await readyImages();await page.screenshot({path:'screenshots/house-homepage-desktop-full.jpg',type:'jpeg',quality:80,fullPage:true});
- await page.setViewportSize({width:390,height:844});await go('/product/fortivor-pre-workout');await readyImages();await page.screenshot({path:'screenshots/house-fortivor-mobile-full.jpg',type:'jpeg',quality:80,fullPage:true});
- for(const [width,label] of [[1440,'desktop'],[390,'mobile']]){
-  await page.setViewportSize({width,height:width<600?844:1000});await go('/product/fortivor-pre-workout');
-  await page.getByRole('button',{name:'View Supplement Facts',exact:true}).click();await readyImages();
-  await page.screenshot({path:`screenshots/house-facts-${label}.jpg`,type:'jpeg',quality:85,fullPage:false});
- }
- assert.deepEqual(errors,[]);results.push({name:'No browser JavaScript exceptions',status:'passed'});
- await fs.writeFile('docs/house-browser-results.json',JSON.stringify({testedAt:new Date().toISOString(),engine:'Chromium',base,results,errors},null,2));
- console.log(`Completed ${results.length} checks; ${responsive.length} responsive page renders.`);
-}catch(error){await page.screenshot({path:'/workspace/scratch/qa-failure.png',fullPage:true});console.error(error);await fs.writeFile('docs/house-browser-results.json',JSON.stringify({results,errors,failure:error.message},null,2));process.exitCode=1;}finally{await browser.close();}
+  await go('/');await readyImages();await page.screenshot({path:path.join(output,'homepage-desktop-full.jpg'),type:'jpeg',quality:82,fullPage:true});
+  await page.setViewportSize({width:390,height:844});await page.screenshot({path:path.join(output,'homepage-mobile-full.jpg'),type:'jpeg',quality:82,fullPage:true});
+ });
+ assert.deepEqual(errors,[]);results.push({name:'No browser JavaScript exceptions',status:'passed'});console.log(`Completed ${results.length} checks; ${renders.length} responsive page renders.`);
+}catch(error){await page.screenshot({path:path.join(output,'failure.png'),fullPage:true});results.push({name:'Browser validation',status:'failed',message:error.message});console.error(error);process.exitCode=1;}
+finally{await fs.writeFile(path.join(output,'browser-results.json'),JSON.stringify({startedAt,completedAt:new Date().toISOString(),base,results,renders,errors},null,2));await browser.close();}

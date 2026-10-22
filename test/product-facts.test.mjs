@@ -18,12 +18,10 @@ test('caffeine includes guarana and unresolved serving mass cannot imply an appr
  assert.equal(p.servingSizeVerified,false);assert.equal(p.labelVerified,false);
  assert.equal(p.directionsVerified,false);assert.equal(p.suggestedUse,undefined);
 });
-test('gallery contains only the corrected front and flat supplied Supplement Facts',async()=>{
- assert.equal(p.gallery.length,2);
+test('gallery preserves the original packaging and distinguishes campaign artwork from label information',async()=>{
+ assert.equal(p.gallery.length,3);
  assert.equal(p.gallery[0].src,'/assets/fortivor-studio-front.webp');
- assert.deepEqual(p.gallery.slice(1).map(g=>g.kind),['label']);
- const facts=await readFile(new URL('../public'+p.supplementFactsImage,import.meta.url),'utf8');
- assert.match(facts,/Supplement Facts/);assert.match(facts,/Guarana Extract/);assert.match(facts,/1 Scoop \(18 g\)/);
- assert.doesNotMatch(facts,/<image/);
- assert.deepEqual(p.gallery.map(g=>g.label),['Front view','Supplement Facts']);
+ assert.deepEqual(p.gallery.slice(1).map(g=>g.kind),['campaign','campaign']);
+ assert.deepEqual(p.gallery.map(g=>g.label),['Front view','Flavor campaign','Training campaign']);
+ for(const photo of p.gallery)assert.ok((await readFile(new URL('../public'+photo.src,import.meta.url))).length>0);
 });
