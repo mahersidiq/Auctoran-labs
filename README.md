@@ -20,7 +20,7 @@ With no settings it runs in **demo mode**: everything works, but no payment is t
 
 ## Product presentation
 
-The completed black-and-bronze tub designs for Whey Isolate, Creatine, Essential Aminos, Daily Essentials and Thermogenic are documented in [collection designs](docs/COLLECTION_DESIGNS.md). Site-wide layouts and editorial photography are in [visual refresh](docs/VISUAL_REFRESH.md). Fortivor's artwork and product record remain unchanged; its approved sources and outstanding label details are in [product presentation](docs/PRODUCT_PRESENTATION.md).
+Women’s training photography, unified studio backgrounds and larger category/gallery images are documented in [imagery and gallery improvements](docs/INCLUSIVE_IMAGERY.md). The completed black-and-bronze tub designs for Whey Isolate, Creatine, Essential Aminos, Daily Essentials and Thermogenic are documented in [collection designs](docs/COLLECTION_DESIGNS.md). Site-wide layouts and editorial photography are in [visual refresh](docs/VISUAL_REFRESH.md). Fortivor's artwork and product record remain unchanged; its approved sources and outstanding label details are in [product presentation](docs/PRODUCT_PRESENTATION.md).
 
 ## V4 implementation
 

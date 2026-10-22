@@ -1,5 +1,5 @@
 {
-  "testedAt": "2026-10-22T05:31:27.993Z",
+  "testedAt": "2026-10-22T05:57:49.338Z",
   "engine": "Chromium",
   "base": "http://localhost:4174",
   "renders": [
@@ -10,6 +10,16 @@
     },
     {
       "page": "catalog",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "pre-workout-category",
+      "width": 1440,
+      "status": "passed"
+    },
+    {
+      "page": "protein-category",
       "width": 1440,
       "status": "passed"
     },
@@ -90,6 +100,16 @@
     },
     {
       "page": "catalog",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "pre-workout-category",
+      "width": 1024,
+      "status": "passed"
+    },
+    {
+      "page": "protein-category",
       "width": 1024,
       "status": "passed"
     },
@@ -170,6 +190,16 @@
     },
     {
       "page": "catalog",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "pre-workout-category",
+      "width": 390,
+      "status": "passed"
+    },
+    {
+      "page": "protein-category",
       "width": 390,
       "status": "passed"
     },
@@ -250,6 +280,16 @@
     },
     {
       "page": "catalog",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "pre-workout-category",
+      "width": 430,
+      "status": "passed"
+    },
+    {
+      "page": "protein-category",
       "width": 430,
       "status": "passed"
     },
@@ -325,11 +365,13 @@
     }
   ],
   "checks": [
-    "All 16 customer routes at four widths; visible headings/navigation, bounded product images, no legacy media, missing assets or horizontal overflow",
+    "All 18 customer routes at four widths; prominent category products, balanced athlete imagery, no standalone column, missing assets or horizontal overflow",
     "All six photographic category tiles open the correct filtered catalog",
     "Auctoran branded concepts have their own filter and are not misrepresented as curated partner inventory",
     "Customer care navigation changes route and active state correctly",
-    "Mobile facts zoom genuinely enlarges the label and Escape closes it"
+    "Mobile facts zoom genuinely enlarges the label and Escape closes it",
+    "All six product images genuinely enlarge, load full-resolution sources, center correctly, fit completely and support keyboard controls at four widths (24 gallery checks)",
+    "Full-width category products use sharp sources on a 3× density phone and their photos open the product page"
   ],
   "errors": []
 }
